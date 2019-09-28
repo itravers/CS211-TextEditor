@@ -24,22 +24,13 @@
     <ClInclude Include="panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ContentController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="customcolors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DialogBox.h">
+    <ClInclude Include="TextEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="structs.h">
+    <ClInclude Include="TEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,16 +51,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContentController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DialogBox.cpp">
+    <ClCompile Include="TextEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuController.cpp">
+    <ClCompile Include="TEvent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
