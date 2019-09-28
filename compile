@@ -1,0 +1,1 @@
+g++ -o TextEditor main.cpp -lncurses -std=c++11

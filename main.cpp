@@ -47,6 +47,7 @@ int main(void)
 
 	//pause for user input
 	bool keep_going = true;
+	resize_term(0, 0);
 	while (keep_going == true)
 	{
 		//clear window
@@ -60,7 +61,7 @@ int main(void)
 
 		//Curses documentation says to use KEY_RESIZE, but you can also use
 		//is_termresized.  In real life, use either/or but not both.
-		if (is_termresized() == true)
+		if (is_term_resized(0, 0) == true)
 		{
 			resize_term(0, 0);
 			getmaxyx(main_window, num_rows, num_cols);
