@@ -9,3 +9,33 @@ So now we just have to figure out how to edit the file.
 I am trying to just replace characters in the vector. The trick is getting these
 characters to replace at exactly the right point, there is a disconnect between cursorLocation.x
 and the actual location that the character is in in the vector.
+
+
+
+I'm considering turning the text editor into a manager that manager
+submanagers. these submanagers would talk to the manager via the
+service locator pattern. I didn't feel the observer pattern gave
+a submanager proper access to other submanagers while still
+staying decoupled enough to be resistant to change. The service
+locator pattern, as I understand it, will allow 
+
+https://stackify.com/service-locator-pattern/
+
+
+
+I've done former work using the service locator pattern here:
+https://github.com/itravers/ARaceInSpace/tree/master/core/src/com/araceinspace/EventSubSystem
+
+This is an event subsystem I designed to decouple parts of 
+a game I hobbled together in my spare time. I think
+I will take this general idea and apply it to my text editor
+making the main manager talk to all the submanagers using
+a similar event subsystem. Later on I can actually incorporate
+that event subsystem into my curses wrappers.
+
+In order to work in linux the dependencies:
+
+DEBIAN: libncurses5-dev and libncursesw5-dev
+CENTOS: ncurses-devel
+
+need to be installed.
