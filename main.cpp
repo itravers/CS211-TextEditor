@@ -1,9 +1,18 @@
+/*
+	Isaac Travers
+	CS 211 - Data Structures HSU
+	August 30th, 2019
+
+	A text editor demonstrating skills with data structures.
+*/
+
 #ifdef _WIN32
 //Windows includes
 #include "curses.h"
 #include "panel.h"
 #include "curspriv.h"
 #else
+
 //Linux / MacOS includes
 #include <curses.h>
 #endif
@@ -18,6 +27,9 @@ void draw_centered(WINDOW* win, int max_y, int max_x, string text);
 
 int main(void)
 {
+	
+	/*
+	
 	WINDOW* main_window = nullptr;
 	int num_cols = 0;
 	int num_rows = 0;
@@ -76,6 +88,8 @@ int main(void)
 	}
 	//end curses mode
 	endwin();
+
+	*/
 }
 
 void draw_centered(WINDOW* win, int max_y, int max_x, string text)
