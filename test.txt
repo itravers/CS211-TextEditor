@@ -1,21 +1,21 @@
    Welcome to the Editor of Text. Where you can do wonderful things... like edit text.
 Currently, you can't edit any text, sorry. However, you can manipulate the menus!
-        asdf
 
-Menu Commands
- CTRL-f - Popup File Menu
- CTRL-e - Popup Edit Menu
- CTRL-v - Popup View Menu
- CTRL-t - Popup Tool Menu
- CTRL-h - Popup Help Menu
- CTRL-d - Close All Menus
- CTRL-c - Close the program
- CTRL-b - Demo Dialog Box
-
- Move Cursor:
-  Up Arrow - Up
-  Down Arrow - Down
-  Right Arrow - Right
+sdf
+Mensdfasdands
+ CTRL-f -fasdfa File Menu
+ CTRL-e - Popupsdfit Menu
+ CTRL-v - Popup Vies dfnu
+ CTRL-t - Popup Tool Masud                          df a
+ CTRL-h - Popup Help Menu a s            f as    f as   df
+ CTRL-d - Close All Menus    dfas    dfas    f as          ad
+ CTRL-c - Close the program      f as                         as
+ CTRL-b - Demo Dialog Box                                       ga
+                                                                   dgs r
+ Move Cursor:                                                           gna d
+  Up Arrow - Up                                                              a s
+  Down Arrow - Down                                                            ta gr
+  Right Arrow - Right                                                              a
   Left Arrow - Left
 
  Current Features:
@@ -64,23 +64,3 @@ ents turn awry... and lose the name of action.
  able to scroll
  down and see
  this text. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            asdf

@@ -132,9 +132,7 @@
     <ClInclude Include="MenuController.h" />
     <ClInclude Include="panel.h" />
     <ClInclude Include="structs.h" />
-
     <ClInclude Include="TextEditor.h" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll" />
@@ -149,9 +147,7 @@
     <ClCompile Include="FileController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuController.cpp" />
-
     <ClCompile Include="TextEditor.cpp" />
-
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

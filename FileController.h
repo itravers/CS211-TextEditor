@@ -6,6 +6,7 @@
 #ifndef FILE_CONTROLLER
 #define FILE_CONTROLLER
 
+//#include "TextEditor.h" //File controller should never need to include textEditor.h, it's included by main
 #include <string>
 #include <vector>
 #include <fstream>
@@ -17,6 +18,8 @@ using std::ofstream;
 using std::endl;
 
 enum READ_WRITE { READ, WRITE };
+
+
 
 /*******************************************************************************
  * Class Name:   FileController
@@ -30,6 +33,7 @@ public:
 	/*******************************************************************************
 	 * Constructor
 	 *******************************************************************************/
+	//FileController();
 	FileController();
 
 	/*******************************************************************************
@@ -50,6 +54,7 @@ private:
 	 *******************************************************************************/
 	ifstream inFile;
 	ofstream outFile;
+
 
 	/*******************************************************************************
 	 * Private Methods

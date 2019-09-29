@@ -8,7 +8,6 @@
 /*
 	Default Constructor
 */
-
 //FileController::FileController() {
 //
 //}
@@ -52,6 +51,7 @@ bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE
 	//check if we are reading or writing
 	if (readOrWrite == READ) {
 //		textEditor->changeStatus("Opening File: " + fileName);
+
 		//Close the inFile if it is currently open
 		if (inFile) inFile.close();
 

@@ -21,6 +21,7 @@ MenuController::MenuController() {
 	Initializes all the menu windows and panels
 */
 MenuController::MenuController(WINDOW* mainWindow, int numRows, int numCols) {
+	//textEditor = t;
 	//setup the main menu
 	mainMenuWindow = subwin(mainWindow, 0, 0, 0, 0);
 
@@ -220,7 +221,6 @@ void MenuController::setMenuState(MENU_STATE state){
 */
 bool MenuController::isMenuMouseEvent(MEVENT* mouseEvent, int numRows, 
 									  int numCols) {
-
 	bool returnVal = false;
 
 	//check if the mouse event is clicking on a menu item
@@ -238,7 +238,6 @@ bool MenuController::isMenuMouseEvent(MEVENT* mouseEvent, int numRows,
 		MENU_STATE state = getMenuState();
 		switch (state) {
 			case MENU_CLOSED:
-
 ////				textEditor->changeStatus("menuClosed");
 				returnVal = false;
 				break;
@@ -258,7 +257,6 @@ bool MenuController::isMenuMouseEvent(MEVENT* mouseEvent, int numRows,
 
 				//MENU_EDIT_OPEN menu is between 13 <= x <= 30, 3<=y<=11later we'll remove the hard coding
 				if (x >= 13 && x <= 30 && y >= 3 && y <= 11) {
-
 ////					textEditor->changeStatus(" Edit Menu Clicked x: " + to_string(x) + " y: " + to_string(y));
 					returnVal = true;
 				}
@@ -291,6 +289,7 @@ bool MenuController::isMenuMouseEvent(MEVENT* mouseEvent, int numRows,
 			case MENU_HELP_OPEN:
 				//MENU_HELP_OPEN menu is between 46 <= x <= 63, 3<=y<=11later we'll remove the hard coding
 ////				textEditor->changeStatus(" Help Menu Clicked x: " + to_string(x) + " y: " + to_string(y));
+
 				if (x >= 46 && x <= 63 && y >= 3 && y <= 11) {
 ////					textEditor->changeStatus(" Help Menu Clicked x: " + to_string(x) + " y: " + to_string(y));
 					returnVal = true;
