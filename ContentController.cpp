@@ -9,12 +9,14 @@
 	The default constructor
 */
 ContentController::ContentController() {
+	//textEditor = t;
 	cursorLocation.x = 0;
 	cursorLocation.y = 0;
 	cursorChar = 'Q';
 }
 
 ContentController::ContentController(WINDOW* mainWindow, int numRows, int numCols) {
+	//textEditor = t;
 	startLine = 0;
 	wordWrapRecord = vector<int>();
 	this->numCols = numCols - 4;
@@ -75,7 +77,6 @@ void ContentController::displayContentsFromLine(vector<string> lines, int startL
 			wattroff(wrapBar, COLOR_PAIR(COLOR_WORDWRAP_PAIR));
 		}
 
-
 		//check if this line should be a scroll bar line
 		if (isScrollbarLine(startLine + i, firstLine + n, 0, lines.size()+numRows)) {
 			wattron(scrollBar, COLOR_PAIR(COLOR_SCROLLBAR_PAIR));
@@ -131,12 +132,14 @@ void ContentController::insertChar(char c) {
 
 	//edit the character at the current cursor location (+ startLine adjusts the correct line when scrolling)
 	string line = currentLines[ yAdjusted];
-	
+
+	//replace the character in the string
 	replaceCharInString(line, x-2, c);
 
-	
-	
+	//replace the line with the edited line
 	currentLines[yAdjusted] = line;
+
+	//refresh the content window
 	wrefresh(contentWindow);
 }
 
@@ -196,7 +199,7 @@ bool ContentController::vectorContains(vector<int>&v, int item) {
 /*
 	Checks if this mouse event has anything to do with the content controller
 */
-bool ContentController::isContentMouseEvent(MEVENT* mouseEvent, int numRows, int numCols, void(*changeStatus)(string)) {
+bool ContentController::isContentMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
 	//check if the mouse is over the content pane
 	int x = mouseEvent->x;
 	int y = mouseEvent->y;
@@ -213,7 +216,7 @@ bool ContentController::isContentMouseEvent(MEVENT* mouseEvent, int numRows, int
 /*
 	Called for a mouse event on the window
 */
-void ContentController::processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols, void(*changeStatus)(string)) {
+void ContentController::processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
 	wrefresh(contentWindow);
 }
 

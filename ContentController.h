@@ -49,8 +49,8 @@ public:
 	void displayContents();
 	void displayContents(vector<string> lines);
 	void displayContentsFromLine(vector<string> lines, int startLine);
-	bool isContentMouseEvent(MEVENT* mouseEvent, int numRows, int numCols, void(*changeStatus)(string));
-	void processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols, void(*changeStatus)(string));
+	bool isContentMouseEvent(MEVENT* mouseEvent, int numRows, int numCols);
+	void processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols);
 	void moveCursorUp();
 	void moveCursorDown();
 	void moveCursorLeft();

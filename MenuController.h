@@ -28,7 +28,11 @@
 #include <vector>
 #include "curses.h"
 #include "panel.h"
+
+//#include "TextEditor.h" //we don't ever need to include this it's
 #include "customcolors.h"
+
+
 
 using std::string;
 using std::vector;
@@ -42,6 +46,8 @@ enum MENU_STATE {MENU_CLOSED, MENU_FILE_OPEN, MENU_EDIT_OPEN, MENU_VIEW_OPEN, ME
  * Class Name:   MenuController
  * Purpose:      Controls the Text Editors Menu System
  *******************************************************************************/
+//class TextEditor; //forward declare TextEditor
+
 class MenuController {
 public:
 
@@ -71,6 +77,15 @@ public:
 	void processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols, void(*changeStatus)(string));
 
 private:
+
+	bool isMenuMouseEvent(MEVENT*, int numRows, int numCols);
+	void processMouseEvent(MEVENT* mouseEvent, int numRows, int numCols);
+
+private:
+	/* Objects */
+	//TextEditor* textEditor;
+
+
 	/*******************************************************************************
 	 * Private Fields
 	 *******************************************************************************/

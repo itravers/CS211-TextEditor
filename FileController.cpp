@@ -8,11 +8,16 @@
 /*
 	Default Constructor
 */
-FileController::FileController() {
 
+//FileController::FileController() {
+//
+//}
+
+FileController::FileController() {
+	
 }
 
-bool FileController::writeFile(string filename, vector<string>& lines, void(*changeStatus)(string)) {
+bool FileController::writeFile(string filename, vector<string>& lines) {
 	if (outFile) outFile.close();
 
 	//try to open the file by name
@@ -34,7 +39,7 @@ bool FileController::writeFile(string filename, vector<string>& lines, void(*cha
 
 	}catch (string error) {
 		//print our error to the status bar
-		changeStatus(error);
+//		textEditor->changeStatus(error);
 		return false;
 	}
 }
@@ -43,11 +48,10 @@ bool FileController::writeFile(string filename, vector<string>& lines, void(*cha
 	Opens a file in the current working directory by name.
 	Reads the file into a string vector, line by line.
 */
-bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE readOrWrite, void(* changeStatus)(string)) {
+bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE readOrWrite) {
 	//check if we are reading or writing
 	if (readOrWrite == READ) {
-		changeStatus("Opening File: " + fileName);
-
+//		textEditor->changeStatus("Opening File: " + fileName);
 		//Close the inFile if it is currently open
 		if (inFile) inFile.close();
 
@@ -72,7 +76,8 @@ bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE
 		}
 		catch (string error) {
 			//print our error to the status bar
-			changeStatus(error);
+			
+//			textEditor->changeStatus(error);
 			return false;
 		}
 
