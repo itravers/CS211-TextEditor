@@ -70,7 +70,7 @@ private:
 
 	/* Objects */
 	FileController fileController;
-	//MenuController menuController;
+	MenuController menuController;
 	//ContentController contentController;
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;

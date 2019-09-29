@@ -44,7 +44,7 @@ void TextEditor::load(string fileName) {
 	FileController fileController = FileController();
 
 	//Initialize Menu Controller
-	//MenuController menuController = MenuController(this, mainWindow, numRows, numCols);
+	MenuController menuController = MenuController(mainWindow, numRows, numCols);
 
 
 
@@ -85,22 +85,22 @@ void TextEditor::load(string fileName) {
 ////			contentController.moveCursorRight();
 			break;
 		case ctrl('f'):
-////			menuController.setMenuState(MENU_FILE_OPEN);
+			menuController.setMenuState(MENU_FILE_OPEN);
 			break;
 		case ctrl('e'):
-////			menuController.setMenuState(MENU_EDIT_OPEN);
+			menuController.setMenuState(MENU_EDIT_OPEN);
 			break;
 		case ctrl('v'):
-/////			menuController.setMenuState(MENU_VIEW_OPEN);
+			menuController.setMenuState(MENU_VIEW_OPEN);
 			break;
 		case ctrl('t'):
-////			menuController.setMenuState(MENU_TOOLS_OPEN);
+			menuController.setMenuState(MENU_TOOLS_OPEN);
 			break;
 		case ctrl('h'):
-////			menuController.setMenuState(MENU_HELP_OPEN);
+			menuController.setMenuState(MENU_HELP_OPEN);
 			break;
 		case ctrl('d'):
-////			menuController.setMenuState(MENU_CLOSED);
+			menuController.setMenuState(MENU_CLOSED);
 			break;
 		case ctrl('b'):
 			dialogString = dialogBox.displayDialogBox("What is your FIRST name:");
@@ -174,7 +174,7 @@ void TextEditor::load(string fileName) {
 */
 void TextEditor::drawScreen(int numRows, int numCols) {
 	drawBorder(numRows, numCols);
-//	menuController.drawMenu(numRows, numCols);
+	menuController.drawMenu(numRows, numCols);
 	//dialogBox.draw();
 	drawStatus(numRows, numCols);
 }
@@ -252,10 +252,11 @@ void TextEditor::writeLines(vector<string>lines) {
 */
 void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
 	//changeStatus("processMouseEvent()");
-/*
+
 	if (menuController.isMenuMouseEvent(mouseEvent, numRows, numCols)) {
 		menuController.processMouseEvent(mouseEvent, numRows, numCols);
 	}
+	/*
 	else if (contentController.isContentMouseEvent(mouseEvent, numRows, numCols)) {
 		//execure the content mouse event
 		contentController.processMouseEvent(mouseEvent, numRows, numCols);
