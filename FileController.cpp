@@ -12,9 +12,8 @@
 //
 //}
 
-FileController::FileController(void(*changeStatus)(string), TextEditor* t) {
-	//textEditor = t;
-	changeStatus("FileController Loaded");
+FileController::FileController() {
+	
 }
 
 bool FileController::writeFile(string filename, vector<string>& lines) {

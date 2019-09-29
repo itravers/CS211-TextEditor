@@ -6,7 +6,7 @@
 
 #include "TextEditor.h"
 
-TextEditor::TextEditor() : fileController(NULL)/*, menuController(this), contentController(this)*/ {
+TextEditor::TextEditor() : fileController()/*, menuController(this), contentController(this)*/ {
 //TextEditor::TextEditor() {
 
 }
@@ -41,7 +41,7 @@ void TextEditor::load(string fileName) {
 	curs_set(0);
 
 	//Initialize File Controller
-	FileController fileController = FileController(&TextEditor::Callback, this);
+	FileController fileController = FileController();
 
 	//Initialize Menu Controller
 	//MenuController menuController = MenuController(this, mainWindow, numRows, numCols);

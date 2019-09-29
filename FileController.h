@@ -20,7 +20,6 @@ using std::endl;
 enum READ_WRITE { READ, WRITE };
 
 
-class TextEditor; //forward declare TextEditor
 
 /*******************************************************************************
  * Class Name:   FileController
@@ -35,7 +34,7 @@ public:
 	 * Constructor
 	 *******************************************************************************/
 	//FileController();
-	FileController((void (*)(string callbackARG, void* this_pointer), TextEditor*));
+	FileController();
 
 	/*******************************************************************************
 	 * Public Fields
@@ -56,8 +55,6 @@ private:
 	ifstream inFile;
 	ofstream outFile;
 
-	/* Objects */
-	TextEditor* textEditor;
 
 	/*******************************************************************************
 	 * Private Methods
