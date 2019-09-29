@@ -49,7 +49,7 @@ void TextEditor::load(string fileName) {
 
 
 	//Initialize the Content Controller
-	//ContentController contentController = ContentController(this, mainWindow, numRows, numCols);
+	ContentController contentController = ContentController(mainWindow, numRows, numCols);
 
 	//Initialize the Dialog Box
 	DialogBox dialogBox = DialogBox(mainWindow, "", DIALOG_Y, DIALOG_X, DIALOG_NUM_ROWS, DIALOG_NUM_COLUMNS);
@@ -60,7 +60,7 @@ void TextEditor::load(string fileName) {
 	
 	vector<string>lines;
 	fileController.readFile(fileName, lines, READ);
-////	contentController.displayContents(lines);
+	contentController.displayContents(lines);
 	drawScreen(numRows, numCols);
 
 	MEVENT event;
@@ -73,16 +73,16 @@ void TextEditor::load(string fileName) {
 
 		switch (c) {
 		case KEY_UP:
-////			contentController.moveCursorUp();
+			contentController.moveCursorUp();
 			break;
 		case KEY_DOWN:
-////			contentController.moveCursorDown();
+			contentController.moveCursorDown();
 			break;
 		case KEY_LEFT:
-////			contentController.moveCursorLeft();
+			contentController.moveCursorLeft();
 			break;
 		case KEY_RIGHT:
-////			contentController.moveCursorRight();
+			contentController.moveCursorRight();
 			break;
 		case ctrl('f'):
 			menuController.setMenuState(MENU_FILE_OPEN);
@@ -105,7 +105,7 @@ void TextEditor::load(string fileName) {
 		case ctrl('b'):
 			dialogString = dialogBox.displayDialogBox("What is your FIRST name:");
 			dialogBox.hide();
-////			contentController.displayContents(); //must call this after dialogBox.hide();
+			contentController.displayContents(); //must call this after dialogBox.hide();
 			changeStatus("My Name is: " + dialogString);
 			break;
 		case ctrl('c'):
@@ -122,10 +122,10 @@ void TextEditor::load(string fileName) {
 			//get filename from user
 			dialogString = dialogBox.displayDialogBox("Save File As: ");
 			dialogBox.hide(); //hide box
-////			contentController.displayContents(); //must be called after dialogBox.hide() to delete it
+			contentController.displayContents(); //must be called after dialogBox.hide() to delete it
 
 			//get file data from content controller
-////			contentController.getCurrentLines(linesToSave);
+			contentController.getCurrentLines(linesToSave);
 			fileController.writeFile(dialogString, linesToSave);
 			changeStatus("Saving File As: " + dialogString);
 			break;
@@ -140,12 +140,12 @@ void TextEditor::load(string fileName) {
 			}
 			break;
 		case KEY_ENTER:
-////			contentController.moveCursorDown();
+			contentController.moveCursorDown();
 			break;
 		case 'a': case 'b': case 'c': case ' ': default:
 			changeStatus("typed: " + to_string(c));
-////			contentController.insertChar(c);
-////			contentController.moveCursorRight();
+			contentController.insertChar(c);
+			contentController.moveCursorRight();
 			break;
 		case -1:
 			//do nothing if nothing is hit
@@ -256,21 +256,13 @@ void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numC
 	if (menuController.isMenuMouseEvent(mouseEvent, numRows, numCols)) {
 		menuController.processMouseEvent(mouseEvent, numRows, numCols);
 	}
-	/*
+	
 	else if (contentController.isContentMouseEvent(mouseEvent, numRows, numCols)) {
 		//execure the content mouse event
 		contentController.processMouseEvent(mouseEvent, numRows, numCols);
 	}
-*/
+
 }
-
-
-static void Callback(string callbackARG, void* this_pointer) {
-	TextEditor* self = static_cast<TextEditor*>(this_pointer);
-	self->changeStatus(callbackARG);
-}
-
-
 
 
 

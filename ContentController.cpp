@@ -8,15 +8,15 @@
 /*
 	The default constructor
 */
-ContentController::ContentController(TextEditor* t) {
-	textEditor = t;
+ContentController::ContentController() {
+	//textEditor = t;
 	cursorLocation.x = 0;
 	cursorLocation.y = 0;
 	cursorChar = 'Q';
 }
 
-ContentController::ContentController(TextEditor* t, WINDOW* mainWindow, int numRows, int numCols) {
-	textEditor = t;
+ContentController::ContentController(WINDOW* mainWindow, int numRows, int numCols) {
+	//textEditor = t;
 	startLine = 0;
 	wordWrapRecord = vector<int>();
 	this->numCols = numCols - 4;

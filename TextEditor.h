@@ -65,13 +65,12 @@ public:
 	void run();
 
 	void changeStatus(string);		// Changes the status screen that gets printed at the bottom.
-	static void Callback(string callbackARG, void* this_pointer);
 private:
 
 	/* Objects */
 	FileController fileController;
 	MenuController menuController;
-	//ContentController contentController;
+	ContentController contentController;
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;
 
