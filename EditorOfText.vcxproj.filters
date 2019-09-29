@@ -24,19 +24,16 @@
     <ClInclude Include="panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ContentController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="customcolors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DialogBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
+    <ClInclude Include="ContentController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="structs.h">
@@ -50,7 +47,7 @@
     <None Include="pdcurses.dll">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pdcurses.exp">
+    <None Include="ClassDiagram.cd">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -60,7 +57,13 @@
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="MenuController.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ContentController.cpp">
@@ -69,14 +72,16 @@
     <ClCompile Include="DialogBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TextEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="motd.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
