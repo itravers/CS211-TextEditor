@@ -88,5 +88,3 @@ private:
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
 };
 #endif
-
-
