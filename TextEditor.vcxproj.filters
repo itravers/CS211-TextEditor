@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\TextEditor">
+      <UniqueIdentifier>{edf16516-90de-4787-8131-aa353823c278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TextEditor">
+      <UniqueIdentifier>{27189219-c435-4abf-b26a-c5d9b935869e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h">
@@ -36,14 +42,14 @@
     <ClInclude Include="FileController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TextEditor.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\MenuController.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +78,11 @@
     <ClCompile Include="FileController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TextEditor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\MenuController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

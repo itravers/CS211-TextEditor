@@ -129,10 +129,10 @@
     <ClInclude Include="customcolors.h" />
     <ClInclude Include="DialogBox.h" />
     <ClInclude Include="FileController.h" />
-    <ClInclude Include="MenuController.h" />
     <ClInclude Include="panel.h" />
     <ClInclude Include="structs.h" />
     <ClInclude Include="TextEditor.h" />
+    <ClInclude Include="TextEditor\MenuController.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll" />
@@ -146,8 +146,8 @@
     <ClCompile Include="DialogBox.cpp" />
     <ClCompile Include="FileController.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MenuController.cpp" />
     <ClCompile Include="TextEditor.cpp" />
+    <ClCompile Include="TextEditor\MenuController.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

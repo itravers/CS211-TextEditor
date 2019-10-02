@@ -16,7 +16,7 @@
 #include "curses.h"				/* This is Curses */
 #include "panel.h"				/* Curses Library to Manipulate Windows */
 #include "customcolors.h"		/* Reference to console colors */
-#include "MenuController.h"		/* Everything to do with Menu's */
+#include "TextEditor/MenuController.h"		/* Everything to do with Menu's */
 #include "FileController.h"		/* Manipulating Files */
 #include "ContentController.h"	/* All Content Manipulation. */
 #include "DialogBox.h"			/* Everything to do with dialogs. */
