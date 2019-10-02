@@ -13,13 +13,13 @@
 #define ctrl(x) ((x) & 0x1f)	//CTRL-x masking
 
 //INCLUDES
-#include "curses.h"				/* This is Curses */
-#include "panel.h"				/* Curses Library to Manipulate Windows */
-#include "TextEditor/customcolors.h"		/* Reference to console colors */
-#include "TextEditor/MenuController.h"		/* Everything to do with Menu's */
-#include "TextEditor/FileController.h"		/* Manipulating Files */
-#include "TextEditor/ContentController.h"	/* All Content Manipulation. */
-#include "TextEditor/DialogBox.h"			/* Everything to do with dialogs. */
+#include "../curses.h"							/* This is Curses */
+#include "../panel.h"							/* Curses Library to Manipulate Windows */
+#include "customcolors.h"						/* Reference to console colors */
+#include "../TextEditor/MenuController.h"		/* Everything to do with Menu's */
+#include "FileController.h"						/* Manipulating Files */
+#include "ContentController.h"					/* All Content Manipulation. */
+#include "DialogBox.h"							/* Everything to do with dialogs. */
 
 #include <string>
 #include <iostream>
@@ -72,20 +72,20 @@ private:
 	MenuController menuController;
 	ContentController contentController;
 	DialogBox dialogBox;
-	static WINDOW* titleWindow;
+	static WINDOW* titleWindow;	
 
 	/* Field Variables */
 	string currentStatus = "Starting Program...";
 
 	/* Function Prototypes*/
-	void initColor(void);			// Initialize the Color System
-	void drawBorder(int, int);		// Border around the screen
-	void drawStatus(int, int);		// Draws the status bar at the bottom of the screen
-	void drawScreen(int, int);		// Draws everything associated with the screen.
+	void initColor(void);				// Initialize the Color System
+	void drawBorder(int, int);			// Border around the screen
+	void drawStatus(int, int);			// Draws the status bar at the bottom of the screen
+	void drawScreen(int, int);			// Draws everything associated with the screen.
 	
-	void writeLines(vector<string>);// Writes the lines from the file to the screen
-	void processMainMouseEvent(MEVENT*, int, int);// processes a mouse event
-	static void colorbox(WINDOW*, chtype, int);	// Creates a color box around given window, 1 for visible
+	void writeLines(vector<string>);				// Writes the lines from the file to the screen
+	void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
+	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
 };
 #endif
 

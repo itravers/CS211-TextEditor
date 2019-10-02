@@ -123,16 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ContentController.h" />
     <ClInclude Include="curses.h" />
     <ClInclude Include="curspriv.h" />
-    <ClInclude Include="customcolors.h" />
-    <ClInclude Include="DialogBox.h" />
-    <ClInclude Include="FileController.h" />
     <ClInclude Include="panel.h" />
-    <ClInclude Include="structs.h" />
-    <ClInclude Include="TextEditor.h" />
+    <ClInclude Include="TextEditor\ContentController.h" />
+    <ClInclude Include="TextEditor\customcolors.h" />
+    <ClInclude Include="TextEditor\DialogBox.h" />
+    <ClInclude Include="TextEditor\FileController.h" />
     <ClInclude Include="TextEditor\MenuController.h" />
+    <ClInclude Include="TextEditor\structs.h" />
+    <ClInclude Include="TextEditor\TextEditor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll" />
@@ -142,12 +142,12 @@
     <Library Include="pdcurses.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ContentController.cpp" />
-    <ClCompile Include="DialogBox.cpp" />
-    <ClCompile Include="FileController.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TextEditor.cpp" />
+    <ClCompile Include="TextEditor\ContentController.cpp" />
+    <ClCompile Include="TextEditor\DialogBox.cpp" />
+    <ClCompile Include="TextEditor\FileController.cpp" />
     <ClCompile Include="TextEditor\MenuController.cpp" />
+    <ClCompile Include="TextEditor\TextEditor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

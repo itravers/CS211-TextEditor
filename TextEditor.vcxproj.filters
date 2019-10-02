@@ -30,25 +30,25 @@
     <ClInclude Include="panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ContentController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="customcolors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DialogBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TextEditor\MenuController.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\ContentController.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\customcolors.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\DialogBox.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\FileController.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\structs.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\TextEditor.h">
       <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
   </ItemGroup>
@@ -69,19 +69,19 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContentController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DialogBox.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FileController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextEditor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TextEditor\MenuController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\ContentController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\DialogBox.cpp">
+      <Filter>Source Files\TextEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\FileController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\TextEditor.cpp">
       <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,8 +13,8 @@
 
 #define A_ATTR (A_ATTRIBUTES)
 
-#include "curses.h"
-#include "panel.h"
+#include "../curses.h"
+#include "../panel.h"
 #include "structs.h"
 #include <string>
 
