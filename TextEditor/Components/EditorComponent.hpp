@@ -149,9 +149,11 @@ namespace TextEditorNamespace {
 				_isVisible = isVisible;
 				if (isVisible) {
 					show_panel(_c_panel);
-				}
-				else {
+					update_panels();
+				}else {
+					werase(_c_window);
 					hide_panel(_c_panel);
+					update_panels();
 				}
 				setNeedsRefresh(true);
 			}
@@ -161,9 +163,9 @@ namespace TextEditorNamespace {
 
 			virtual void refresh() {
 				if (_c_window != nullptr) {
-					if (isVisible()) {
+					if (needsRefresh()) {
 						wrefresh(_c_window);
-						//setNeedsRefresh(false);  //we'll implement this functionality later
+						setNeedsRefresh(false);  //we'll implement this functionality later
 					}
 				}
 				

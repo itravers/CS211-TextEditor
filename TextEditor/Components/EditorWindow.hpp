@@ -127,13 +127,18 @@ namespace TextEditorNamespace {
 					}
 
 					//check if we need a refresh, and do a text render
-					if (needsRefresh() == true) {
+					//if (needsRefresh() == true) {
 						
 						//loop through the buffer and print it to the screen
 						if (_c_window != nullptr) {
 
+							//erase the window first
+							werase(_c_window);
+
 							//we render differently if we have a border or not
 							if (hasBorder()) {
+								//create the border
+								colorbox(_c_window, COLOR_MENU_PAIR, true);
 
 								//we do have a border
 								//loop through each line
@@ -159,12 +164,9 @@ namespace TextEditorNamespace {
 								}
 							}
 						}
-					}
+					//}
 				}
-			}
-
-
-
+			} //end render function
 
 
 		//These will not be available to extended classes, or anyone else.

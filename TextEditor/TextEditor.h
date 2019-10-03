@@ -32,6 +32,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::to_string;
+using TextEditorNamespace::EditorComponent;
 
 /*******************************************************************************
  * Class Name:   Text Editor
@@ -87,5 +88,7 @@ private:
 	void writeLines(vector<string>);				// Writes the lines from the file to the screen
 	void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
+	bool componentNeedsRefresh(vector<EditorComponent*> v);
+
 };
 #endif

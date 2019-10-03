@@ -6,6 +6,8 @@
 
 #include "TextEditor.h"
 
+
+
 TextEditor::TextEditor() : fileController()/*, menuController(this), contentController(this)*/ {
 //TextEditor::TextEditor() {
 
@@ -28,7 +30,7 @@ void TextEditor::load(string fileName) {
 	initColor();
 
 	//go near-full screen
-	resize_term(4000, 4000);
+	resize_term(1000, 1000);
 	getmaxyx(mainWindow, numRows, numCols);
 	resize_term(numRows - 1, numCols - 1);
 	getmaxyx(mainWindow, numRows, numCols);
@@ -54,6 +56,8 @@ void TextEditor::load(string fileName) {
 
 	while (keep_going == true)
 	{
+		
+		//werase(mainWindow);
 
 		//render components
 		for (auto& component : components)
@@ -61,6 +65,7 @@ void TextEditor::load(string fileName) {
 			//TODO: render
 			if (component->needsRefresh() == true)
 			{
+
 				component->render();
 				component->refresh();
 			}
@@ -79,11 +84,20 @@ void TextEditor::load(string fileName) {
 		{
 		case ctrl('c'):
 			keep_going = false;
+			break;
+		case 'h':
+			components[0]->setIsVisible(false);
+			break;
+		case 's':
+			components[0]->setIsVisible(true);
+			break;
 		case KEY_RESIZE:
 			resize_term(0, 0);
 			getmaxyx(mainWindow, numRows, numCols);
-		}
+			break;
 
+		}
+		wrefresh(mainWindow);
 	}
 
 	///////////////////////////////END TESTING
@@ -220,6 +234,19 @@ void TextEditor::load(string fileName) {
 	endwin();
 
 	//return 0;
+}
+
+bool TextEditor::componentNeedsRefresh(vector<EditorComponent*>v) {
+	bool returnVal = false;
+
+	//loop through the vector, and see if any specific element needs refreshed, if ANY elemnt does, return true
+	for (int i = 0; i < v.size(); i++) {
+		if (v[i]->needsRefresh()) {
+			returnVal = true;
+			break;
+		}
+	}
+	return returnVal;
 }
 
 /*
