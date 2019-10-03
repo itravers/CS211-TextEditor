@@ -82,6 +82,10 @@ void TextEditor::load(string fileName) {
 			break;
 		case 'h':
 			components[0]->setIsVisible(false);
+
+			//we need to refresh all components
+			refreshComponents(components);
+			
 			break;
 		case 's':
 			components[0]->setIsVisible(true);
@@ -242,6 +246,12 @@ void TextEditor::load(string fileName) {
 	endwin();
 
 	//return 0;
+}
+
+void TextEditor::refreshComponents(vector<EditorComponent*> v) {
+	for (auto& component : v) {
+		component->setNeedsRefresh(true);
+	}
 }
 
 bool TextEditor::componentNeedsRefresh(vector<EditorComponent*>v) {

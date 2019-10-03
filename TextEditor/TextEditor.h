@@ -89,6 +89,7 @@ private:
 	void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
 	bool componentNeedsRefresh(vector<EditorComponent*> v);
+	void refreshComponents(vector<EditorComponent*> v);
 
 };
 #endif

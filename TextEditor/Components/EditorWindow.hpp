@@ -53,7 +53,7 @@ namespace TextEditorNamespace {
 				}
 
 				int loc = size.height - 3;
-				_buffer[loc] = "Testtesttesetkja;lksdjfalksdfja;lkjddddddddd";
+				//_buffer[loc] = "Testtesttesetkja;lksdjfalksdfja;lkjddddddddd";
 
 				if(_buffer[loc].length() < size.width)
 				_buffer[loc].append(size.width - _buffer[loc].length(), ' '); //add the rest of the lines in
@@ -104,6 +104,14 @@ namespace TextEditorNamespace {
 
 				//replace it
 				_buffer = newBuffer;
+			}
+
+			bool putChar(char c, int y, int x) {
+				if (hasBorder()) {
+
+				}else {
+
+				}
 			}
 
 			/*******************************************************************************

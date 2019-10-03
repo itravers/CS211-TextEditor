@@ -174,14 +174,16 @@ namespace TextEditorNamespace {
 				
 			}
 
-		
-		//These will not be available to extended classes, or anyone else.
-		private:
-
 			//set if we need to refresh or not
 			void setNeedsRefresh(bool needsRefresh) {
 				_needsRefresh = needsRefresh;
 			}
+
+		
+		//These will not be available to extended classes, or anyone else.
+		private:
+
+			
 			
 	}; //end class EditorComponent
 
