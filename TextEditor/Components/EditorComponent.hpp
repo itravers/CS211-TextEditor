@@ -1,7 +1,7 @@
 /********************************************************************************
  *	Isaac Travers
  *	CIS 211 - Data Structures
- *	October 10th, 2019
+ *	October 1st, 2019
  *
  *	EditorComponent.h: An Abstract class used to wrap a ncurses window
  *                     and panel
@@ -14,6 +14,7 @@
 #if _WIN32
 	#include "../../curses.h"
 	#include "../../panel.h"
+	#include "../structs.h"
 #else
 	#include <curses.h>
 	#include <panel.h>
@@ -22,17 +23,7 @@
 //We are going to define a namespace here that our entire editor library will use.
 namespace TextEditorNamespace {
 
-	//This should be used for any location within the TextEditor, this is how we will disinguish between curses and our libraries.
-	struct Location {
-		int y;
-		int x;
-	};
-
-	//This should be used for any size within the TextEditor
-	struct Size {
-		int height;
-		int width;
-	};
+	
 
 	//We are defining the class EditorComponent
 	class EditorComponent {

@@ -50,11 +50,11 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 0}, TextEditorNamespace::Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindow{ mainWindow, Location{0, 0}, Size{20, 20}, false, true }
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 20}, TextEditorNamespace::Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindow{ mainWindow, Location{0, 20}, Size{20, 20}, true, true }
 	);
 
 	

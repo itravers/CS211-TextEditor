@@ -1,7 +1,7 @@
 /********************************************************************************
  *	Isaac Travers
  *	CIS 211 - Data Structures
- *	October 10th, 2019
+ *	October 1st, 2019
  *
  *	EditorWindow.hpp: An extended version of EditorComponent
  *					  This class gives the ability to display both text and
