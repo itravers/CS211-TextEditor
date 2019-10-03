@@ -50,26 +50,21 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 0}, TextEditorNamespace::Size{40, 40}, true, true }
+		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 0}, TextEditorNamespace::Size{20, 20}, true, true }
+	);
+
+	components.push_back(
+		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{10, 10}, TextEditorNamespace::Size{20, 20}, true, true }
 	);
 
 
 	while (keep_going == true)
 	{
-		
+		//wrefresh(mainWindow);
+		//refresh();
 		//werase(mainWindow);
 
-		//render components
-		for (auto& component : components)
-		{
-			//TODO: render
-			if (component->needsRefresh() == true)
-			{
-
-				component->render();
-				component->refresh();
-			}
-		}
+		
 
 		int input = wgetch(mainWindow);
 
@@ -97,7 +92,20 @@ void TextEditor::load(string fileName) {
 			break;
 
 		}
-		wrefresh(mainWindow);
+
+		//render components
+		for (auto& component : components)
+		{
+			//TODO: render
+			if (component->needsRefresh() == true)
+			{
+
+				component->render();
+				component->refresh();
+			}
+		}
+
+		wrefresh(mainWindow);//
 	}
 
 	///////////////////////////////END TESTING

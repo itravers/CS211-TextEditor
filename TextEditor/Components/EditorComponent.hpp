@@ -151,9 +151,10 @@ namespace TextEditorNamespace {
 					show_panel(_c_panel);
 					update_panels();
 				}else {
-					werase(_c_window);
+					//werase(_c_window);
 					hide_panel(_c_panel);
 					update_panels();
+					//wrefresh(_c_window);
 				}
 				setNeedsRefresh(true);
 			}
@@ -164,6 +165,8 @@ namespace TextEditorNamespace {
 			virtual void refresh() {
 				if (_c_window != nullptr) {
 					if (needsRefresh()) {
+						werase(_c_window);
+						render();
 						wrefresh(_c_window);
 						setNeedsRefresh(false);  //we'll implement this functionality later
 					}
