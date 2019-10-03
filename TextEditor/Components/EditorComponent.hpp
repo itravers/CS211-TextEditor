@@ -147,6 +147,13 @@ namespace TextEditorNamespace {
 			 *******************************************************************************/
 			void setIsVisible(bool isVisible) {
 				_isVisible = isVisible;
+				if (isVisible) {
+					show_panel(_c_panel);
+				}
+				else {
+					hide_panel(_c_panel);
+				}
+				setNeedsRefresh(true);
 			}
 
 			//Render this compenent, must be implemented by implementing class
@@ -156,7 +163,7 @@ namespace TextEditorNamespace {
 				if (_c_window != nullptr) {
 					if (isVisible()) {
 						wrefresh(_c_window);
-						setNeedsRefresh(false);
+						//setNeedsRefresh(false);  //we'll implement this functionality later
 					}
 				}
 				
@@ -171,8 +178,6 @@ namespace TextEditorNamespace {
 				_needsRefresh = needsRefresh;
 			}
 			
-
-
 	}; //end class EditorComponent
 
 }//end namespace TextEditor

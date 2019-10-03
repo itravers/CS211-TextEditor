@@ -127,6 +127,7 @@
     <ClInclude Include="curspriv.h" />
     <ClInclude Include="panel.h" />
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
+    <ClInclude Include="TextEditor\Components\EditorWindow.hpp" />
     <ClInclude Include="TextEditor\ContentController.h" />
     <ClInclude Include="TextEditor\customcolors.h" />
     <ClInclude Include="TextEditor\DialogBox.h" />

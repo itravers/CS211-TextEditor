@@ -28,6 +28,7 @@ void TextEditor::load(string fileName) {
 	initColor();
 
 	//go near-full screen
+	resize_term(4000, 4000);
 	getmaxyx(mainWindow, numRows, numCols);
 	resize_term(numRows - 1, numCols - 1);
 	getmaxyx(mainWindow, numRows, numCols);
@@ -45,6 +46,10 @@ void TextEditor::load(string fileName) {
 	///////////////////TESTING
 	bool keep_going = true;
 	vector<TextEditorNamespace::EditorComponent*> components{};
+
+	components.push_back(
+		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 0}, TextEditorNamespace::Size{40, 40}, true, true }
+	);
 
 
 	while (keep_going == true)
@@ -67,8 +72,8 @@ void TextEditor::load(string fileName) {
 		//is_termresized.  In real life, use either/or but not both.
 		if (is_termresized() == true)
 		{
-			resize_term(0, 0);
-			getmaxyx(mainWindow, numRows, numCols);
+			//resize_term(0, 0);
+			//getmaxyx(mainWindow, numRows, numCols);/////this doesn't work yet
 		}
 		switch (input)
 		{

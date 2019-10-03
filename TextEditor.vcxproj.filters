@@ -57,6 +57,9 @@
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindow.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
