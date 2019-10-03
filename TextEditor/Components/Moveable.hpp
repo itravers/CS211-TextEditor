@@ -3,23 +3,23 @@
  *	CIS 211 - Data Structures
  *	October 3rd, 2019
  *
- *	Resizable.hpp - An interface that needs to be implemented by anything 
- *                  that needs to be resized.
+ *	Moveable.hpp - An interface that needs to be implemented by anything
+ *                  that needs to be moved.
 *********************************************************************************/
 
-#ifndef RESIZABLE_HPP
-#define RESIZABLE_HPP
+#ifndef MOVEABLE_HPP
+#define MOVEABLE_HPP
 
 #include "../structs.h"
 
 //we are defining a class in the namespace TextEditorNamespace
 namespace TextEditorNamespace {
 
-	class Resizable {
+	class Moveable {
 	public:
-		virtual void resize(Size s) = 0;
+		virtual void move(Location l) = 0;
 	};
 
 }
 
-#endif // END RESIZABLE_HPP
+#endif // END MOVEABLE_HPP

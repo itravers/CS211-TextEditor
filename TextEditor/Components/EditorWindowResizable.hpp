@@ -3,9 +3,8 @@
  *	CIS 211 - Data Structures
  *	October 1st, 2019
  *
- *	EditorWindow.hpp: An extended version of EditorComponent
- *					  This class gives the ability to display both text and
-					  other components.
+ *	EditorWindowResizable.hpp: An extended version of EditorWindow
+ *					  This class gives the editor window the ability to resize
 *********************************************************************************/
 
 #ifndef EDITOR_WINDOW_RESIZABLE
@@ -20,28 +19,27 @@ using std::to_string;
 //we are defining a class in the namespace TextEditorNamespace
 namespace TextEditorNamespace {
 
-	//we are defining a EditorWindow, which is an extention of EditorComponent
+	//we are defining a EditorWindowResizable, which is an extention of EditorWindow, and we are implementing the Resizable interface
 	class EditorWindowResizable : public EditorWindow, public Resizable {
 
-		//We'll be extending this class later, these will be private for extended classes
+	//We'll be extending this class later, these will be private for extended classes
 	protected:
 		WINDOW* _parent_window = nullptr;		//we need to keep a record to our parent, because we need to be able to remake _c_window
 
-
-		//These will be public for all extended classes
+	//These will be public for all extended classes
 	public:
 
 		//constructor
 		EditorWindowResizable(WINDOW* parent = 0, Location location = { 0, 0 }, Size size = { 0, 0 }, bool isVisible = false, bool hasBorder = false)
 			:EditorWindow(parent, location, size, isVisible, hasBorder), _parent_window(parent) {
+
 			//I think we can let the Editor Window super class take care of all construction tasks?
-			for (int i = 0; i < _size.height-2; i++) {
+			for (int i = 0; i < _size.height-2; i++) { //this is our test info
 				_buffer[i] = "This is just a test : " + to_string(i);
 			}
 
 			//resize the buffer to the right size after we changed it
 			resizeBuffer(_buffer, _size);
-			
 		}
 
 		virtual void resize(Size s) {
@@ -49,7 +47,6 @@ namespace TextEditorNamespace {
 			//erase everything in the current window
 			werase(_c_window);
 			
-
 			//save our new size
 			_size = s;
 
@@ -72,7 +69,7 @@ namespace TextEditorNamespace {
 
 
 
-		//These will not be available to extended classes, or anyone else.
+	//These will not be available to extended classes, or anyone else.
 	private:
 		void resizeBuffer(vector<string> buf, Size s) {
 
@@ -90,8 +87,6 @@ namespace TextEditorNamespace {
 			}
 		}
 	};
-
 } // end TextEditorNamespace
-
 
 #endif

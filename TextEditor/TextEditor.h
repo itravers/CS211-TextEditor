@@ -17,6 +17,7 @@
 #include "../panel.h"							/* Curses Library to Manipulate Windows */
 #include "Components/EditorWindow.hpp"			/* The Base/Abstract Editor Component*/
 #include "Components/EditorWindowResizable.hpp"			/* The Base/Abstract Editor Component*/
+#include "Components/EditorWindowMoveable.hpp"			/* The Base/Abstract Editor Component*/
 #include "customcolors.h"						/* Reference to console colors */
 #include "../TextEditor/MenuController.h"		/* Everything to do with Menu's */
 #include "FileController.h"						/* Manipulating Files */
@@ -36,6 +37,7 @@ using std::to_string;
 using TextEditorNamespace::EditorComponent;
 using TextEditorNamespace::EditorWindow;
 using TextEditorNamespace::EditorWindowResizable;
+using TextEditorNamespace::EditorWindowMoveable;
 
 /*******************************************************************************
  * Class Name:   Text Editor

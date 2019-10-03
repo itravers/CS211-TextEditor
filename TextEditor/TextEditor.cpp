@@ -50,7 +50,7 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, Location{0, 0}, Size{20, 20}, false, true }
+		new TextEditorNamespace::EditorWindowMoveable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
 	);
 
 	components.push_back(
@@ -81,6 +81,11 @@ void TextEditor::load(string fileName) {
 		case ctrl('c'):
 			keep_going = false;
 			break;
+		case 'm':
+			((EditorWindowMoveable*)components[0])->move(Location{ 10, 0 });
+			((EditorWindowMoveable*)components[0])->resize(Size{ 10, 5 });
+			refreshComponents(components);
+			break;
 		case 'h':
 			components[0]->setIsVisible(false);
 
@@ -88,6 +93,7 @@ void TextEditor::load(string fileName) {
 			refreshComponents(components);
 			
 			break;
+		
 		case 's':
 			components[0]->setIsVisible(true);
 			refreshComponents(components);
