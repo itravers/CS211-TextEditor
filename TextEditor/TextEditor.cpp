@@ -40,6 +40,52 @@ void TextEditor::load(string fileName) {
 	//i cause everything
 	curs_set(0);
 
+	
+
+	///////////////////TESTING
+	bool keep_going = true;
+	vector<TextEditorNamespace::EditorComponent*> components{};
+
+
+	while (keep_going == true)
+	{
+
+		//render components
+		for (auto& component : components)
+		{
+			//TODO: render
+			if (component->needsRefresh() == true)
+			{
+				component->render();
+				component->refresh();
+			}
+		}
+
+		int input = wgetch(mainWindow);
+
+		//Curses documentation says to use KEY_RESIZE, but you can also use
+		//is_termresized.  In real life, use either/or but not both.
+		if (is_termresized() == true)
+		{
+			resize_term(0, 0);
+			getmaxyx(mainWindow, numRows, numCols);
+		}
+		switch (input)
+		{
+		case ctrl('c'):
+			keep_going = false;
+		case KEY_RESIZE:
+			resize_term(0, 0);
+			getmaxyx(mainWindow, numRows, numCols);
+		}
+
+	}
+
+	///////////////////////////////END TESTING
+
+
+	//COMMENT OUT FOR TESTING COMPONENTS
+	/*
 	//Initialize File Controller
 	FileController fileController = FileController();
 
@@ -158,6 +204,8 @@ void TextEditor::load(string fileName) {
 
 	refresh(); //Tells Curses to Draw
 
+
+	*/
 	//revert back to normal console mode
 	nodelay(mainWindow, TRUE);
 	keypad(mainWindow, TRUE);

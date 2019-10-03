@@ -19,6 +19,9 @@
     <Filter Include="Source Files\TextEditor">
       <UniqueIdentifier>{27189219-c435-4abf-b26a-c5d9b935869e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\TextEditor\Components">
+      <UniqueIdentifier>{b37950f8-e2fc-44aa-b045-eb05909f7258}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h">
@@ -50,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="TextEditor\TextEditor.h">
       <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorComponent.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

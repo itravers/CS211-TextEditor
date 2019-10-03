@@ -15,6 +15,7 @@
 //INCLUDES
 #include "../curses.h"							/* This is Curses */
 #include "../panel.h"							/* Curses Library to Manipulate Windows */
+#include "Components/EditorComponent.hpp"			/* The Base/Abstract Editor Component*/
 #include "customcolors.h"						/* Reference to console colors */
 #include "../TextEditor/MenuController.h"		/* Everything to do with Menu's */
 #include "FileController.h"						/* Manipulating Files */
