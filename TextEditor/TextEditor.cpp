@@ -54,9 +54,10 @@ void TextEditor::load(string fileName) {
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{10, 10}, TextEditorNamespace::Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindow{ mainWindow, TextEditorNamespace::Location{0, 20}, TextEditorNamespace::Size{20, 20}, true, true }
 	);
 
+	
 
 	while (keep_going == true)
 	{
@@ -89,6 +90,12 @@ void TextEditor::load(string fileName) {
 			break;
 		case 's':
 			components[0]->setIsVisible(true);
+			refreshComponents(components);
+			break;
+		case 'a':
+			((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
+			((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
+			refreshComponents(components);
 			break;
 		case KEY_RESIZE:
 			resize_term(0, 0);

@@ -106,12 +106,45 @@ namespace TextEditorNamespace {
 				_buffer = newBuffer;
 			}
 
+			/*******************************************************************************
+			 * Function Name:   putChar()
+			 * Purpose:         Adds a character to the buffer, at the specified location
+			 * Without border
+			 * ((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
+			 *
+			 * with border
+			 * ((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
+			 *******************************************************************************/
 			bool putChar(char c, int y, int x) {
+				bool returnVal = false;
+
 				if (hasBorder()) {
+					//y++;
+					x++;  //we can't use the first column, there is a border there now
+					if (y >= 0 & y < _buffer.size()-2 && x >= 1 && x < _buffer[y].size()-2) {	 //check to make sure we aren't trying to enter in invalid area
 
+						//Add the character to the buffer
+						_buffer[y][x] = (int)c;
+
+						//and print the character to the string
+						wmove(_c_window, y, x);						//The curses wmove function
+						waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
+						returnVal = true;
+					}
 				}else {
+					if (y >= 0 & y < _buffer.size() && x >= 0 && x < _buffer[y].size()) {	 //check to make sure we aren't trying to enter in invalid area
+						
+						//Add the character to the buffer
+						_buffer[y][x] = (int)c;
 
+						//and print the character to the string
+						wmove(_c_window, y, x);						//The curses wmove function
+						waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
+						returnVal = true;
+					}
+					
 				}
+				return returnVal;
 			}
 
 			/*******************************************************************************

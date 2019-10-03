@@ -33,6 +33,7 @@ using std::cout;
 using std::endl;
 using std::to_string;
 using TextEditorNamespace::EditorComponent;
+using TextEditorNamespace::EditorWindow;
 
 /*******************************************************************************
  * Class Name:   Text Editor
