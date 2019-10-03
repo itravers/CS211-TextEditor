@@ -121,7 +121,7 @@ namespace TextEditorNamespace {
 				if (hasBorder()) {
 					//y++;
 					x++;  //we can't use the first column, there is a border there now
-					if (y >= 0 & y < _buffer.size()-2 && x >= 1 && x < _buffer[y].size()-2) {	 //check to make sure we aren't trying to enter in invalid area
+					if (y >= 0 && y < _buffer.size()-2 && x >= 1 && x < _buffer[y].size()-2) {	 //check to make sure we aren't trying to enter in invalid area
 
 						//Add the character to the buffer
 						_buffer[y][x] = (int)c;
@@ -132,7 +132,7 @@ namespace TextEditorNamespace {
 						returnVal = true;
 					}
 				}else {
-					if (y >= 0 & y < _buffer.size() && x >= 0 && x < _buffer[y].size()) {	 //check to make sure we aren't trying to enter in invalid area
+					if (y >= 0 && y < _buffer.size() && x >= 0 && x < _buffer[y].size()) {	 //check to make sure we aren't trying to enter in invalid area
 						
 						//Add the character to the buffer
 						_buffer[y][x] = (int)c;

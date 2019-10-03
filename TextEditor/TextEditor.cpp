@@ -54,7 +54,7 @@ void TextEditor::load(string fileName) {
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindow{ mainWindow, Location{0, 20}, Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 20}, Size{20, 20}, true, true }
 	);
 
 	
@@ -90,6 +90,14 @@ void TextEditor::load(string fileName) {
 			break;
 		case 's':
 			components[0]->setIsVisible(true);
+			refreshComponents(components);
+			break;
+		case 'r':
+			((EditorWindowResizable*)components[1])->resize(Size{ 10, 10 });
+			refreshComponents(components);
+			break;
+		case 't':
+			((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
 			refreshComponents(components);
 			break;
 		case 'a':

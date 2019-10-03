@@ -7,7 +7,6 @@
  *                  that needs to be resized.
 *********************************************************************************/
 
-
 #ifndef RESIZABLE_HPP
 #define RESIZABLE_HPP
 

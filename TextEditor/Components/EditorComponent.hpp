@@ -69,6 +69,14 @@ namespace TextEditorNamespace {
 			}
 
 			/*******************************************************************************
+			 * Function Name:   setNeedsRefresh()
+			 * Purpose:         Sets if the component needs to be refreshed next loop
+			 *******************************************************************************/
+			void setNeedsRefresh(bool needsRefresh) {
+				_needsRefresh = needsRefresh;
+			}
+
+			/*******************************************************************************
 			 * Function Name:   getLocation()
 			 * Purpose:         Returns the Components Location
 			 *******************************************************************************/
@@ -165,10 +173,7 @@ namespace TextEditorNamespace {
 				
 			}
 
-			//set if we need to refresh or not
-			void setNeedsRefresh(bool needsRefresh) {
-				_needsRefresh = needsRefresh;
-			}
+			
 
 		
 		//These will not be available to extended classes, or anyone else.
