@@ -5,6 +5,9 @@
  *
  *	EditorWindowResizable.hpp: An extended version of EditorWindow
  *					  This class gives the editor window the ability to resize
+ *  When you resize a window: if the new size is smaller than the old size
+ *  your buffer will lose the data that was in it, if it is then made big
+ *  again, the buffer will not have the info the was lost during the resize.
 *********************************************************************************/
 
 #ifndef EDITOR_WINDOW_RESIZABLE

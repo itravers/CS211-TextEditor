@@ -6,6 +6,10 @@
  *	EditorWindow.hpp: An extended version of EditorComponent
  *					  This class gives the ability to display both text and
                       other components.
+ * If you are going to use a border, the rendering of a window changes
+ * the border takes up the outside edge of the window, so it is two
+ * lines shorter, or columns shorter than without the border.
+ * When the border is removed, everything is reprinted starting at the top left.
 *********************************************************************************/
 
 #ifndef EDITOR_WINDOW
