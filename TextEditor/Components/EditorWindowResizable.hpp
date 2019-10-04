@@ -37,9 +37,9 @@ namespace TextEditorNamespace {
 			:EditorWindow(parent, location, size, isVisible, hasBorder), _parent_window(parent) {
 
 			//I think we can let the Editor Window super class take care of all construction tasks?
-			for (int i = 0; i < _size.height-2; i++) { //this is our test info
+			/*for (int i = 0; i < _size.height-2; i++) { //this is our test info
 				_buffer[i] = "This is just a test : " + to_string(i);
-			}
+			}*/
 
 			//resize the buffer to the right size after we changed it
 			resizeBuffer(_buffer, _size);

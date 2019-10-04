@@ -43,6 +43,8 @@ void TextEditor::load(string fileName) {
 	//i cause everything
 	curs_set(0);
 
+
+	
 	
 
 	///////////////////TESTING
@@ -56,6 +58,13 @@ void TextEditor::load(string fileName) {
 	components.push_back(
 		new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 20}, Size{20, 20}, true, true }
 	);
+
+	//Initialize File Controller
+	FileController fileController = FileController();
+	vector<string>lines;
+	fileController.readFile("motd.txt", lines, READ);
+
+	((EditorWindowScrollable*)components[0])->setBuffer(lines);
 
 	
 

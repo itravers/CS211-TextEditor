@@ -57,11 +57,25 @@ namespace TextEditorNamespace {
 		*******************************************************************************/
 		virtual void render() {
 
-			//imprint any data we might have onto the buffer
-			imprintOnBuffer(_data);
+			//we don't want to imprint our data if it is empty.
+			if (!_data.empty()) {
+
+				//imprint any data we might have onto the buffer
+				imprintOnBuffer(_data);
+			}
+			
 
 			//then call our super classes render function.
 			EditorWindow::render();
+		}
+
+		/*******************************************************************************
+		* Function Name:   setData()
+		* Purpose:         Sets the data that we are to display
+		*******************************************************************************/
+		void setData(vector<string>d) {
+			_data = d;
+			setNeedsRefresh(true);
 		}
 
 		/*******************************************************************************
@@ -220,7 +234,7 @@ namespace TextEditorNamespace {
 		}
 
 
-		//These will not be available to extended classes, or anyone else.
+	//These will not be available to extended classes, or anyone else.
 	private:
 		
 
