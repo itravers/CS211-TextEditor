@@ -50,7 +50,7 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowMoveable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindowScrollable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
 	);
 
 	components.push_back(

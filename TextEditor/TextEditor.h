@@ -13,16 +13,17 @@
 #define ctrl(x) ((x) & 0x1f)	//CTRL-x masking
 
 //INCLUDES
-#include "../curses.h"							/* This is Curses */
-#include "../panel.h"							/* Curses Library to Manipulate Windows */
-#include "Components/EditorWindow.hpp"			/* The Base/Abstract Editor Component*/
-#include "Components/EditorWindowResizable.hpp"			/* The Base/Abstract Editor Component*/
-#include "Components/EditorWindowMoveable.hpp"			/* The Base/Abstract Editor Component*/
-#include "customcolors.h"						/* Reference to console colors */
-#include "../TextEditor/MenuController.h"		/* Everything to do with Menu's */
-#include "FileController.h"						/* Manipulating Files */
-#include "ContentController.h"					/* All Content Manipulation. */
-#include "DialogBox.h"							/* Everything to do with dialogs. */
+#include "../curses.h"									/* This is Curses */
+#include "../panel.h"									/* Curses Library to Manipulate Windows */
+#include "Components/EditorWindow.hpp"					/* The Window */
+#include "Components/EditorWindowResizable.hpp"			/* A resizable window */
+#include "Components/EditorWindowMoveable.hpp"			/* A Moveable window */
+#include "Components/EditorWindowScrollable.hpp"		/* A SCrollable Window */
+#include "customcolors.h"								/* Reference to console colors */
+#include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
+#include "FileController.h"								/* Manipulating Files */
+#include "ContentController.h"							/* All Content Manipulation. */
+#include "DialogBox.h"									/* Everything to do with dialogs. */
 
 #include <string>
 #include <iostream>
@@ -38,6 +39,7 @@ using TextEditorNamespace::EditorComponent;
 using TextEditorNamespace::EditorWindow;
 using TextEditorNamespace::EditorWindowResizable;
 using TextEditorNamespace::EditorWindowMoveable;
+using TextEditorNamespace::EditorWindowScrollable;
 
 /*******************************************************************************
  * Class Name:   Text Editor

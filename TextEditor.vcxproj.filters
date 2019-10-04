@@ -72,6 +72,9 @@
     <ClInclude Include="TextEditor\Components\EditorWindowMoveable.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
