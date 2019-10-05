@@ -61,7 +61,7 @@ namespace TextEditorNamespace {
 			if (!_data.empty()) {
 
 				//imprint any data we might have onto the buffer
-				imprintOnBuffer(_data, getScrollLocation().y);
+				imprintOnBuffer(_data, getScrollLocation().y, getScrollLocation().x);
 			}
 			
 

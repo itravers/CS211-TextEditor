@@ -136,7 +136,7 @@ namespace TextEditorNamespace {
 					else {
 
 						//imprint our toImprint string onto our given buffer string.
-						_buffer[i - start] = imprintString(toImprint[i], _buffer[i-start]); //i-start tartgets our ith buffer, this is how we display scrolled info
+						_buffer[i - start] = imprintString(toImprint[i], _buffer[i-start], startX); //i-start tartgets our ith buffer, this is how we display scrolled info
 					}
 				}
 				setNeedsRefresh(true);
@@ -150,7 +150,7 @@ namespace TextEditorNamespace {
 			*                  Otherwise s2 is larger than s1, and we pad
 			*                  s1 so it is the size of s2, then we s2 = s1;
 			*******************************************************************************/
-			string imprintString(string s1, string s2) {
+			string imprintString(string s1, string s2, int startX = 0) {
 				if (s1.size() == s2.size()) {
 
 					//everything is good, just replace the string.
@@ -171,6 +171,19 @@ namespace TextEditorNamespace {
 					s1 = (s1.substr(0, length));
 					s2 = s1;
 				}
+
+				//if startX is not zero, it means we are shifting the string, but we don't want to resize the string at all
+				int size = s2.size();					//record size
+				if (startX >= s2.length()) {
+					s2 = "";
+					//s2.insert(s2.length(), size, ' ');
+				}else {
+					s2 = s2.substr(startX);					//take subtring starting at startX
+				}
+				
+				int diff = size - s2.size();			//calculate difference from new string size to target string size
+				s2.insert(s2.length(), diff, ' ');		//pad the string so it is the proper size.
+
 				return s2;
 			}
 

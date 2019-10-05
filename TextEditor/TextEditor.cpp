@@ -102,6 +102,12 @@ void TextEditor::load(string fileName) {
 		case 'u':
 			((EditorWindowScrollable*)components[0])->decrementScroll();
 			break;
+		case 'z':
+			((EditorWindowScrollable*)components[0])->decrementScroll('x');
+			break;
+		case 'x':
+			((EditorWindowScrollable*)components[0])->incrementScroll('x');
+			break;
 		case 'm':
 			((EditorWindowMoveable*)components[0])->move(Location{ 10, 0 });
 			((EditorWindowMoveable*)components[0])->resize(Size{ 10, 5 });
