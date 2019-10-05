@@ -18,13 +18,14 @@
 #define EDITOR_WINDOW_SCROLLABLE
 
 #include "EditorWindowMoveable.hpp"
+#include "Scrollable.hpp"
 
 
 //we are defining a class in the namespace TextEditorNamespace
 namespace TextEditorNamespace {
 
 	//we are defining a EditorWindowScrollable, which is an extention of EditorWindowMoveable
-	class EditorWindowScrollable : public EditorWindowMoveable {
+	class EditorWindowScrollable : public EditorWindowMoveable, public Scrollable {
 
 		//We'll be extending this class later, these will be private for extended classes
 	protected:

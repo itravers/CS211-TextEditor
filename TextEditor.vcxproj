@@ -133,6 +133,7 @@
     <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp" />
     <ClInclude Include="TextEditor\Components\Moveable.hpp" />
     <ClInclude Include="TextEditor\Components\Resizable.hpp" />
+    <ClInclude Include="TextEditor\Components\Scrollable.hpp" />
     <ClInclude Include="TextEditor\ContentController.h" />
     <ClInclude Include="TextEditor\customcolors.h" />
     <ClInclude Include="TextEditor\DialogBox.h" />
