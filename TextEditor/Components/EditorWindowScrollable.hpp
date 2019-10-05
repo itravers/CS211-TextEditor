@@ -175,63 +175,7 @@ namespace TextEditorNamespace {
 			}
 		}
 
-		/*******************************************************************************
-		* Function Name:   imprintOnBuffer(toImprint)
-		* Purpose:         Imprints the data in _data to the _buffer.
-		*                  Imprinting means that we take the data in _data
-		*                  and copy that data to _buffer, dropping any data
-		*                  that does not fit into the buffer. 
-		*                  Imprinting takes into account our scrolling position
-		*                  so that only the correct data from _data gets imprinted
-		*                  in the buffer.
-		*                  toImprint and _buffer need to be the same type.
-		*******************************************************************************/
-		void imprintOnBuffer(vector<string> toImprint) {
-			
-			//loop through toImprint from where we are scrolled, until where we are scrolled + size of buffer in y
-			int start = getScrollLocation().y;
-			int end = getScrollLocation().y + _buffer.size();
-			for (int i = start; i < end; i++) {
-				if (i >= toImprint.size()) {
 
-					//we are trying to imprint a line that doesn't exist in toImprint
-					//lets stop doing that.
-					break;
-				}else {
-
-					//imprint our toImprint string onto our given buffer string.
-					imprintString(&toImprint[i], &_buffer[i]);
-				}
-			}
-		}
-
-		/*******************************************************************************
-		* Function Name:   imprintString(s1, s2)
-		* Purpose:         Imprints string s1 onto string s2
-		*                  If s1 is larger than s2, we will chop s1 down
-		*                  until it is the size of s2, then s2 = s1.
-		*                  Otherwise s2 is larger than s1, and we pad
-		*                  s1 so it is the size of s2, then we s2 = s1;
-		*******************************************************************************/
-		void imprintString(string* s1, string* s2) {
-			if (s1->size() == s2->size()) {
-
-				//everything is good, just replace the string.
-				s2 = s1;
-			}else if (s1->size() < s2->size()) {
-
-				//we need to pad s1, until it is the size of s2, before we replace
-				int diff = s1->size() - s2->size();
-				s1->insert(s1->length(), diff, ' ');		//padding happens here
-				s2 = s1;
-
-			}else {
-
-				//we need to chop s1, so it is only the size of s2, before we replace
-				int length = s2->size();		//the length we need our string to be chopped to
-				s1 = &(s1->substr(0, length));
-			}
-		}
 
 
 	//These will not be available to extended classes, or anyone else.

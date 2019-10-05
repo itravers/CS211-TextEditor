@@ -63,8 +63,14 @@ void TextEditor::load(string fileName) {
 	FileController fileController = FileController();
 	vector<string>lines;
 	fileController.readFile("motd.txt", lines, READ);
+	//fileController.closeFile();
 
-	((EditorWindowScrollable*)components[0])->setBuffer(lines);
+	//((EditorWindowScrollable*)components[0])->setBuffer(lines);  // instead of setBuffer(), lets experiement with imprint()
+	((EditorWindow*)components[0])->imprintOnBuffer(lines);
+
+	vector<string>lines2;
+	fileController.readFile("main.cpp", lines2, READ);
+	((EditorWindow*)components[1])->imprintOnBuffer(lines2);
 
 	
 
@@ -114,6 +120,8 @@ void TextEditor::load(string fileName) {
 		case 't':
 			((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
 			refreshComponents(components);
+
+			((EditorWindow*)components[1])->imprintOnBuffer(lines2);
 			break;
 		case 'a':
 			((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
@@ -353,6 +361,8 @@ void TextEditor::initColor(void) {
 	init_pair(COLOR_CURSOR_PAIR, COLOR_BLACK, COLOR_WHITE);
 	init_pair(COLOR_SCROLLBAR_PAIR, COLOR_BLACK, COLOR_GREEN);
 	init_pair(COLOR_WORDWRAP_PAIR, COLOR_GREEN, COLOR_BLACK);
+	init_pair(COLOR_GREEN_BLACK, COLOR_GREEN, COLOR_BLACK);
+	init_pair(COLOR_WHITE_BLACK, COLOR_WHITE, COLOR_BLACK);
 }
 
 /*

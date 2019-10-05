@@ -102,12 +102,77 @@ namespace TextEditorNamespace {
 			 * Function Name:   setBuffer()
 			 * Purpose:         Sets a new buffer for the text buffer
 			 *******************************************************************************/
-			void setBuffer(vector<string> newBuffer) {
+			/*void setBuffer(vector<string> newBuffer) {
 				//delete the current buffer
 				_buffer.clear();
 
 				//replace it
 				_buffer = newBuffer;
+			}*/
+
+			/*******************************************************************************
+			* Function Name:   imprintOnBuffer(toImprint)
+			* Purpose:         Imprints the data in _data to the _buffer.
+			*                  Imprint takes a snapshot of a buffer, putting the result
+			*                  into the Window Buffer. It starts at a specific
+			*				   position in the buffer and the snapshot it takes
+			*                  is only as large as the buffer it imprints onto.
+			*                  toImprint and _buffer need to be the same type.
+			*				   startY and startX denote where in the source
+			*                  buffer we start imprinting from
+			*******************************************************************************/
+			void imprintOnBuffer(vector<string> toImprint, int startY = 0, int startX = 0) {
+
+				//loop through toImprint from where we are scrolled, until where we are scrolled + size of buffer in y
+				int start = startY;
+				int end = start + _buffer.size();
+				for (int i = start; i < end; i++) {
+					if (i >= toImprint.size()) {
+
+						//we are trying to imprint a line that doesn't exist in toImprint
+						//lets stop doing that.
+						break;
+					}
+					else {
+
+						//imprint our toImprint string onto our given buffer string.
+						_buffer[i] = imprintString(toImprint[i], _buffer[i]);
+						int breakpoint = 0;
+					}
+				}
+				setNeedsRefresh(true);
+			}
+
+			/*******************************************************************************
+			* Function Name:   imprintString(s1, s2)
+			* Purpose:         Imprints string s1 onto string s2
+			*                  If s1 is larger than s2, we will chop s1 down
+			*                  until it is the size of s2, then s2 = s1.
+			*                  Otherwise s2 is larger than s1, and we pad
+			*                  s1 so it is the size of s2, then we s2 = s1;
+			*******************************************************************************/
+			string imprintString(string s1, string s2) {
+				if (s1.size() == s2.size()) {
+
+					//everything is good, just replace the string.
+					s2 = s1;
+				}
+				else if (s1.size() < s2.size()) {
+
+					//we need to pad s1, until it is the size of s2, before we replace
+					int diff = s2.size() - s1.size();
+					s1.insert(s1.length(), diff, ' ');		//padding happens here
+					s2 = s1;
+
+				}
+				else {
+
+					//we need to chop s1, so it is only the size of s2, before we replace
+					int length = s2.size();		//the length we need our string to be chopped to
+					s1 = (s1.substr(0, length));
+					s2 = s1;
+				}
+				return s2;
 			}
 
 			/*******************************************************************************
@@ -154,6 +219,8 @@ namespace TextEditorNamespace {
 			/*******************************************************************************
 			 * Function Name:   render()
 			 * Purpose:         Renders this EditorWindow
+			 * Preconditions:   The _buffer that we are rendering with here must be
+			 *                  exactly the same size as our _c_window
 			 *******************************************************************************/
 			virtual void render() {
 				
@@ -183,7 +250,7 @@ namespace TextEditorNamespace {
 							//we render differently if we have a border or not
 							if (hasBorder()) {
 								//create the border
-								colorbox(_c_window, COLOR_MENU_PAIR, true);
+								colorbox(_c_window, COLOR_GREEN_BLACK, true);
 
 								//we do have a border
 								//loop through each line
@@ -191,8 +258,10 @@ namespace TextEditorNamespace {
 
 									//loop through each character in the line
 									for (int x = 1; x < _buffer[y].size()+1 && x < getSize().width - 2; x++) {
+										wattron(_c_window, COLOR_PAIR(COLOR_WHITE_BLACK));
 										wmove(_c_window, y, x);
 										waddch(_c_window, (int)_buffer[y - 1].at(x - 1));
+										wattroff(_c_window, COLOR_PAIR(COLOR_WHITE_BLACK));
 									}
 								}
 							}else {

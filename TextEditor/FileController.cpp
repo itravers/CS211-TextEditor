@@ -72,6 +72,7 @@ bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE
 			}
 			
 			//it looks like we succeded, return true to caller
+			inFile.close();
 			return true;
 		}
 		catch (string error) {
