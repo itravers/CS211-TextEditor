@@ -61,7 +61,7 @@ namespace TextEditorNamespace {
 			if (!_data.empty()) {
 
 				//imprint any data we might have onto the buffer
-				imprintOnBuffer(_data);
+				imprintOnBuffer(_data, getScrollLocation().y);
 			}
 			
 
@@ -91,6 +91,12 @@ namespace TextEditorNamespace {
 		* Purpose:         Sets the current scroll location.
 		*******************************************************************************/
 		void setScrollLocation(Location l) {
+
+			//neither x nor y can be allowed to be less than 0
+			if (l.x < 0) l.x = 0;
+			if (l.y < 0) l.y = 0;
+
+			//set the location
 			_scrolledLocation = l;
 		}
 
@@ -108,6 +114,7 @@ namespace TextEditorNamespace {
 					setScrollLocation(Location{ getScrollLocation().y + 1, getScrollLocation().x });
 				break;
 			}
+			setNeedsRefresh(true);
 		}
 
 		/*******************************************************************************
@@ -124,6 +131,7 @@ namespace TextEditorNamespace {
 				setScrollLocation(Location{ getScrollLocation().y - 1, getScrollLocation().x });
 				break;
 			}
+			setNeedsRefresh(true);
 		}
 
 
@@ -140,6 +148,12 @@ namespace TextEditorNamespace {
 		* Purpose:         Sets the current cursor location.
 		*******************************************************************************/
 		void setCursorLocation(Location l) {
+
+			//neither x nor y can be allowed to be less than 0
+			if (l.x < 0) l.x = 0;
+			if (l.y < 0) l.y = 0;
+
+			//set the cursor location
 			_cursorLocation = l;
 		}
 

@@ -66,11 +66,11 @@ void TextEditor::load(string fileName) {
 	//fileController.closeFile();
 
 	//((EditorWindowScrollable*)components[0])->setBuffer(lines);  // instead of setBuffer(), lets experiement with imprint()
-	((EditorWindow*)components[0])->imprintOnBuffer(lines);
+	//((EditorWindow*)components[0])->imprintOnBuffer(lines);
+	((EditorWindowScrollable*)components[0])->setData(lines);
 
-	vector<string>lines2;
-	fileController.readFile("main.cpp", lines2, READ);
-	((EditorWindow*)components[1])->imprintOnBuffer(lines2);
+
+	((EditorWindow*)components[1])->imprintOnBuffer(lines, 10, 0);
 
 	
 
@@ -95,6 +95,12 @@ void TextEditor::load(string fileName) {
 		{
 		case ctrl('c'):
 			keep_going = false;
+			break;
+		case 'd':
+			((EditorWindowScrollable*)components[0])->incrementScroll();
+			break;
+		case 'u':
+			((EditorWindowScrollable*)components[0])->decrementScroll();
 			break;
 		case 'm':
 			((EditorWindowMoveable*)components[0])->move(Location{ 10, 0 });
@@ -121,7 +127,7 @@ void TextEditor::load(string fileName) {
 			((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
 			refreshComponents(components);
 
-			((EditorWindow*)components[1])->imprintOnBuffer(lines2);
+			((EditorWindow*)components[1])->imprintOnBuffer(lines);
 			break;
 		case 'a':
 			((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);

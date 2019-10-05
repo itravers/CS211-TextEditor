@@ -125,9 +125,9 @@ namespace TextEditorNamespace {
 
 				//loop through toImprint from where we are scrolled, until where we are scrolled + size of buffer in y
 				int start = startY;
-				int end = start + _buffer.size();
+				int end = start + _buffer.size()-1;
 				for (int i = start; i < end; i++) {
-					if (i >= toImprint.size()) {
+					if (i >= toImprint.size() || i >= _buffer.size()) {
 
 						//we are trying to imprint a line that doesn't exist in toImprint
 						//lets stop doing that.
@@ -136,8 +136,7 @@ namespace TextEditorNamespace {
 					else {
 
 						//imprint our toImprint string onto our given buffer string.
-						_buffer[i] = imprintString(toImprint[i], _buffer[i]);
-						int breakpoint = 0;
+						_buffer[i - start] = imprintString(toImprint[i], _buffer[i-start]); //i-start tartgets our ith buffer, this is how we display scrolled info
 					}
 				}
 				setNeedsRefresh(true);
