@@ -52,7 +52,7 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/2}, true, true }
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 	);
 
 	//components.push_back(
