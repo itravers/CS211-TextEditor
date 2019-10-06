@@ -176,7 +176,7 @@ namespace TextEditorNamespace {
 
 					//we need to chop s1, so it is only the size of s2, before we replace
 					int length = s2.size();		//the length we need our string to be chopped to
-					s1 = (s1.substr(0, length));
+					s1 = (s1.substr(startX));
 					s2 = s1;
 				}
 

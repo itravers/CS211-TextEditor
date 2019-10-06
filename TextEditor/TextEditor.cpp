@@ -56,7 +56,7 @@ void TextEditor::load(string fileName) {
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 20}, Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 10}, Size{20, 20}, true, true }
 	);
 
 	//Initialize File Controller
@@ -138,7 +138,7 @@ void TextEditor::load(string fileName) {
 			((EditorWindow*)components[1])->imprintOnBuffer(lines);
 			break;
 		case 'a':
-			((EditorWindowEditable*)components[0])->putChar('0', Location{ 60, 60 });
+			((EditorWindowEditable*)components[0])->putChar('0', Location{ 0, 0 });
 			mychar = ((EditorWindowEditable*)components[0])->getChar(Location{ 4, 3 });
 			//((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
 			//refreshComponents(components);
