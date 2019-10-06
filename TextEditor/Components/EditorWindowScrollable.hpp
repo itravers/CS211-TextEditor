@@ -5,13 +5,12 @@
  *
  *	EditorWindowScrollable.hpp: An extended version of EditorWindowMoveable
  *					  This class further extends the ability of an Editor
- *					  window to be able to be scrolled. This means that the
- *                    window now has to keep track of a cursor, a cursor location
- *                    We have to have current lines of text that we are supposed
- *                    to render to screen. We have to keep track of our scroll
- *                    position. We have to have a scroll bar as contained
- *                    component, we have to be able to update that scroll bar.
- *                    We have to allow a user to type and edit text.
+ *					  window to be able to be scrolled. This means that
+ *					  we need data that can be displayed on the _buffer
+ *				      it means that we need to keep track of the location
+ *                    we are scrolled to, and we need to be able to render
+ *                    to the buffer, from the location we are scrolled to
+ *                    either horizontally or vertically
 *********************************************************************************/
 
 #ifndef EDITOR_WINDOW_SCROLLABLE
@@ -64,7 +63,6 @@ namespace TextEditorNamespace {
 				//imprint any data we might have onto the buffer
 				imprintOnBuffer(_data, getScrollLocation().y, getScrollLocation().x);
 			}
-			
 
 			//then call our super classes render function.
 			EditorWindow::render();
@@ -83,7 +81,7 @@ namespace TextEditorNamespace {
 		* Function Name:   getScrollLocation()
 		* Purpose:         Returns our current scrolling location
 		*******************************************************************************/
-		Location getScrollLocation() {
+		virtual Location getScrollLocation(void) {
 			return _scrolledLocation;
 		}
 
@@ -91,7 +89,7 @@ namespace TextEditorNamespace {
 		* Function Name:   setScrolledLocation()
 		* Purpose:         Sets the current scroll location.
 		*******************************************************************************/
-		void setScrollLocation(Location l) {
+		virtual void setScrollLocation(Location l) {
 
 			//neither x nor y can be allowed to be less than 0
 			if (l.x < 0) l.x = 0;
@@ -105,7 +103,7 @@ namespace TextEditorNamespace {
 		* Function Name:   incrementScroll()
 		* Purpose:         Adds 1 to the current scrolled location.
 		*******************************************************************************/
-		void incrementScroll(char xOry = 'y') {
+		virtual void incrementScroll(char xOry = 'y') {
 
 			switch (xOry) {
 				case 'x':
@@ -122,7 +120,7 @@ namespace TextEditorNamespace {
 		* Function Name:   decrementScroll()
 		* Purpose:         Subtracts 1 to the current scrolled location.
 		*******************************************************************************/
-		void decrementScroll(char xOry = 'y') {
+		virtual void decrementScroll(char xOry = 'y') {
 
 			switch (xOry) {
 			case 'x':

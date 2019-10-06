@@ -52,7 +52,7 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowScrollable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindowEditable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
 	);
 
 	components.push_back(
@@ -91,6 +91,8 @@ void TextEditor::load(string fileName) {
 			//resize_term(0, 0);
 			//getmaxyx(mainWindow, numRows, numCols);/////this doesn't work yet
 		}
+
+		char mychar;
 		switch (input)
 		{
 		case ctrl('c'):
@@ -136,9 +138,10 @@ void TextEditor::load(string fileName) {
 			((EditorWindow*)components[1])->imprintOnBuffer(lines);
 			break;
 		case 'a':
-			((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
-			((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
-			refreshComponents(components);
+			((EditorWindowEditable*)components[0])->putChar('0', Location{ 60, 60 });
+			mychar = ((EditorWindowEditable*)components[0])->getChar(Location{ 4, 3 });
+			//((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
+			//refreshComponents(components);
 			break;
 		case KEY_RESIZE:
 			resize_term(0, 0);

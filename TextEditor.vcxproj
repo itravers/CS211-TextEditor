@@ -126,8 +126,10 @@
     <ClInclude Include="curses.h" />
     <ClInclude Include="curspriv.h" />
     <ClInclude Include="panel.h" />
+    <ClInclude Include="TextEditor\Components\Editable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindow.hpp" />
+    <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowMoveable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowResizable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp" />
@@ -156,6 +158,9 @@
     <ClCompile Include="TextEditor\FileController.cpp" />
     <ClCompile Include="TextEditor\MenuController.cpp" />
     <ClCompile Include="TextEditor\TextEditor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="motd.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -126,12 +126,20 @@ namespace TextEditorNamespace {
 				//loop through toImprint from where we are scrolled, until where we are scrolled + size of buffer in y
 				int start = startY;
 				int end = start + _buffer.size()-1;
+
+				//end shouldn't be bigger than toImprintSize
+				//if (end > toImprint.size())end = toImprint.size(); //keep the last line from being printed over and over.
 				for (int i = start; i < end; i++) {
-					if (i >= toImprint.size() || i >= _buffer.size()) {
+					if (i >= toImprint.size() /*|| i >= _buffer.size()*/) {
 
 						//we are trying to imprint a line that doesn't exist in toImprint
-						//lets stop doing that.
-						break;
+						//lets stop doing that. NEVER CHANGE THE BUFFER SIZE, UNLESS WE ARE RESIZING
+						string newString = "";
+						int oldSize = _buffer[0].size();
+						int diff = oldSize - newString.size();
+						newString.insert(newString.length(), diff, ' ');		//padding happens here
+						_buffer[i - start] = newString;
+						//break;
 					}
 					else {
 
@@ -187,46 +195,7 @@ namespace TextEditorNamespace {
 				return s2;
 			}
 
-			/*******************************************************************************
-			 * Function Name:   putChar()
-			 * Purpose:         Adds a character to the buffer, at the specified location
-			 * Without border
-			 * ((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
-			 *
-			 * with border
-			 * ((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
-			 *******************************************************************************/
-			bool putChar(char c, int y, int x) {
-				bool returnVal = false;
-
-				if (hasBorder()) {
-					//y++;
-					x++;  //we can't use the first column, there is a border there now
-					if (y >= 0 && y < _buffer.size()-2 && x >= 1 && x < _buffer[y].size()-2) {	 //check to make sure we aren't trying to enter in invalid area
-
-						//Add the character to the buffer
-						_buffer[y][x] = (int)c;
-
-						//and print the character to the string
-						wmove(_c_window, y, x);						//The curses wmove function
-						waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
-						returnVal = true;
-					}
-				}else {
-					if (y >= 0 && y < _buffer.size() && x >= 0 && x < _buffer[y].size()) {	 //check to make sure we aren't trying to enter in invalid area
-						
-						//Add the character to the buffer
-						_buffer[y][x] = (int)c;
-
-						//and print the character to the string
-						wmove(_c_window, y, x);						//The curses wmove function
-						waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
-						returnVal = true;
-					}
-					
-				}
-				return returnVal;
-			}
+			
 
 			/*******************************************************************************
 			 * Function Name:   render()

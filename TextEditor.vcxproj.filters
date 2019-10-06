@@ -78,6 +78,12 @@
     <ClInclude Include="TextEditor\Components\Scrollable.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Components\Editable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
@@ -111,5 +117,10 @@
     <ClCompile Include="TextEditor\TextEditor.cpp">
       <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="motd.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
