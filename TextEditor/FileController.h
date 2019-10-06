@@ -59,6 +59,8 @@ private:
 	/*******************************************************************************
 	 * Private Methods
 	 *******************************************************************************/
+	void replaceChar(vector<string>& lines, char toReplace, char replaceWith, int numReplaces);
+	void replaceCharInString(string& s, int n, char replaceWith);
 };
 
 #endif

@@ -19,7 +19,8 @@
 #include "Components/EditorWindowResizable.hpp"			/* A resizable window */
 #include "Components/EditorWindowMoveable.hpp"			/* A Moveable window */
 #include "Components/EditorWindowScrollable.hpp"		/* A SCrollable Window */
-#include "Components/EditorWindowEditable.hpp"		/* A SCrollable Window */
+#include "Components/EditorWindowEditable.hpp"			/* A Editable Window */
+#include "Components/EditorWindowInteractive.h"			/* An Interactive Window */
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -42,6 +43,7 @@ using TextEditorNamespace::EditorWindowResizable;
 using TextEditorNamespace::EditorWindowMoveable;
 using TextEditorNamespace::EditorWindowScrollable;
 using TextEditorNamespace::EditorWindowEditable;
+using TextEditorNamespace::EditorWindowInteractive;
 
 /*******************************************************************************
  * Class Name:   Text Editor

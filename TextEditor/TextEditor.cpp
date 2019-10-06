@@ -52,17 +52,17 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowEditable{ mainWindow, Location{0, 0}, Size{20, 20}, true, true }
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/2}, true, true }
 	);
 
-	components.push_back(
-		new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 10}, Size{20, 20}, true, true }
-	);
+	//components.push_back(
+	//	new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 0}, Size{1, 20}, true, true }
+	//);
 
 	//Initialize File Controller
 	FileController fileController = FileController();
 	vector<string>lines;
-	fileController.readFile("motd.txt", lines, READ);
+	fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
 	//fileController.closeFile();
 
 	//((EditorWindowScrollable*)components[0])->setBuffer(lines);  // instead of setBuffer(), lets experiement with imprint()
@@ -70,7 +70,7 @@ void TextEditor::load(string fileName) {
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 
-	((EditorWindow*)components[1])->imprintOnBuffer(lines, 10, 0);
+	//((EditorWindow*)components[1])->imprintOnBuffer(lines, 10, 0);
 
 	
 
@@ -95,7 +95,7 @@ void TextEditor::load(string fileName) {
 		char mychar;
 		switch (input)
 		{
-		case ctrl('c'):
+		/*case ctrl('c'):
 			keep_going = false;
 			break;
 		case 'd':
@@ -128,14 +128,14 @@ void TextEditor::load(string fileName) {
 			refreshComponents(components);
 			break;
 		case 'r':
-			((EditorWindowResizable*)components[1])->resize(Size{ 10, 10 });
+			//((EditorWindowResizable*)components[1])->resize(Size{ 10, 10 });
 			refreshComponents(components);
 			break;
 		case 't':
-			((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
+		//	((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
 			refreshComponents(components);
 
-			((EditorWindow*)components[1])->imprintOnBuffer(lines);
+			//((EditorWindow*)components[1])->imprintOnBuffer(lines);
 			break;
 		case 'a':
 			((EditorWindowEditable*)components[0])->putChar('0', Location{ 0, 0 });
@@ -146,6 +146,10 @@ void TextEditor::load(string fileName) {
 		case KEY_RESIZE:
 			resize_term(0, 0);
 			getmaxyx(mainWindow, numRows, numCols);
+			break;
+			*/
+		default:
+			((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
 			break;
 
 		}

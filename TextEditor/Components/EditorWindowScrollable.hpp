@@ -29,7 +29,6 @@ namespace TextEditorNamespace {
 		//We'll be extending this class later, these will be private for extended classes
 	protected:
 		Location _scrolledLocation = Location{ 0, 0 };			//Keep track of our scrolling
-		Location _cursorLocation = Location{ 0, 0 };			//Keep track of where our cursor is.
 
 		//we need text to be displayed, NOTE, this is different than our _buffer
 		//text that needs to be displayed will need to be properly imprinted on
@@ -132,64 +131,6 @@ namespace TextEditorNamespace {
 			}
 			setNeedsRefresh(true);
 		}
-
-
-		/*******************************************************************************
-		* Function Name:   getCursorLocation()
-		* Purpose:         Returns our current cursor location
-		*******************************************************************************/
-		Location getCursorLocation() {
-			return _cursorLocation;
-		}
-
-		/*******************************************************************************
-		* Function Name:   setCursorLocation()
-		* Purpose:         Sets the current cursor location.
-		*******************************************************************************/
-		void setCursorLocation(Location l) {
-
-			//neither x nor y can be allowed to be less than 0
-			if (l.x < 0) l.x = 0;
-			if (l.y < 0) l.y = 0;
-
-			//set the cursor location
-			_cursorLocation = l;
-		}
-
-		/*******************************************************************************
-		* Function Name:   incrementCursorLocation()
-		* Purpose:         Adds 1 to the current cursor location.
-		*******************************************************************************/
-		void incrementCursorLocation(char xOry = 'y') {
-
-			switch (xOry) {
-			case 'x':
-				setCursorLocation(Location{ getCursorLocation().y, getCursorLocation().x + 1 });
-				break;
-			case 'y':
-				setCursorLocation(Location{ getCursorLocation().y + 1, getCursorLocation().x });
-				break;
-			}
-		}
-
-		/*******************************************************************************
-		* Function Name:   decrementCursorLocation()
-		* Purpose:         Subtracts 1 to the current cursor location.
-		*******************************************************************************/
-		void decrementCursorLocation(char xOry = 'y') {
-
-			switch (xOry) {
-			case 'x':
-				setCursorLocation(Location{ getCursorLocation().y, getCursorLocation().x - 1 });
-				break;
-			case 'y':
-				setCursorLocation(Location{ getCursorLocation().y - 1, getCursorLocation().x });
-				break;
-			}
-		}
-
-
-
 
 	//These will not be available to extended classes, or anyone else.
 	private:

@@ -73,6 +73,9 @@ bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE
 			
 			//it looks like we succeded, return true to caller
 			inFile.close();
+
+			//replace all tabs in the file, we don't want to deal with tabs
+			replaceChar(lines, '\t', ' ', 4); //replace all tabs in lines with 4 spaces
 			return true;
 		}
 		catch (string error) {
@@ -86,4 +89,44 @@ bool FileController::readFile(string fileName, vector<string>& lines, READ_WRITE
 	else if(readOrWrite == WRITE) {
 		//we are writing
 	}
+}
+
+//replace a given character with a certain number of others in lines.
+//we'll use this to replace special characters ourselves
+void FileController::replaceChar(vector<string>& lines, char toReplace, char replaceWith, int numReplaces) {
+
+	//loop through lines, finding the char toReplace
+	for (int i = 0; i < lines.size(); i++) {
+		string line = lines.at(i);
+
+		//loop through each character
+		for (int j = 0; j < line.size(); j++) {
+
+			//check if the character is what we are looking for
+			char c = line.at(j);
+			if (c == toReplace || c < 0) {
+
+				//we want to replace this character with numReplaces number of the character replaceWith
+				lines[i][j] = replaceWith;
+			}
+		}
+	}
+}
+
+/*
+	Replaces a given character in a given string
+*/
+void FileController::replaceCharInString(string& s, int n, char replaceWith) {
+
+	//we don't want to insert before the string
+	if (n < 0)return;
+
+	//if the string is not long enough, we have to add spaces, before we enter this character
+	if (s.length() <= n) {
+		s.insert(s.length(), n - s.length(), ' ');
+		s += replaceWith;
+		return;
+	}
+
+	s[n] = replaceWith;
 }

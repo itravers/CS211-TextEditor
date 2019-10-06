@@ -36,7 +36,7 @@ namespace TextEditorNamespace {
 
 		/*******************************************************************************
 		* Function Name:   putChar()
-		* Purpose:         Adds a character to the buffer, at the specified location
+		* Purpose:         Adds a character to the data, at the specified location
 		* Without border
 		* ((EditorWindow*)components[0])->putChar('0', ((EditorWindow*)components[0])->getSize().height - 1, ((EditorWindow*)components[0])->getSize().width - 1);
 		*
@@ -44,39 +44,7 @@ namespace TextEditorNamespace {
 		* ((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
 		*******************************************************************************/
 		virtual void putChar(char c, Location l) {
-			//bool returnVal = false;
-			/*int x = l.x;
-			int y = l.y;
-
-			if (hasBorder()) {
-				//y++;
-				x++;  //we can't use the first column, there is a border there now
-				if (y >= 0 && y < _buffer.size() - 2 && x >= 1 && x < _buffer[y].size() - 2) {	 //check to make sure we aren't trying to enter in invalid area
-
-					//Add the character to the buffer
-					_buffer[y][x] = (int)c;
-
-					//and print the character to the string
-					wmove(_c_window, y, x);						//The curses wmove function
-					waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
-					returnVal = true;
-				}
-			}
-			else {
-				if (y >= 0 && y < _buffer.size() && x >= 0 && x < _buffer[y].size()) {	 //check to make sure we aren't trying to enter in invalid area
-
-					//Add the character to the buffer
-					_buffer[y][x] = (int)c;
-
-					//and print the character to the string
-					wmove(_c_window, y, x);						//The curses wmove function
-					waddch(_c_window, (int)_buffer[y].at(x));		//add char to window, at x, y, casted to an int for curses
-					returnVal = true;
-				}
-
-			}*/
-
-
+			
 			if (_data.size() > l.y) {
 
 				//we have this line
@@ -113,6 +81,7 @@ namespace TextEditorNamespace {
 
 			//return returnVal;
 		}
+
 
 		virtual char getChar(Location l) {
 			char returnVal = NULL;
