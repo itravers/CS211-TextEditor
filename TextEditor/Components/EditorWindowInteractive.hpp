@@ -202,8 +202,9 @@ namespace TextEditorNamespace {
 
 		void moveCursorRight() {
 			int offset = 1;
-			if (hasBorder()) offset = 3;
-			if (_cursorLocation.x < _buffer[0].size() - offset) {
+			
+			if (hasBorder()) offset = 4;	//we offset different if there is a border
+			if (_cursorLocation.x < getSize().width - offset) {
 				incrementCursorLocation('x');
 			}
 			else {

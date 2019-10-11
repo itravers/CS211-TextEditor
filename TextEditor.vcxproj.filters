@@ -87,7 +87,7 @@
     <ClInclude Include="TextEditor\Components\KeyboardHandler.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
-    <ClInclude Include="TextEditor\Components\EditorWindowInteractive.h">
+    <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
   </ItemGroup>

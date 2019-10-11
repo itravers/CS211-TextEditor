@@ -130,7 +130,7 @@
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindow.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp" />
-    <ClInclude Include="TextEditor\Components\EditorWindowInteractive.h" />
+    <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowMoveable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowResizable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp" />

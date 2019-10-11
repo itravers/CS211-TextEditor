@@ -20,7 +20,7 @@
 #include "Components/EditorWindowMoveable.hpp"			/* A Moveable window */
 #include "Components/EditorWindowScrollable.hpp"		/* A SCrollable Window */
 #include "Components/EditorWindowEditable.hpp"			/* A Editable Window */
-#include "Components/EditorWindowInteractive.h"			/* An Interactive Window */
+#include "Components/EditorWindowInteractive.hpp"			/* An Interactive Window */
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
