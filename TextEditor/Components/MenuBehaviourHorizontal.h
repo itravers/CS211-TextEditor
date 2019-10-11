@@ -3,17 +3,15 @@
  *	CIS 211 - Data Structures
  *	October 11th, 2019
  *
- *	MenuBehaviour.hpp: Encapsulates the behaviour of a menu
- *                     This is using the strategy class
- *                     Each menu has a menu behaviour, the behaviour decides
- *                     how the menu will be rendered. Each behaviour can
- *                     render the menu in a different way.
+ *	MenuBehaviourHorizontal.hpp: Extends menu behaviour
+ *                               responsible for rendering a menu in a horizontal
+ *                               format.
 *********************************************************************************/
 
-#ifndef MENU_BEHAVIOUR_HPP
-#define MENU_BEHAVIOUR_HPP
+#ifndef MENU_BEHAVIOUR_HORIZONTAL_HPP
+#define MENU_BEHAVIOUR_HORIZONTAL_HPP
 
-#include "EditorWindowMoveable.hpp"
+#include "EditorMenu.hpp"
 #include "MenuBehaviour.hpp"
 
 
@@ -21,27 +19,28 @@
 namespace TextEditorNamespace {
 
 	//we are defining a MenuBehaviour
-	class MenuBehaviour {
+	class MenuBehaviourHorizontal : public MenuBehaviour {
 
 		//We'll be extending this class later, these will be private for extended classes
 	protected:
-		EditorMenu* parent;
-
 
 
 		//These will be public for all extended classes
 	public:
 
 		//constructor
-		MenuBehaviour(EditorMenu* p) {
-			parent = p;
+		MenuBehaviourHorizontal(EditorMenu* p)
+			:MenuBehaviour(p){
+			//you know nothing jon snow
 		}
 
 		/*******************************************************************************
 		* Function Name:   render()
-		* Purpose:         Extending classes will need to implement their own render
+		* Purpose:         Renders the menu in a horizontal format
 		*******************************************************************************/
-		virtual void render(vector<string>items) = 0;
+		virtual void render(vector<string> items) {
+			// here is were we will do our horizontal rendering
+		}
 
 		//These will not be available to extended classes, or anyone else.
 	private:
