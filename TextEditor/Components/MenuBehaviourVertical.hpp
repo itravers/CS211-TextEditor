@@ -11,7 +11,6 @@
 #ifndef MENU_BEHAVIOUR_VERTICAL_HPP
 #define MENU_BEHAVIOUR_VERTICAL_HPP
 
-#include "EditorMenu.hpp"
 #include "MenuBehaviour.hpp"
 
 
@@ -36,10 +35,10 @@ namespace TextEditorNamespace {
 
 		/*******************************************************************************
 		* Function Name:   render()
-		* Purpose:         Renders the menu in a horizontal format
+		* Purpose:         Renders the menu in a vertical format
 		*******************************************************************************/
 		virtual void render(vector<string> items) {
-			// here is were we will do our horizontal rendering
+			// here is were we will do our vertical rendering
 		}
 
 		//These will not be available to extended classes, or anyone else.

@@ -128,6 +128,7 @@
     <ClInclude Include="panel.h" />
     <ClInclude Include="TextEditor\Components\Editable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
+    <ClInclude Include="TextEditor\Components\EditorMenu.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindow.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp" />
@@ -135,6 +136,8 @@
     <ClInclude Include="TextEditor\Components\EditorWindowResizable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp" />
     <ClInclude Include="TextEditor\Components\KeyboardHandler.hpp" />
+    <ClInclude Include="TextEditor\Components\MenuBehaviour.hpp" />
+    <ClInclude Include="TextEditor\Components\MenuBehaviourHorizontal.hpp" />
     <ClInclude Include="TextEditor\Components\Moveable.hpp" />
     <ClInclude Include="TextEditor\Components\Resizable.hpp" />
     <ClInclude Include="TextEditor\Components\Scrollable.hpp" />

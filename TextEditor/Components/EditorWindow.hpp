@@ -196,6 +196,7 @@ namespace TextEditorNamespace {
 			}
 
 			
+			
 
 			/*******************************************************************************
 			 * Function Name:   render()

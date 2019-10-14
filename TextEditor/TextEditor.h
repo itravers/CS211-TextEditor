@@ -21,6 +21,7 @@
 #include "Components/EditorWindowScrollable.hpp"		/* A SCrollable Window */
 #include "Components/EditorWindowEditable.hpp"			/* A Editable Window */
 #include "Components/EditorWindowInteractive.hpp"			/* An Interactive Window */
+#include "Components/EditorMenu.hpp"					/* An Menu Window */
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -44,6 +45,7 @@ using TextEditorNamespace::EditorWindowMoveable;
 using TextEditorNamespace::EditorWindowScrollable;
 using TextEditorNamespace::EditorWindowEditable;
 using TextEditorNamespace::EditorWindowInteractive;
+using TextEditorNamespace::EditorMenu;
 
 /*******************************************************************************
  * Class Name:   Text Editor

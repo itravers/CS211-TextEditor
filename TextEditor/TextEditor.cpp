@@ -52,8 +52,21 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 2) / 1}, true, true }
+
+		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 	);
+
+	components.push_back(
+		new TextEditorNamespace::EditorMenu{ mainWindow, Location{0, 0}, Size{3, (numCols - 2) / 1}, true, true, true}
+
+	);
+	((EditorMenu*)components[1])->addItem("File");
+	((EditorMenu*)components[1])->addItem("Edit");
+	((EditorMenu*)components[1])->addItem("View");
+	((EditorMenu*)components[1])->addItem("Tool");
+	((EditorMenu*)components[1])->addItem("Help");
+
 
 	//components.push_back(
 	//	new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 0}, Size{1, 20}, true, true }

@@ -17,7 +17,8 @@
 #define EDITOR_MENU
 
 #include "EditorWindowMoveable.hpp"
-#include "MenuBehaviour.hpp"
+#include "MenuBehaviourHorizontal.hpp"
+//#include "MenuBehaviourVertical.hpp"
 
 
 //we are defining a class in the namespace TextEditorNamespace
@@ -28,14 +29,14 @@ namespace TextEditorNamespace {
 
 		//We'll be extending this class later, these will be private for extended classes
 	protected:
-		MenuBehaviour menuBehaviour;			//The swappable behaviour of the menu
+		MenuBehaviour* menuBehaviour;			//The swappable behaviour of the menu
 		vector<string> menuItems;
 
 		//These will be public for all extended classes
 	public:
 
 		//constructor
-		EditorMenu(WINDOW* parent = 0, Location location = { 0, 0 }, Size size = { 0, 0 }, bool isVisible = false, bool hasBorder = false, bool isHorizontal)
+		EditorMenu(WINDOW* parent = 0, Location location = { 0, 0 }, Size size = { 0, 0 }, bool isVisible = false, bool hasBorder = false, bool isHorizontal = true)
 			:EditorWindowMoveable(parent, location, size, isVisible, hasBorder) {
 
 			//initialize the menu Items
@@ -43,10 +44,10 @@ namespace TextEditorNamespace {
 
 			//check if we are horizontal or not, and initialze the proper behaviour
 			if (isHorizontal) {
-				menuBehaviour = MenuBehaviourHorizontal(this);
+				menuBehaviour =  new MenuBehaviourHorizontal(_buffer);
 			}
 			else {
-				menuBehaviour = MenuBehaviourVertical(this);
+				//menuBehaviour = MenuBehaviourVertical(this);
 			}
 		}
 
@@ -57,7 +58,14 @@ namespace TextEditorNamespace {
 		*				   We'll need to render our cursor, etc
 		*******************************************************************************/
 		virtual void render() {
-			menuBehaviour.render(menuItems);
+
+			//now render our menu items
+			menuBehaviour->render(menuItems);
+
+			//render our super class
+			EditorWindowMoveable::render();
+
+			
 		}
 
 		/*******************************************************************************
