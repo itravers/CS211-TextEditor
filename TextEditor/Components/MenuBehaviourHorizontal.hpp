@@ -45,7 +45,7 @@ namespace TextEditorNamespace {
 		//These will not be available to extended classes, or anyone else.
 	private:
 
-	}; // end class MenuBehaviour
+	}; // end class MenuBehaviourHorizontal
 } // end TextEditorNamespace
 
 #endif
