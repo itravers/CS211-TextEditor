@@ -128,7 +128,7 @@
     <ClInclude Include="panel.h" />
     <ClInclude Include="TextEditor\Components\Editable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
-    <ClInclude Include="TextEditor\Components\EditorMenu.hpp" />
+    <ClInclude Include="TextEditor\Components\EditorMenuPanel.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindow.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp" />

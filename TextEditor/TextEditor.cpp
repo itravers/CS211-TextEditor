@@ -6,20 +6,20 @@
 
 #include "TextEditor.h"
 
-void TextEditor::testCallback2() {
+void TextEditor::testCallback2(string menuData) {
 	int i = 0;
 	int j = 0;
 }
 
-static void  testCallback(int other_arg, void* this_pointer) {
+/*static void  testCallback(int other_arg, void* this_pointer) {
 	TextEditor* self = static_cast<TextEditor*>(this_pointer);
 	self->testCallback2();
-}
+}*/
 
-void TextEditor::testCallback(int other_arg, void* this_pointer)
+void TextEditor::menuCallback(string menuData, void* this_pointer)
 {
 	TextEditor* self = static_cast<TextEditor*>(this_pointer);
-	self->testCallback2();
+	self->testCallback2(menuData);
 }
 
 
@@ -73,17 +73,19 @@ void TextEditor::load(string fileName) {
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorMenu{ mainWindow, Location{0, 0}, Size{3, (numCols - 2) / 1}, true, true, true}
+		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, (numCols - 2) / 1}, true, true, true}
 
 	);
-	((EditorMenu*)components[1])->addItem("File");
-	((EditorMenu*)components[1])->addItem("Edit");
-	((EditorMenu*)components[1])->addItem("View");
-	((EditorMenu*)components[1])->addItem("Tool");
-	((EditorMenu*)components[1])->addItem("Help");
+	((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
+	((EditorMenuPanel*)components[1])->addItem("Edit", menuCallback, this); //name of menu, callback function, and pointer to this
 
-		((EditorMenu*)components[1])->setCallBack(testCallback, this);
-		((EditorMenu*)components[1])->setoff();
+	//((EditorMenu*)components[1])->addItem("Edit");
+	//((EditorMenu*)components[1])->addItem("View");
+	//((EditorMenu*)components[1])->addItem("Tool");
+	//((EditorMenu*)components[1])->addItem("Help");
+
+		//((EditorMenu*)components[1])->setCallBack(menuCallback, this);
+		//((EditorMenu*)components[1])->setoff();
 
 	//((EditorMenu*)components[1])->setCallBack(testCallback, this);
 
@@ -105,6 +107,9 @@ void TextEditor::load(string fileName) {
 
 	//((EditorWindow*)components[1])->imprintOnBuffer(lines, 10, 0);
 
+	//setup mouse
+	mousemask(ALL_MOUSE_EVENTS, NULL);
+	MEVENT event;
 	
 
 	while (keep_going == true)
@@ -126,65 +131,16 @@ void TextEditor::load(string fileName) {
 		}
 
 		char mychar;
-		switch (input)
-		{
-		/*case ctrl('c'):
-			keep_going = false;
-			break;
-		case 'd':
-			((EditorWindowScrollable*)components[0])->incrementScroll();
-			break;
-		case 'u':
-			((EditorWindowScrollable*)components[0])->decrementScroll();
-			break;
-		case 'z':
-			((EditorWindowScrollable*)components[0])->decrementScroll('x');
-			break;
-		case 'x':
-			((EditorWindowScrollable*)components[0])->incrementScroll('x');
-			break;
-		case 'm':
-			((EditorWindowMoveable*)components[0])->move(Location{ 10, 0 });
-			((EditorWindowMoveable*)components[0])->resize(Size{ 10, 5 });
-			refreshComponents(components);
-			break;
-		case 'h':
-			components[0]->setIsVisible(false);
-
-			//we need to refresh all components
-			refreshComponents(components);
-			
-			break;
-		
-		case 's':
-			components[0]->setIsVisible(true);
-			refreshComponents(components);
-			break;
-		case 'r':
-			//((EditorWindowResizable*)components[1])->resize(Size{ 10, 10 });
-			refreshComponents(components);
-			break;
-		case 't':
-		//	((EditorWindowResizable*)components[1])->resize(Size{ 30, 30 });
-			refreshComponents(components);
-
-			//((EditorWindow*)components[1])->imprintOnBuffer(lines);
-			break;
-		case 'a':
-			((EditorWindowEditable*)components[0])->putChar('0', Location{ 0, 0 });
-			mychar = ((EditorWindowEditable*)components[0])->getChar(Location{ 4, 3 });
-			//((EditorWindow*)components[1])->putChar('1', ((EditorWindow*)components[1])->getSize().height - 3, ((EditorWindow*)components[1])->getSize().width - 5);
-			//refreshComponents(components);
-			break;
-		case KEY_RESIZE:
-			resize_term(0, 0);
-			getmaxyx(mainWindow, numRows, numCols);
-			break;
-			*/
-		default:
-			((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
-			break;
-
+		switch (input){
+			case KEY_MOUSE:
+				//changeStatus("key mouse");
+				if (nc_getmouse(&event) == OK) {
+					processMainMouseEvent(((EditorMenuPanel*)components[1]), &event);
+				}
+				break;
+			default:
+				((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
+				break;
 		}
 
 		//render components
@@ -444,7 +400,15 @@ void TextEditor::writeLines(vector<string>lines) {
 /*
 	Processes a Mouse Event
 */
-void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
+void TextEditor::processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouseEvent) {
+	//changeStatus("processMouseEvent()");
+
+	//tell the menu to check if this mouse event is its?
+	//((EditorMenuPanel*)components[1])->processMouseEvent(mouseEvent);
+	menuPanel->processMouseEvent(mouseEvent);
+
+}
+/*void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
 	//changeStatus("processMouseEvent()");
 
 	if (menuController.isMenuMouseEvent(mouseEvent, numRows, numCols)) {
@@ -457,3 +421,4 @@ void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numC
 	}
 
 }
+*/

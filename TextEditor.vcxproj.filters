@@ -90,13 +90,13 @@
     <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
-    <ClInclude Include="TextEditor\Components\EditorMenu.hpp">
-      <Filter>Header Files\TextEditor\Components</Filter>
-    </ClInclude>
     <ClInclude Include="TextEditor\Components\MenuBehaviour.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
     <ClInclude Include="TextEditor\Components\MenuBehaviourHorizontal.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorMenuPanel.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
   </ItemGroup>

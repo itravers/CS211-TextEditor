@@ -40,16 +40,52 @@ namespace TextEditorNamespace {
 		}
 
 		/*******************************************************************************
+		* Function Name:   menuClicked()
+		* Purpose:         Extending classes will need to implement their own menuClicked
+		*                  If a Menu is clicked this should return the index of that
+		*                  menu. If a menu is not clicked, it should return -1.
+		*******************************************************************************/
+		virtual int menuClicked(MEVENT* mEvent, vector<string> items, bool has_border, Location loc) {
+			int returnVal = -1;		//returns -1 if the menu was not clicked
+			int margin = 0;			//the difference between the left most buffer area and the left most screen area
+
+			if (has_border)margin++;		//if we have a border the margin is increased by 1
+
+			float fracOfScreen = 1 / (float)items.size();
+			int itemWidth = fracOfScreen * _parent_buffer[0].size();
+			int x = loc.x + margin;
+
+			//first check if we have clicked on the menu in a horizontal fashion
+			//this will only work if mEvent was clicked at a y that is loc.y + margin
+			if (mEvent->y == loc.y + margin) {
+
+				// The line the menu is on was clicked, now we have to see if we clicked
+				// on any items in the menu.
+
+				//loop item by item and see if we clicked on it
+				for (int i = 0; i < items.size(); i++) {
+
+					//define a start and end x and see if we have clicked between them inclusively, return that index
+					if (mEvent->x >= x && mEvent->x <= (x + items.at(i).size()-1)) { //between start of word and end of word
+
+						//we found that we HAVE clicked the menu item at index i, so we'll return that.
+						return i;
+					}
+
+					//Increase the first index we will look for the next word at.
+					x = x + itemWidth;
+				}
+			}
+
+			return returnVal;
+		}
+
+		/*******************************************************************************
 		* Function Name:   render()
 		* Purpose:         Renders the menu in a horizontal format
 		*******************************************************************************/
 		virtual void render(vector<string> items) {
-			// here is were we will do our horizontal rendering
-
-			//render our super class
-			//parent->imprintStringOnBuffer("test", 0, 0);
-			//_parent_buffer[1] = 'h';
-			//_parent_buffer.at(2) = "h                       ";
+			// here is were we will do our horizontal rendering                    ";
 			
 			int x = 0;
 			float fracOfScreen = 1 / (float)items.size();

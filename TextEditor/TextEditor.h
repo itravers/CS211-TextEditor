@@ -21,7 +21,7 @@
 #include "Components/EditorWindowScrollable.hpp"		/* A SCrollable Window */
 #include "Components/EditorWindowEditable.hpp"			/* A Editable Window */
 #include "Components/EditorWindowInteractive.hpp"			/* An Interactive Window */
-#include "Components/EditorMenu.hpp"					/* An Menu Window */
+#include "Components/EditorMenuPanel.hpp"					/* An Menu Window */
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -45,7 +45,7 @@ using TextEditorNamespace::EditorWindowMoveable;
 using TextEditorNamespace::EditorWindowScrollable;
 using TextEditorNamespace::EditorWindowEditable;
 using TextEditorNamespace::EditorWindowInteractive;
-using TextEditorNamespace::EditorMenu;
+using TextEditorNamespace::EditorMenuPanel;
 
 /*******************************************************************************
  * Class Name:   Text Editor
@@ -80,8 +80,8 @@ public:
 	void run();
 
 	void changeStatus(string);		// Changes the status screen that gets printed at the bottom.
-	static void testCallback(int other_arg, void* this_pointer);
-	void testCallback2();
+	static void menuCallback(string menuData, void* this_pointer);	//Callback function used by 
+	void testCallback2(string menuData);
 	//void testCallback();
 private:
 
@@ -102,7 +102,9 @@ private:
 	void drawScreen(int, int);			// Draws everything associated with the screen.
 	
 	void writeLines(vector<string>);				// Writes the lines from the file to the screen
-	void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
+	void processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouseEvent);	// processes a mouse event
+
+	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
 	bool componentNeedsRefresh(vector<EditorComponent*> v);
 	void refreshComponents(vector<EditorComponent*> v);

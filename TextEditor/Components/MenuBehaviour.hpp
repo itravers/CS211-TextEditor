@@ -30,6 +30,7 @@ namespace TextEditorNamespace {
 	protected:
 		//EditorMenu* parent;
 		vector<string>& _parent_buffer;
+		
 
 		/*******************************************************************************
 			* Function Name:   imprintStringOnBuffer(s1, int y, int x)
@@ -100,10 +101,11 @@ namespace TextEditorNamespace {
 	public:
 
 		//constructor
-		MenuBehaviour(vector<string>&_buf) 
+		MenuBehaviour( vector<string>&_buf)
 		  :_parent_buffer(_buf){
-		//MenuBehaviour(EditorMenu* p) {
-		//	parent = p;
+		
+			//this could add a bug later, if we want menu's to be able to turn on and off their border
+			//if that happens we will add a getter and setter here, and override the border functions in EditorMenuPanel
 			
 			
 		}
@@ -113,6 +115,14 @@ namespace TextEditorNamespace {
 		* Purpose:         Extending classes will need to implement their own render
 		*******************************************************************************/
 		virtual void render(vector<string>items) = 0;
+
+		/*******************************************************************************
+		* Function Name:   menuClicked()
+		* Purpose:         Extending classes will need to implement their own menuClicked
+		*                  If a Menu is clicked this should return the index of that
+		*                  menu. If a menu is not clicked, it should return -1.
+		*******************************************************************************/
+		virtual int menuClicked(MEVENT* mEvent, vector<string> items, bool has_border, Location loc) = 0;
 
 		//These will not be available to extended classes, or anyone else.
 	private:

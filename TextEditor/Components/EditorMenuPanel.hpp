@@ -16,6 +16,8 @@
 #ifndef EDITOR_MENU
 #define EDITOR_MENU
 
+#define ITEM_LIMIT 10
+
 #include "EditorWindowMoveable.hpp"
 #include "MenuBehaviourHorizontal.hpp"
 //#include "MenuBehaviourVertical.hpp"
@@ -25,21 +27,20 @@
 namespace TextEditorNamespace {
 
 	//we are defining a EditorWindowScrollable, which is an extention of EditorWindowMoveable
-	class EditorMenu : public EditorWindowMoveable {
+	class EditorMenuPanel : public EditorWindowMoveable {
 
 		//We'll be extending this class later, these will be private for extended classes
 	protected:
-		//void (TextEditor::*callback)(void) ;
-		void (*callback)(int, void*);
-		void* callback_pnt_to_caller;
-		MenuBehaviour* menuBehaviour;			//The swappable behaviour of the menu
-		vector<string> menuItems;
+		void (*callback[ITEM_LIMIT])(string, void*);		//An Array of Callback functions of the form void name(string, void*) - The service callback pattern
+		void* callback_pnt_to_caller[ITEM_LIMIT];			//An array of pointers to the caller, used to call the callback fucntion
+		MenuBehaviour* menuBehaviour;						//The swappable behaviour of the menu - Uses the strategy pattern.
+		vector<string> menuItems;							//The Individual Menu Items
 
 		//These will be public for all extended classes
 	public:
 
 		//constructor
-		EditorMenu(WINDOW* parent = 0, Location location = { 0, 0 }, Size size = { 0, 0 }, bool isVisible = false, bool hasBorder = false, bool isHorizontal = true)
+		EditorMenuPanel(WINDOW* parent = 0, Location location = { 0, 0 }, Size size = { 0, 0 }, bool isVisible = false, bool hasBorder = false, bool isHorizontal = true)
 			:EditorWindowMoveable(parent, location, size, isVisible, hasBorder) {
 
 			//initialize the menu Items
@@ -50,19 +51,10 @@ namespace TextEditorNamespace {
 				menuBehaviour =  new MenuBehaviourHorizontal(_buffer);
 			}
 			else {
+				//TODO
 				//menuBehaviour = MenuBehaviourVertical(this);
 			}
 		}
-
-		void setCallBack(void (*callBackFunction)(int, void*), void* this_pointer_callback) {
-			//callBackFunction(3, this_pointer_callback);
-			callback_pnt_to_caller = this_pointer_callback;
-			callback = callBackFunction;
-			//callBackFunction(2, this_pointer_callback);
-			//callback = callBackFunction;
-			//callback();
-		}
-
 
 		/*******************************************************************************
 		* Function Name:   render()
@@ -76,19 +68,17 @@ namespace TextEditorNamespace {
 
 			//render our super class
 			EditorWindowMoveable::render();
-
-			
-		}
-
-		void setoff() {
-			callback(0, callback_pnt_to_caller);
 		}
 
 		/*******************************************************************************
 		* Function Name:   addItem()
 		* Purpose:         Adds an item to the menu
+		*                  with the specified callback function a "void nameOfFunc(string menuData, void* ptrToCaller)" function
 		*******************************************************************************/
-		void addItem(string item) {
+		void addItem(string item, void (*callBackFunction)(string, void*), void* ptr_to_caller) {
+			int place = menuItems.size();						//where are we saving this callback function
+			callback[place] = callBackFunction;					//save it there
+			callback_pnt_to_caller[place] = ptr_to_caller;
 			menuItems.push_back(item);
 		}
 
@@ -100,14 +90,29 @@ namespace TextEditorNamespace {
 			return menuItems;
 		}
 
+		/*******************************************************************************
+		* Function Name:   processMouseEvent(MEVENT* mEvent)
+		* Purpose:         Returns vector of all items in the menu.
+		*******************************************************************************/
+		void processMouseEvent(MEVENT* mEvent) {
+			//int i = 0;
+			//callback[0](menuItems.at(0), callback_pnt_to_caller[0]);
 
+			//let the menubehaviour tell us if we have clicked an item
+			//int itemNumClicked = menuBehaviour->menuClicked(mEvent); //returns -1 if the menu wasn't clicked, and the index if so
+			int itemNumClicked = menuBehaviour->menuClicked(mEvent, menuItems, hasBorder(), _location);
 
+			//check to see if any item was clicked
+			if (itemNumClicked >= 0) {
+
+				//an item was clicked, call its callback function
+				callback[itemNumClicked](menuItems.at(itemNumClicked), callback_pnt_to_caller[itemNumClicked]);
+			}
+		}
 
 		//These will not be available to extended classes, or anyone else.
 	private:
 		
-
-
 
 	};
 } // end TextEditorNamespace
