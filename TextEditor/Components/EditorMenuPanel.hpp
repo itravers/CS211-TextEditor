@@ -20,7 +20,7 @@
 
 #include "EditorWindowMoveable.hpp"
 #include "MenuBehaviourHorizontal.hpp"
-//#include "MenuBehaviourVertical.hpp"
+#include "MenuBehaviourVertical.hpp"
 
 
 //we are defining a class in the namespace TextEditorNamespace
@@ -51,8 +51,7 @@ namespace TextEditorNamespace {
 				menuBehaviour =  new MenuBehaviourHorizontal(_buffer);
 			}
 			else {
-				//TODO
-				//menuBehaviour = MenuBehaviourVertical(this);
+				menuBehaviour = new MenuBehaviourVertical(_buffer);
 			}
 		}
 
@@ -95,19 +94,22 @@ namespace TextEditorNamespace {
 		* Purpose:         Returns vector of all items in the menu.
 		*******************************************************************************/
 		void processMouseEvent(MEVENT* mEvent) {
-			//int i = 0;
-			//callback[0](menuItems.at(0), callback_pnt_to_caller[0]);
+			
+			//we don't process any mouse events if we are not visible.
+			if (isVisible()) {
 
-			//let the menubehaviour tell us if we have clicked an item
-			//int itemNumClicked = menuBehaviour->menuClicked(mEvent); //returns -1 if the menu wasn't clicked, and the index if so
-			int itemNumClicked = menuBehaviour->menuClicked(mEvent, menuItems, hasBorder(), _location);
+				//let the menubehaviour tell us if we have clicked an item
+				//int itemNumClicked = menuBehaviour->menuClicked(mEvent); //returns -1 if the menu wasn't clicked, and the index if so
+				int itemNumClicked = menuBehaviour->menuClicked(mEvent, menuItems, hasBorder(), _location);
 
-			//check to see if any item was clicked
-			if (itemNumClicked >= 0) {
+				//check to see if any item was clicked
+				if (itemNumClicked >= 0) {
 
-				//an item was clicked, call its callback function
-				callback[itemNumClicked](menuItems.at(itemNumClicked), callback_pnt_to_caller[itemNumClicked]);
+					//an item was clicked, call its callback function
+					callback[itemNumClicked](menuItems.at(itemNumClicked), callback_pnt_to_caller[itemNumClicked]);
+				}
 			}
+			
 		}
 
 		//These will not be available to extended classes, or anyone else.

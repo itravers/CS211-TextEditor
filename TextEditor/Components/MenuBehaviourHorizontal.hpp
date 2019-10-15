@@ -31,12 +31,9 @@ namespace TextEditorNamespace {
 	public:
 
 		//constructor
-		//MenuBehaviourHorizontal(EditorMenu* p)
-		//	:MenuBehaviour(p) {
 		MenuBehaviourHorizontal(vector<string>&_buf)
 			:MenuBehaviour(_buf) {
 			//you know nothing jon snow
-			//parent = p;
 		}
 
 		/*******************************************************************************

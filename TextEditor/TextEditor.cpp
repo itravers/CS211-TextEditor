@@ -67,17 +67,23 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 2) / 1}, true, true }
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{10, 0}, Size{(numRows - 5) / 10, (numCols - 2) / 10}, true, true }
 
 		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, (numCols - 2) / 1}, true, true, true}
+		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{5+2, 4+3}, true, true, false}
 
 	);
 	((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
 	((EditorMenuPanel*)components[1])->addItem("Edit", menuCallback, this); //name of menu, callback function, and pointer to this
+	((EditorMenuPanel*)components[1])->addItem("View", menuCallback, this); //name of menu, callback function, and pointer to this
+	((EditorMenuPanel*)components[1])->addItem("Tool", menuCallback, this); //name of menu, callback function, and pointer to this
+	((EditorMenuPanel*)components[1])->addItem("Help", menuCallback, this); //name of menu, callback function, and pointer to this
+
+
+
 
 	//((EditorMenu*)components[1])->addItem("Edit");
 	//((EditorMenu*)components[1])->addItem("View");

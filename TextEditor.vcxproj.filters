@@ -99,6 +99,9 @@
     <ClInclude Include="TextEditor\Components\EditorMenuPanel.hpp">
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Components\MenuBehaviourVertical.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
