@@ -29,6 +29,9 @@ namespace TextEditorNamespace {
 
 		//We'll be extending this class later, these will be private for extended classes
 	protected:
+		//void (TextEditor::*callback)(void) ;
+		void (*callback)(int, void*);
+		void* callback_pnt_to_caller;
 		MenuBehaviour* menuBehaviour;			//The swappable behaviour of the menu
 		vector<string> menuItems;
 
@@ -51,6 +54,15 @@ namespace TextEditorNamespace {
 			}
 		}
 
+		void setCallBack(void (*callBackFunction)(int, void*), void* this_pointer_callback) {
+			//callBackFunction(3, this_pointer_callback);
+			callback_pnt_to_caller = this_pointer_callback;
+			callback = callBackFunction;
+			//callBackFunction(2, this_pointer_callback);
+			//callback = callBackFunction;
+			//callback();
+		}
+
 
 		/*******************************************************************************
 		* Function Name:   render()
@@ -66,6 +78,10 @@ namespace TextEditorNamespace {
 			EditorWindowMoveable::render();
 
 			
+		}
+
+		void setoff() {
+			callback(0, callback_pnt_to_caller);
 		}
 
 		/*******************************************************************************

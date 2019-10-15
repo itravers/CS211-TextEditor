@@ -80,6 +80,9 @@ public:
 	void run();
 
 	void changeStatus(string);		// Changes the status screen that gets printed at the bottom.
+	static void testCallback(int other_arg, void* this_pointer);
+	void testCallback2();
+	//void testCallback();
 private:
 
 	/* Objects */
@@ -103,6 +106,7 @@ private:
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
 	bool componentNeedsRefresh(vector<EditorComponent*> v);
 	void refreshComponents(vector<EditorComponent*> v);
+	
 
 };
 #endif

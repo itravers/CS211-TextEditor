@@ -6,6 +6,21 @@
 
 #include "TextEditor.h"
 
+void TextEditor::testCallback2() {
+	int i = 0;
+	int j = 0;
+}
+
+static void  testCallback(int other_arg, void* this_pointer) {
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->testCallback2();
+}
+
+void TextEditor::testCallback(int other_arg, void* this_pointer)
+{
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->testCallback2();
+}
 
 
 TextEditor::TextEditor() : fileController()/*, menuController(this), contentController(this)*/ {
@@ -66,6 +81,11 @@ void TextEditor::load(string fileName) {
 	((EditorMenu*)components[1])->addItem("View");
 	((EditorMenu*)components[1])->addItem("Tool");
 	((EditorMenu*)components[1])->addItem("Help");
+
+		((EditorMenu*)components[1])->setCallBack(testCallback, this);
+		((EditorMenu*)components[1])->setoff();
+
+	//((EditorMenu*)components[1])->setCallBack(testCallback, this);
 
 
 	//components.push_back(
@@ -318,6 +338,8 @@ void TextEditor::load(string fileName) {
 	//return 0;
 }
 
+
+
 void TextEditor::refreshComponents(vector<EditorComponent*> v) {
 	for (auto& component : v) {
 		component->setNeedsRefresh(true);
@@ -404,6 +426,8 @@ void TextEditor::initColor(void) {
 void TextEditor::changeStatus(string newStatus) {
 	currentStatus = newStatus + "                 ";
 }
+
+
 
 /*
 	Writes out the lines in vector to the screen, exactly
