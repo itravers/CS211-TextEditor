@@ -67,13 +67,13 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{10, 0}, Size{(numRows - 5) / 10, (numCols - 2) / 10}, true, true }
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
 
 		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 	);
 
 	components.push_back(
-		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{5+2, 4+3}, true, true, false}
+		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
 
 	);
 	((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
