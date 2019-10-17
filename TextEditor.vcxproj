@@ -136,6 +136,7 @@
     <ClInclude Include="TextEditor\Components\EditorWindowResizable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp" />
     <ClInclude Include="TextEditor\Components\KeyboardHandler.hpp" />
+    <ClInclude Include="TextEditor\Components\MenuBar.hpp" />
     <ClInclude Include="TextEditor\Components\MenuBehaviour.hpp" />
     <ClInclude Include="TextEditor\Components\MenuBehaviourHorizontal.hpp" />
     <ClInclude Include="TextEditor\Components\MenuBehaviourVertical.hpp" />

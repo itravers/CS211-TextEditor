@@ -91,7 +91,7 @@ namespace TextEditorNamespace {
 
 		/*******************************************************************************
 		* Function Name:   processMouseEvent(MEVENT* mEvent)
-		* Purpose:         Returns vector of all items in the menu.
+		* Purpose:         Processes a mouseEvent
 		*******************************************************************************/
 		void processMouseEvent(MEVENT* mEvent) {
 			
