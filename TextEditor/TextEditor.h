@@ -22,6 +22,7 @@
 #include "Components/EditorWindowEditable.hpp"			/* A Editable Window */
 #include "Components/EditorWindowInteractive.hpp"			/* An Interactive Window */
 #include "Components/EditorMenuPanel.hpp"					/* An Menu Window */
+#include "Components/MenuBar.hpp"						/* A Menu system, embedded in a bar*/
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -46,6 +47,8 @@ using TextEditorNamespace::EditorWindowScrollable;
 using TextEditorNamespace::EditorWindowEditable;
 using TextEditorNamespace::EditorWindowInteractive;
 using TextEditorNamespace::EditorMenuPanel;
+using TextEditorNamespace::MenuBar;
+
 
 /*******************************************************************************
  * Class Name:   Text Editor
@@ -91,6 +94,7 @@ private:
 	ContentController contentController;
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;	
+	MenuBar menuBar;
 
 	/* Field Variables */
 	string currentStatus = "Starting Program...";

@@ -16,12 +16,17 @@
 
 #include "MenuBehaviour.hpp"
 #include "EditorMenuPanel.hpp"
-#include <map>
+#include <unordered_map>
 
-using std::map;
+using std::unordered_map;
+
+
+//void menuBarCallback(string menuData, void* this_ptr_callback);
 
 //we are defining a class in the namespace TextEditorNamespace
 namespace TextEditorNamespace {
+
+	
 
 	//we are defining a MenuBehaviour
 	class MenuBar {
@@ -33,12 +38,36 @@ namespace TextEditorNamespace {
 	//These will be public for all extended classes
 	public:
 
+		//default constructor
+		MenuBar() {
+			//can't be used until the real constructor is called
+		}
+
 		//constructor
 		MenuBar(WINDOW* window, Location loc, Size size){
 			
 			//create the mainMenu
-			mainMenu = new EditorMenuPanel(window, loc, size);
+			_mainMenu = new EditorMenuPanel(window, loc, size, true, true, true);
+			_window = window;
 		}
+
+		
+		void menuBarCallbackHelper(string menuData) {
+			int i = 0;
+			int j = 0;
+		}
+
+		/*******************************************************************************
+		* Function Name:   menuCallback(string menuData, void* this_ptr_callback)
+		* Purpose:         When a main menu item is clicked, this function is called
+		*                  it makes sure that that corresponding submenu item pops up
+		*                  and all other submenu's close.
+		*******************************************************************************/
+		static void menuBarCallback(string menuData, void* this_ptr_callback) {
+			MenuBar* self = static_cast<MenuBar*>(this_ptr_callback); //helps decouple
+			self->menuBarCallbackHelper(menuData);
+		}
+		
 
 		/*******************************************************************************
 		* Function Name:   addItem(string mainMenu, string subMenu, void (*callBackFunction)(string, void*))
@@ -48,23 +77,39 @@ namespace TextEditorNamespace {
 		void addItem(string subMenuName, string itemName, void (*callBackFunction)(string, void*), void* ptr_to_caller) {
 
 			//check to see if itemName already exists
-			auto it = subMenus.find(itemName);
-			if (it == subMenus.end()) {
+			auto it = _subMenus.find(itemName);
+			if (it == _subMenus.end()) {
 
 				//we have not found an item with that name, we need to add it
 
 				//do we have a subMenu by subMenuName?
-				if (mainMenu.contains(subMenuName)) {
+				if (_mainMenu->contains(subMenuName)) {
 
 					//the main menu already has a submenu by that name,we can add this item to that submenu
-					EditorMenuPanel* subMenu = subMenus[subMenuName];
+					EditorMenuPanel* subMenu = _subMenus[subMenuName];
 					subMenu->addItem(itemName, callBackFunction, ptr_to_caller);
 				}else {
 
 					//the main menu does not have a sub menu by that name, we have to create the sub menu and then add this item to it
 					// find the x location of that value
 					//int xLoc = mainMenu.getXLoc(subMenuName);
-					EditorMenuPanel* subMenu = new EditorMenuPanel();
+					Location loc = Location{ 7,0 };
+					Size size = Size{3, 10};
+
+					//create the new subMenu
+					EditorMenuPanel* submenu = new EditorMenuPanel(_window, loc, size, false, true, false);
+
+					//add our item to it
+					submenu->addItem(itemName, callBackFunction, ptr_to_caller);
+
+					//add the submenu to our main menu, and then to our list of sub menus
+					_subMenus[subMenuName] = submenu;
+					_mainMenu->addItem(subMenuName, menuBarCallback, this);
+					_mainMenu->setNeedsRefresh(true);
+					//having trouble getting a pointer to a member variable to work
+					//this is requireing a TextEditorNamespace::MenuBar::* instead of a void* as we planned, is there
+					//a way to Generizie the classname itself in the addItem function
+
 				}
 			}
 			//we already have a function by that name do nothing
@@ -76,16 +121,16 @@ namespace TextEditorNamespace {
 		* Function Name:   render()
 		* Purpose:         Renders the menu in a vertical format
 		*******************************************************************************/
-		virtual void render(vector<string> items) {
+		virtual void render() {
 
 			//only render main menu if it needs a refresh
-			if (mainMenu->needsRefresh()) {
-				mainMenu->render();
-				mainMenu->refresh();
-			}
+			//if (_mainMenu->needsRefresh()) {
+				_mainMenu->render();
+				_mainMenu->refresh();
+			//}
 
 			//only render sub-menu's if they need a refresh
-			for (auto it = subMenus.begin(); it != subMenus.end(); it++) {
+			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
 				if (menuPanel->needsRefresh()) {
 					menuPanel->render();
@@ -102,12 +147,12 @@ namespace TextEditorNamespace {
 			bool returnVal = false;
 
 			//check main menu
-			if (mainMenu->needsRefresh()) {
+			if (_mainMenu->needsRefresh()) {
 				returnVal = true;
 			}
 
 			//check submenus
-			for (auto it = subMenus.begin(); it != subMenus.end(); it++) {
+			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				if (returnVal) break; //we have found that we need to be refreshed
 
 				EditorMenuPanel* menuPanel = it->second;
@@ -127,22 +172,27 @@ namespace TextEditorNamespace {
 		void processMouseEvent(MEVENT* mEvent) {
 
 			// Have the mainMenu process all mouse events
-			if (mainMenu != nullptr) mainMenu->processMouseEvent(mEvent);
+			if (_mainMenu != nullptr) _mainMenu->processMouseEvent(mEvent);
 
 			//loop through all submenu's, if a submenu is visible, have it process the event
-			for (auto it = subMenus.begin(); it != subMenus.end(); it++) {
+			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
 				if (menuPanel->isVisible()) menuPanel->processMouseEvent(mEvent);
 			}
 		}
 
+
 	//These will not be available to extended classes, or anyone else.
 	private:
-		EditorMenuPanel* mainMenu = nullptr;		//this is the menu bar at the top of the screen
-		map<string, EditorMenuPanel*> subMenus; //our submenu's
-		WINDOW* window;
+		EditorMenuPanel* _mainMenu = nullptr;		//this is the menu bar at the top of the screen
+		unordered_map<string, EditorMenuPanel*> _subMenus; //our submenu's
+		WINDOW* _window;
+
+		
 
 	}; // end class MenuBar
+
 } // end TextEditorNamespace
+
 
 #endif

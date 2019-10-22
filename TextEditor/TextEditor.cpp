@@ -59,7 +59,8 @@ void TextEditor::load(string fileName) {
 	curs_set(0);
 
 
-	
+	menuBar = MenuBar(mainWindow, Location{0, 0}, Size{ 3, numCols - 4 });
+	menuBar.addItem("File", "Open", menuCallback, this);
 	
 
 	///////////////////TESTING
@@ -67,20 +68,21 @@ void TextEditor::load(string fileName) {
 	vector<TextEditorNamespace::EditorComponent*> components{};
 
 	components.push_back(
-		new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
-
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
 		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
-	);
-
-	components.push_back(
-		new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
 
 	);
-	((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
-	((EditorMenuPanel*)components[1])->addItem("Edit", menuCallback, this); //name of menu, callback function, and pointer to this
-	((EditorMenuPanel*)components[1])->addItem("View", menuCallback, this); //name of menu, callback function, and pointer to this
-	((EditorMenuPanel*)components[1])->addItem("Tool", menuCallback, this); //name of menu, callback function, and pointer to this
-	((EditorMenuPanel*)components[1])->addItem("Help", menuCallback, this); //name of menu, callback function, and pointer to this
+
+	//components.push_back(
+	//	new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
+			//	new TextEditorNamespace::MenuBar{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
+
+	//);
+	//((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
+	//((EditorMenuPanel*)components[1])->addItem("Edit", menuCallback, this); //name of menu, callback function, and pointer to this
+	//((EditorMenuPanel*)components[1])->addItem("View", menuCallback, this); //name of menu, callback function, and pointer to this
+	//((EditorMenuPanel*)components[1])->addItem("Tool", menuCallback, this); //name of menu, callback function, and pointer to this
+	//((EditorMenuPanel*)components[1])->addItem("Help", menuCallback, this); //name of menu, callback function, and pointer to this
 
 
 
@@ -141,13 +143,17 @@ void TextEditor::load(string fileName) {
 			case KEY_MOUSE:
 				//changeStatus("key mouse");
 				if (nc_getmouse(&event) == OK) {
-					processMainMouseEvent(((EditorMenuPanel*)components[1]), &event);
+					//processMainMouseEvent(((EditorMenuPanel*)components[1]), &event);
+					menuBar.processMouseEvent(&event);
 				}
 				break;
 			default:
 				((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
 				break;
 		}
+
+		//render the menubar
+		
 
 		//render components
 		for (auto& component : components)
@@ -160,6 +166,8 @@ void TextEditor::load(string fileName) {
 				component->refresh();
 			}
 		}
+
+		menuBar.render();
 
 		wrefresh(mainWindow);//
 	}

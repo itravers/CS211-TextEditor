@@ -21,6 +21,7 @@
 #include "EditorWindowMoveable.hpp"
 #include "MenuBehaviourHorizontal.hpp"
 #include "MenuBehaviourVertical.hpp"
+#include <algorithm>
 
 
 //we are defining a class in the namespace TextEditorNamespace
@@ -69,6 +70,22 @@ namespace TextEditorNamespace {
 			EditorWindowMoveable::render();
 		}
 
+
+		/*******************************************************************************
+		* Function Name:   contains()
+		* Purpose:         Returns true if our menu panel holds an
+		*                  item by the name of "item".
+		*******************************************************************************/
+		bool contains(string item) {
+			bool returnVal = false;
+
+			if (std::find(menuItems.begin(), menuItems.end(), item) != menuItems.end()) {
+				/* v contains x */
+			}
+
+			return returnVal;
+		}
+
 		/*******************************************************************************
 		* Function Name:   addItem()
 		* Purpose:         Adds an item to the menu
@@ -80,6 +97,8 @@ namespace TextEditorNamespace {
 			callback_pnt_to_caller[place] = ptr_to_caller;
 			menuItems.push_back(item);
 		}
+
+		//static_cast<void*>(
 
 		/*******************************************************************************
 		* Function Name:   getMenuItems()
