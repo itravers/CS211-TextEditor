@@ -14,6 +14,8 @@
 #ifndef MENU_BAR_HPP
 #define MENU_BAR_HPP
 
+#define SUBMENU_WIDTH 10
+
 #include "MenuBehaviour.hpp"
 #include "EditorMenuPanel.hpp"
 #include <unordered_map>
@@ -93,8 +95,8 @@ namespace TextEditorNamespace {
 					//the main menu does not have a sub menu by that name, we have to create the sub menu and then add this item to it
 					// find the x location of that value
 					//int xLoc = mainMenu.getXLoc(subMenuName);
-					Location loc = Location{ 7,0 };
-					Size size = Size{3, 10};
+					Location loc = Location{ 3,0 };
+					Size size = Size{3, SUBMENU_WIDTH };
 
 					//create the new subMenu
 					EditorMenuPanel* submenu = new EditorMenuPanel(_window, loc, size, false, true, false);
@@ -114,6 +116,7 @@ namespace TextEditorNamespace {
 			}
 			//we already have a function by that name do nothing
 			int x = 0; //debug
+			
 		}
 
 
@@ -124,20 +127,43 @@ namespace TextEditorNamespace {
 		virtual void render() {
 
 			//only render main menu if it needs a refresh
-			//if (_mainMenu->needsRefresh()) {
+			if (_mainMenu->needsRefresh()) {
 				_mainMenu->render();
 				_mainMenu->refresh();
-			//}
+			}
 
 			//only render sub-menu's if they need a refresh
 			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
-				if (menuPanel->needsRefresh()) {
+				if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
 					menuPanel->render();
 					menuPanel->refresh();
 				}
 			}
 		}
+
+		/*******************************************************************************
+		* Function Name:   render()
+		* Purpose:         Renders the menu in a vertical format
+		*******************************************************************************/
+		/*
+		virtual void refresh() {
+
+			//only render main menu if it needs a refresh
+			//if (_mainMenu->needsRefresh()) {
+			//_mainMenu->render();
+			_mainMenu->refresh();
+			//}
+
+			//only render sub-menu's if they need a refresh
+			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
+				EditorMenuPanel* menuPanel = it->second;
+				if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
+					//menuPanel->render();
+					menuPanel->refresh();
+				}
+			}
+		}*/
 
 		/*******************************************************************************
 		* Function Name:   needsRefresh()

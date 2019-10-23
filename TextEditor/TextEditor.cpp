@@ -152,7 +152,6 @@ void TextEditor::load(string fileName) {
 				break;
 		}
 
-		//render the menubar
 		
 
 		//render components
@@ -167,7 +166,9 @@ void TextEditor::load(string fileName) {
 			}
 		}
 
+		//render the menubar
 		menuBar.render();
+		//menuBar.refresh();
 
 		wrefresh(mainWindow);//
 	}
