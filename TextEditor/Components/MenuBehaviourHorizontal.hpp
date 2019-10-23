@@ -81,6 +81,18 @@ namespace TextEditorNamespace {
 		}
 
 		/*******************************************************************************
+		* Function Name:   getLocationOfItem(string item)
+		* Purpose:         Returns the location of the first character
+		*                  of a menu item
+		*******************************************************************************/
+		virtual Location getLocationOfItem(int itemNum, vector<string>items) {
+			int x = 0;
+			float fracOfScreen = 1 / (float)items.size();
+			int itemWidth = fracOfScreen * _parent_buffer[0].size();
+			return Location{ 0, itemWidth * itemNum };
+		}
+
+		/*******************************************************************************
 		* Function Name:   render()
 		* Purpose:         Renders the menu in a horizontal format
 		*******************************************************************************/

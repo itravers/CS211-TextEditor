@@ -14,7 +14,8 @@
 #ifndef MENU_BAR_HPP
 #define MENU_BAR_HPP
 
-#define SUBMENU_WIDTH 10
+#define SUBMENU_WIDTH 15
+#define SUBMENU_HEIGHT 10
 
 #include "MenuBehaviour.hpp"
 #include "EditorMenuPanel.hpp"
@@ -67,11 +68,13 @@ namespace TextEditorNamespace {
 			// Iterate over the _submenus using iterator
 			while (it != _subMenus.end()){
 				it->second->setIsVisible(false);
+				it->second->setNeedsRefresh(true);
 				it++;
 			}
 
 			//now if we have an item of menuData in _submenus map, then make that item visible
 			_subMenus[menuData]->setIsVisible(true);
+			_subMenus[menuData]->setNeedsRefresh(true);
 		}
 
 		/*******************************************************************************
@@ -110,9 +113,14 @@ namespace TextEditorNamespace {
 
 					//the main menu does not have a sub menu by that name, we have to create the sub menu and then add this item to it
 					// find the x location of that value
-					//int xLoc = mainMenu.getXLoc(subMenuName);
-					Location loc = Location{ 3,0 };
-					Size size = Size{3, SUBMENU_WIDTH };
+					//int xLoc = _mainMenu->getXLoc(subMenuName);
+					
+					int numItems = _mainMenu->getMenuItems().size();
+					Location loc = _mainMenu->getLocationOfItem(numItems);
+					loc.y += 2;
+
+					//Location loc = Location{ 3,0 };
+					Size size = Size{ SUBMENU_HEIGHT, SUBMENU_WIDTH };
 
 					//create the new subMenu
 					EditorMenuPanel* submenu = new EditorMenuPanel(_window, loc, size, false, true, false);

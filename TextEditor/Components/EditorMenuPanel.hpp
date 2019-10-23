@@ -70,6 +70,14 @@ namespace TextEditorNamespace {
 			EditorWindowMoveable::render();
 		}
 
+		/*******************************************************************************
+		* Function Name:   getLocationOfItem()
+		* Purpose:         Returns the location of the first char of a menu item
+		*******************************************************************************/
+		Location getLocationOfItem(int itemNum) {
+			return menuBehaviour->getLocationOfItem(itemNum, menuItems);
+		}
+
 
 		/*******************************************************************************
 		* Function Name:   contains()
@@ -81,6 +89,7 @@ namespace TextEditorNamespace {
 
 			if (std::find(menuItems.begin(), menuItems.end(), item) != menuItems.end()) {
 				/* v contains x */
+				returnVal = true;
 			}
 
 			return returnVal;
@@ -96,7 +105,7 @@ namespace TextEditorNamespace {
 			callback[place] = callBackFunction;					//save it there
 			callback_pnt_to_caller[place] = ptr_to_caller;
 			menuItems.push_back(item);
-			setNeedsRefresh(true);
+			//setNeedsRefresh(true);
 		}
 
 		//static_cast<void*>(

@@ -74,6 +74,8 @@ void TextEditor::load(string fileName) {
 
 	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
 	menuBar.addItem("File", "Open", menuCallback, this);
+	menuBar.addItem("File", "Exit", menuCallback, this);
+	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 
 	//components.push_back(
 	//	new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}

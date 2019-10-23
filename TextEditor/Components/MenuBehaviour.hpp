@@ -124,6 +124,13 @@ namespace TextEditorNamespace {
 		*******************************************************************************/
 		virtual int menuClicked(MEVENT* mEvent, vector<string> items, bool has_border, Location loc) = 0;
 
+		/*******************************************************************************
+		* Function Name:   getLocationOfItem(string item)
+		* Purpose:         Returns the location of the first character
+		*                  of a menu item
+		*******************************************************************************/
+		virtual Location getLocationOfItem(int itemNum, vector<string> items) = 0;
+
 		//These will not be available to extended classes, or anyone else.
 	private:
 

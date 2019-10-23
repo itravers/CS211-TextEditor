@@ -80,6 +80,15 @@ namespace TextEditorNamespace {
 			}
 		}
 
+		/*******************************************************************************
+		* Function Name:   getLocationOfItem(string item)
+		* Purpose:         Returns the location of the first character
+		*                  of a menu item
+		*******************************************************************************/
+		virtual Location getLocationOfItem(int itemNum, vector<string>items) {
+			return Location{itemNum, 0};
+		}
+
 		//These will not be available to extended classes, or anyone else.
 	private:
 
