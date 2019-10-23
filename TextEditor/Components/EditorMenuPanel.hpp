@@ -96,6 +96,7 @@ namespace TextEditorNamespace {
 			callback[place] = callBackFunction;					//save it there
 			callback_pnt_to_caller[place] = ptr_to_caller;
 			menuItems.push_back(item);
+			setNeedsRefresh(true);
 		}
 
 		//static_cast<void*>(
@@ -110,16 +111,21 @@ namespace TextEditorNamespace {
 
 		/*******************************************************************************
 		* Function Name:   processMouseEvent(MEVENT* mEvent)
-		* Purpose:         Processes a mouseEvent
+		* Purpose:         Processes a mouseEvent, returns the index of item
+		*                  that may have been clicked on, -1 for this menu
+		*				   wasn't clicked on at all, and -2 for this menu was clicked
+		*                  on, but no items were
 		*******************************************************************************/
-		void processMouseEvent(MEVENT* mEvent) {
-			
+		int processMouseEvent(MEVENT* mEvent) {
+			int returnVal = -1;
+
 			//we don't process any mouse events if we are not visible.
 			if (isVisible()) {
 
 				//let the menubehaviour tell us if we have clicked an item
 				//int itemNumClicked = menuBehaviour->menuClicked(mEvent); //returns -1 if the menu wasn't clicked, and the index if so
 				int itemNumClicked = menuBehaviour->menuClicked(mEvent, menuItems, hasBorder(), _location);
+				returnVal = itemNumClicked;
 
 				//check to see if any item was clicked
 				if (itemNumClicked >= 0) {
@@ -128,7 +134,7 @@ namespace TextEditorNamespace {
 					callback[itemNumClicked](menuItems.at(itemNumClicked), callback_pnt_to_caller[itemNumClicked]);
 				}
 			}
-			
+			return returnVal;
 		}
 
 		//These will not be available to extended classes, or anyone else.

@@ -41,6 +41,8 @@ namespace TextEditorNamespace {
 		* Purpose:         Extending classes will need to implement their own menuClicked
 		*                  If a Menu is clicked this should return the index of that
 		*                  menu. If a menu is not clicked, it should return -1.
+		*                  If the menu IS clicked, but no menu items are clicked
+		*                  we'll return a -2
 		*******************************************************************************/
 		virtual int menuClicked(MEVENT* mEvent, vector<string> items, bool has_border, Location loc) {
 			int returnVal = -1;		//returns -1 if the menu was not clicked
@@ -55,6 +57,7 @@ namespace TextEditorNamespace {
 			//first check if we have clicked on the menu in a horizontal fashion
 			//this will only work if mEvent was clicked at a y that is loc.y + margin
 			if (mEvent->y == loc.y + margin) {
+				returnVal = -2; //we have clicked on the menu, but maybe not on a menu item.
 
 				// The line the menu is on was clicked, now we have to see if we clicked
 				// on any items in the menu.

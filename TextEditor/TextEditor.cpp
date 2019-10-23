@@ -59,8 +59,7 @@ void TextEditor::load(string fileName) {
 	curs_set(0);
 
 
-	menuBar = MenuBar(mainWindow, Location{0, 0}, Size{ 3, numCols - 4 });
-	menuBar.addItem("File", "Open", menuCallback, this);
+	
 	
 
 	///////////////////TESTING
@@ -72,6 +71,9 @@ void TextEditor::load(string fileName) {
 		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 
 	);
+
+	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
+	menuBar.addItem("File", "Open", menuCallback, this);
 
 	//components.push_back(
 	//	new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
@@ -144,7 +146,10 @@ void TextEditor::load(string fileName) {
 				//changeStatus("key mouse");
 				if (nc_getmouse(&event) == OK) {
 					//processMainMouseEvent(((EditorMenuPanel*)components[1]), &event);
-					menuBar.processMouseEvent(&event);
+					int itemClicked = menuBar.processMouseEvent(&event);
+					if (itemClicked == -2) {
+						components[0]->setNeedsRefresh(true);
+					}
 				}
 				break;
 			default:
@@ -420,7 +425,7 @@ void TextEditor::processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouse
 
 	//tell the menu to check if this mouse event is its?
 	//((EditorMenuPanel*)components[1])->processMouseEvent(mouseEvent);
-	menuPanel->processMouseEvent(mouseEvent);
+	//menuPanel->processMouseEvent(mouseEvent);
 
 }
 /*void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {

@@ -53,10 +53,25 @@ namespace TextEditorNamespace {
 			_window = window;
 		}
 
-		
+		/*******************************************************************************
+		* Function Name:   menuBarCallbackHelper(menuData)
+		* Purpose:         Called when an item on the main menu is clicked
+		*				   menuData will be the name of the item that was clicked
+		*                  we need to hide ALL submenus, and then show only
+		*				   the one identified by the name menuData
+		*******************************************************************************/
 		void menuBarCallbackHelper(string menuData) {
-			int i = 0;
-			int j = 0;
+			//close ALL submenus
+			auto it = _subMenus.begin();
+
+			// Iterate over the _submenus using iterator
+			while (it != _subMenus.end()){
+				it->second->setIsVisible(false);
+				it++;
+			}
+
+			//now if we have an item of menuData in _submenus map, then make that item visible
+			_subMenus[menuData]->setIsVisible(true);
 		}
 
 		/*******************************************************************************
@@ -90,6 +105,7 @@ namespace TextEditorNamespace {
 					//the main menu already has a submenu by that name,we can add this item to that submenu
 					EditorMenuPanel* subMenu = _subMenus[subMenuName];
 					subMenu->addItem(itemName, callBackFunction, ptr_to_caller);
+					
 				}else {
 
 					//the main menu does not have a sub menu by that name, we have to create the sub menu and then add this item to it
@@ -107,7 +123,8 @@ namespace TextEditorNamespace {
 					//add the submenu to our main menu, and then to our list of sub menus
 					_subMenus[subMenuName] = submenu;
 					_mainMenu->addItem(subMenuName, menuBarCallback, this);
-					_mainMenu->setNeedsRefresh(true);
+					//_mainMenu->setNeedsRefresh(true);
+					_subMenus[subMenuName]->setNeedsRefresh(false);
 					//having trouble getting a pointer to a member variable to work
 					//this is requireing a TextEditorNamespace::MenuBar::* instead of a void* as we planned, is there
 					//a way to Generizie the classname itself in the addItem function
@@ -135,7 +152,8 @@ namespace TextEditorNamespace {
 			//only render sub-menu's if they need a refresh
 			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
-				if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
+				//if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
+				if (menuPanel->needsRefresh()) {
 					menuPanel->render();
 					menuPanel->refresh();
 				}
@@ -195,16 +213,33 @@ namespace TextEditorNamespace {
 		* Function Name:   processMouseEvent(MEVENT* mEvent)
 		* Purpose:         Returns vector of all items in the menu.
 		*******************************************************************************/
-		void processMouseEvent(MEVENT* mEvent) {
-
+		int processMouseEvent(MEVENT* mEvent) {
+			int returnVal = -1;
 			// Have the mainMenu process all mouse events
-			if (_mainMenu != nullptr) _mainMenu->processMouseEvent(mEvent);
+			if (_mainMenu != nullptr) {
+				int itemClicked = _mainMenu->processMouseEvent(mEvent);
+				returnVal = itemClicked;
+
+				//no item in the menu was clicked,
+				//all menu items should be closed
+				if (itemClicked == -2) {
+					for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
+						EditorMenuPanel* menuPanel = it->second;
+						if(menuPanel->isVisible())menuPanel->setIsVisible(false);
+						menuPanel->render();
+						menuPanel->refresh();
+						//menuPanel->setNeedsRefresh(false);
+						//return;
+					}
+				}
+			}
 
 			//loop through all submenu's, if a submenu is visible, have it process the event
 			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
 				if (menuPanel->isVisible()) menuPanel->processMouseEvent(mEvent);
 			}
+			return returnVal;
 		}
 
 
