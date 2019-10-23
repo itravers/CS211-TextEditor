@@ -50,7 +50,8 @@ namespace TextEditorNamespace {
 			if (mEvent->y >= loc.y + margin && mEvent->y <= loc.y + margin + items.size() - 1) {
 
 				//we have clicked in the menu
-				int candidate_returnVal = mEvent->y - margin;
+				//int candidate_returnVal = mEvent->y - margin;
+				int candidate_returnVal = mEvent->y - loc.y - margin;
 
 				//now check that we are actually clicking on a word itself
 				int startx = loc.x + margin;
