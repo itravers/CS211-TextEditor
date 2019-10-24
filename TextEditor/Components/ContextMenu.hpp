@@ -71,15 +71,7 @@ namespace TextEditorNamespace {
 			return returnVal;
 		}
 
-		//void mainCallback(string menuData, void* this_pointer) {
-		//	ContextMenu* self = static_cast<ContextMenu*>(this_pointer);
-		//	self->callbackHelper(menuData);
-		//}
-
-		//void callbackHelper(string menuData) {
-		//	int x = 0;
-
-		//}
+		
 
 
 	private:
