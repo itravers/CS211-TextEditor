@@ -129,7 +129,7 @@ namespace TextEditorNamespace {
 		* Purpose:         Returns the location of the first character
 		*                  of a menu item
 		*******************************************************************************/
-		virtual Location getLocationOfItem(int itemNum, vector<string> items) = 0;
+		virtual Location getLocationOfItem(int itemNum, int totalItems, bool has_border, Location loc) = 0;
 
 		//These will not be available to extended classes, or anyone else.
 	private:

@@ -85,11 +85,22 @@ namespace TextEditorNamespace {
 		* Purpose:         Returns the location of the first character
 		*                  of a menu item
 		*******************************************************************************/
-		virtual Location getLocationOfItem(int itemNum, vector<string>items) {
-			int x = 0;
-			float fracOfScreen = 1 / (float)items.size();
+		virtual Location getLocationOfItem(int itemNum, int totalItems, bool has_border, Location loc) {
+			int margin = 0;			//the difference between the left most buffer area and the left most screen area
+
+			if (has_border)margin++;		//if we have a border the margin is increased by 1
+
+			float fracOfScreen = 1.f / totalItems;
 			int itemWidth = fracOfScreen * _parent_buffer[0].size();
-			return Location{ 0, itemWidth * itemNum };
+			//int x = loc.x + margin;
+			int x = (itemNum * itemWidth) + loc.x + margin;
+
+			//for (int i = 0; i < totalItems; i++) {
+
+				//Increase the first index we will look for the next word at.
+			///	x = x + itemWidth;
+			//}
+			return Location{loc.y, x};
 		}
 
 		/*******************************************************************************

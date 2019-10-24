@@ -85,8 +85,12 @@ namespace TextEditorNamespace {
 		* Purpose:         Returns the location of the first character
 		*                  of a menu item
 		*******************************************************************************/
-		virtual Location getLocationOfItem(int itemNum, vector<string>items) {
-			return Location{itemNum, 0};
+		virtual Location getLocationOfItem(int itemNum, int totalItems, bool has_border, Location loc) {
+			int margin = 0;			//the difference between the left most buffer area and the left most screen area
+
+			if (has_border)margin++;		//if we have a border the margin is increased by 1
+
+			return Location{loc.y+itemNum+margin, loc.x};
 		}
 
 		//These will not be available to extended classes, or anyone else.

@@ -76,6 +76,9 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("File", "Open", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
+	menuBar.addItem("Help", "About", menuCallback, this);
+
+	
 
 	//components.push_back(
 	//	new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
@@ -151,6 +154,11 @@ void TextEditor::load(string fileName) {
 					int itemClicked = menuBar.processMouseEvent(&event);
 					if (itemClicked == -2) {
 						components[0]->setNeedsRefresh(true);
+					}
+					else if (itemClicked >= 0) {
+						for (auto& component : components) {
+							component->setNeedsRefresh(true);
+						}
 					}
 				}
 				break;

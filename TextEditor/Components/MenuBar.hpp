@@ -68,13 +68,14 @@ namespace TextEditorNamespace {
 			// Iterate over the _submenus using iterator
 			while (it != _subMenus.end()){
 				it->second->setIsVisible(false);
-				it->second->setNeedsRefresh(true);
+				//it->second->setNeedsRefresh(true);
 				it++;
 			}
 
 			//now if we have an item of menuData in _submenus map, then make that item visible
 			_subMenus[menuData]->setIsVisible(true);
 			_subMenus[menuData]->setNeedsRefresh(true);
+			_currentSubMenu = _subMenus[menuData];
 		}
 
 		/*******************************************************************************
@@ -116,7 +117,9 @@ namespace TextEditorNamespace {
 					//int xLoc = _mainMenu->getXLoc(subMenuName);
 					
 					int numItems = _mainMenu->getMenuItems().size();
-					Location loc = _mainMenu->getLocationOfItem(numItems);
+					Location loc = _mainMenu->getLocationOfItem(numItems, _mainMenu->getMenuItems().size()+1);
+					//if (numItems == 1)
+					//	loc = Location{ 5,25 };
 					loc.y += 2;
 
 					//Location loc = Location{ 3,0 };
@@ -158,13 +161,22 @@ namespace TextEditorNamespace {
 			}
 
 			//only render sub-menu's if they need a refresh
-			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
+			/*for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
 				EditorMenuPanel* menuPanel = it->second;
 				//if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
 				if (menuPanel->needsRefresh()) {
 					menuPanel->render();
 					menuPanel->refresh();
 				}
+			}*/
+
+			//try only rendering current submenut
+			if (_currentSubMenu != nullptr) {
+				if (_currentSubMenu->needsRefresh()) {
+					_currentSubMenu->render();
+					_currentSubMenu->refresh();
+				}
+				
 			}
 		}
 
@@ -239,6 +251,9 @@ namespace TextEditorNamespace {
 						//menuPanel->setNeedsRefresh(false);
 						//return;
 					}
+
+					//set currentSubMenu to nullptr
+					_currentSubMenu = nullptr;
 				}
 			}
 
@@ -256,6 +271,9 @@ namespace TextEditorNamespace {
 		EditorMenuPanel* _mainMenu = nullptr;		//this is the menu bar at the top of the screen
 		unordered_map<string, EditorMenuPanel*> _subMenus; //our submenu's
 		WINDOW* _window;
+
+		//we'll try to track the current submenu, so we can properly figure out which to render
+		EditorMenuPanel* _currentSubMenu = nullptr;
 
 		
 

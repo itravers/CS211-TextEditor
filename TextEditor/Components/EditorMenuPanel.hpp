@@ -74,8 +74,8 @@ namespace TextEditorNamespace {
 		* Function Name:   getLocationOfItem()
 		* Purpose:         Returns the location of the first char of a menu item
 		*******************************************************************************/
-		Location getLocationOfItem(int itemNum) {
-			return menuBehaviour->getLocationOfItem(itemNum, menuItems);
+		Location getLocationOfItem(int itemNum, int totalItems) {
+			return menuBehaviour->getLocationOfItem(itemNum, totalItems, hasBorder(), getLocation());
 		}
 
 
