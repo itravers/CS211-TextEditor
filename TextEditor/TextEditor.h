@@ -23,6 +23,7 @@
 #include "Components/EditorWindowInteractive.hpp"			/* An Interactive Window */
 #include "Components/EditorMenuPanel.hpp"					/* An Menu Window */
 #include "Components/MenuBar.hpp"						/* A Menu system, embedded in a bar*/
+#include "Components/ContextMenu.hpp"
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -48,6 +49,7 @@ using TextEditorNamespace::EditorWindowEditable;
 using TextEditorNamespace::EditorWindowInteractive;
 using TextEditorNamespace::EditorMenuPanel;
 using TextEditorNamespace::MenuBar;
+using TextEditorNamespace::ContextMenu;
 
 
 /*******************************************************************************
@@ -85,6 +87,8 @@ public:
 	void changeStatus(string);		// Changes the status screen that gets printed at the bottom.
 	static void menuCallback(string menuData, void* this_pointer);	//Callback function used by 
 	void testCallback2(string menuData);
+	static void contextEditorCallback(string menuData, void* this_pointer);
+	void contextEditorHelper(string menuData);
 	//void testCallback();
 private:
 
@@ -95,6 +99,7 @@ private:
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;	
 	MenuBar menuBar;
+	ContextMenu contextMenu;
 
 	/* Field Variables */
 	string currentStatus = "Starting Program...";

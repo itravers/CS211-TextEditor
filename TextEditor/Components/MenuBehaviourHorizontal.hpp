@@ -93,7 +93,7 @@ namespace TextEditorNamespace {
 			float fracOfScreen = 1.f / totalItems;
 			int itemWidth = fracOfScreen * _parent_buffer[0].size();
 			//int x = loc.x + margin;
-			int x = (itemNum * itemWidth) + loc.x + margin;
+			int x = (itemNum * itemWidth);// +loc.x + margin;
 
 			//for (int i = 0; i < totalItems; i++) {
 

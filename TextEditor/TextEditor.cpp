@@ -22,6 +22,18 @@ void TextEditor::menuCallback(string menuData, void* this_pointer)
 	self->testCallback2(menuData);
 }
 
+void TextEditor::contextEditorHelper(string menuData) {
+	int i = 0;
+	int j = 0;
+}
+
+void TextEditor::contextEditorCallback(string menuData, void* this_pointer) {
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->contextEditorHelper(menuData);
+}
+
+
+
 
 TextEditor::TextEditor() : fileController()/*, menuController(this), contentController(this)*/ {
 //TextEditor::TextEditor() {
@@ -74,9 +86,14 @@ void TextEditor::load(string fileName) {
 
 	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
 	menuBar.addItem("File", "Open", menuCallback, this);
+	menuBar.addItem("File", "Save", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
+
+
+	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
+	contextMenu.addItem("Test", contextEditorCallback, this);
 
 	
 
@@ -154,13 +171,39 @@ void TextEditor::load(string fileName) {
 					int itemClicked = menuBar.processMouseEvent(&event);
 					if (itemClicked == -2) {
 						components[0]->setNeedsRefresh(true);
+						//menuBar.render();
 					}
 					else if (itemClicked >= 0) {
 						for (auto& component : components) {
 							component->setNeedsRefresh(true);
+							
 						}
+						//menuBar.render();
+					}
+
+
+					itemClicked = contextMenu.processMouseEvent(&event);
+					if (itemClicked == -2) {
+						components[0]->setNeedsRefresh(true);
+						//menuBar.render();
+					}
+					else if (itemClicked >= 0) {
+						for (auto& component : components) {
+							component->setNeedsRefresh(true);
+
+						}
+						//menuBar.render();
 					}
 				}
+				break;
+			case ctrl('f'):
+				contextMenu.toggleVisibility();
+				
+					for (auto& component : components) {
+						component->setNeedsRefresh(true);
+
+					}
+				
 				break;
 			default:
 				((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
@@ -181,9 +224,17 @@ void TextEditor::load(string fileName) {
 			}
 		}
 
+		
+
 		//render the menubar
 		menuBar.render();
 		//menuBar.refresh();
+
+		if (contextMenu.needRefresh()) {
+			contextMenu.render();
+			contextMenu.refresh();
+			//contextMenu.needRefresh();
+		}
 
 		wrefresh(mainWindow);//
 	}

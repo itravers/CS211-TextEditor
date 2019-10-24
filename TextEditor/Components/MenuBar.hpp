@@ -181,29 +181,6 @@ namespace TextEditorNamespace {
 		}
 
 		/*******************************************************************************
-		* Function Name:   render()
-		* Purpose:         Renders the menu in a vertical format
-		*******************************************************************************/
-		/*
-		virtual void refresh() {
-
-			//only render main menu if it needs a refresh
-			//if (_mainMenu->needsRefresh()) {
-			//_mainMenu->render();
-			_mainMenu->refresh();
-			//}
-
-			//only render sub-menu's if they need a refresh
-			for (auto it = _subMenus.begin(); it != _subMenus.end(); it++) {
-				EditorMenuPanel* menuPanel = it->second;
-				if (menuPanel->needsRefresh() && menuPanel->isVisible()) {
-					//menuPanel->render();
-					menuPanel->refresh();
-				}
-			}
-		}*/
-
-		/*******************************************************************************
 		* Function Name:   needsRefresh()
 		* Purpose:         Returns true if ANY of our components needs to be refreshed
 		*******************************************************************************/

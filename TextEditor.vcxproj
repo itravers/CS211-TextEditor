@@ -126,6 +126,7 @@
     <ClInclude Include="curses.h" />
     <ClInclude Include="curspriv.h" />
     <ClInclude Include="panel.h" />
+    <ClInclude Include="TextEditor\Components\ContextMenu.hpp" />
     <ClInclude Include="TextEditor\Components\Editable.hpp" />
     <ClInclude Include="TextEditor\Components\EditorComponent.hpp" />
     <ClInclude Include="TextEditor\Components\EditorMenuPanel.hpp" />

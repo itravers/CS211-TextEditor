@@ -57,9 +57,10 @@ namespace TextEditorNamespace {
 				}
 
 				int loc = size.height - 3;
+				if (loc < 0) loc = 0;
 				//_buffer[loc] = "Testtesttesetkja;lksdjfalksdfja;lkjddddddddd";
 
-				if(_buffer[loc].length() < size.width)
+				if(_buffer.size() > 0 && _buffer[loc].length() < size.width)
 				_buffer[loc].append(size.width - _buffer[loc].length(), ' '); //add the rest of the lines in
 				int test = 0;
 
