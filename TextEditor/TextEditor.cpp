@@ -22,9 +22,10 @@ void TextEditor::menuCallback(string menuData, void* this_pointer)
 	self->testCallback2(menuData);
 }
 
-void TextEditor::contextEditorHelper(string menuData) {
-	int i = 0;
-	int j = 0;
+void TextEditor::contextEditorHelper(string wordToInsert) {
+	//insert the word wordToInsert into our content window
+	((EditorWindowInteractive*)components[0])->insertString(wordToInsert);
+
 }
 
 void TextEditor::contextEditorCallback(string menuData, void* this_pointer) {
@@ -76,7 +77,7 @@ void TextEditor::load(string fileName) {
 
 	///////////////////TESTING
 	bool keep_going = true;
-	vector<TextEditorNamespace::EditorComponent*> components{};
+	
 
 	components.push_back(
 		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
@@ -94,6 +95,9 @@ void TextEditor::load(string fileName) {
 
 	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
 	contextMenu.addItem("Test", contextEditorCallback, this);
+	contextMenu.addItem("Test2", contextEditorCallback, this);
+	contextMenu.addItem("Test3", contextEditorCallback, this);
+
 
 	
 

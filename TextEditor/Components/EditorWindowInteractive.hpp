@@ -164,6 +164,16 @@ namespace TextEditorNamespace {
 			}
 		}
 
+		void insertString(string s) {
+			//Location cursorLoc = ;
+			
+			//loop through string inserting where our cursor is
+			for (int i = 0; i < s.size(); i++) {
+				putChar(s[i]);
+			}
+
+		}
+
 
 		//These will not be available to extended classes, or anyone else.
 	private:

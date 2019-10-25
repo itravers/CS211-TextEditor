@@ -93,6 +93,8 @@ namespace TextEditorNamespace {
 			return returnVal;
 		}
 
+		
+
 
 		//These will not be available to extended classes, or anyone else.
 	private:
