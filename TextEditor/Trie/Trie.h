@@ -22,11 +22,20 @@ public:
     virtual ~Trie()
     {
         //TODO: clean up memory
+		//delete _root;
     }
 
 	//TODO: implement
-    void addWord(const string &word)
-    {
+    void addWord(const string &word){
+
+		//add a sentinal if our word does not already have one
+		string newWord = word;
+		if (newWord.at(newWord.size() - 1) != '$') {
+			newWord += '$';
+			}
+		_root->addWord(newWord);
+
+		
     }
 
 	//TODO: implement

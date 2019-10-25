@@ -5,6 +5,8 @@
  *******************************************************************************/
 
 #include "TextEditor.h"
+#include "Trie/Trie.h"
+
 
 void TextEditor::testCallback2(string menuData) {
 	int i = 0;
@@ -98,6 +100,11 @@ void TextEditor::load(string fileName) {
 	contextMenu.addItem("Test2", contextEditorCallback, this);
 	contextMenu.addItem("Test3", contextEditorCallback, this);
 
+
+	//trie testing
+	Trie trie = Trie();
+	trie.addWord("Test");
+	trie.addWord("Tesla");
 
 	
 
