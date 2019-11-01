@@ -85,13 +85,21 @@ public:
 
 			//copy each of these words into myWords, with current nodes value appended to front
 			for (int i = 0; i < childWords.size(); i++) {
-				myWords.push_back(getValue() + childWords[i]);
+				char currentVal = getValue();
+				if (currentVal == '\0') {
+					myWords.push_back(childWords[i]);
+				}else {
+					myWords.push_back(getValue() + childWords[i]);
+				}
+				
 			}
 		}
 
 		//base case
-		string val(1, getValue());
-		if (children.size() <= 0) myWords.push_back(val);
+		if (children.size() <= 0) {
+			string val(1, getValue());
+			myWords.push_back(val);
+		}
 
 
 		return myWords;

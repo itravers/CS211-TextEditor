@@ -40,6 +40,15 @@ public:
 
 	vector<string> getWords() {
 		vector <string> words =_root->getWords();
+
+		//strip the $ off of every word
+		for (int i = 0; i < words.size(); i++) {
+			//if (words[i].at(words[i].length - 1) == '$') {
+			string newString = words[i].substr(0, words[i].length() - 1);
+				words[i] = newString;
+			//}
+		}
+
 		return words;
 	}
 

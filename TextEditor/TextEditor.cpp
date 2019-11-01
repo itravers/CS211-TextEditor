@@ -96,9 +96,9 @@ void TextEditor::load(string fileName) {
 
 
 	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
-	contextMenu.addItem("Test", contextEditorCallback, this);
-	contextMenu.addItem("Test2", contextEditorCallback, this);
-	contextMenu.addItem("Test3", contextEditorCallback, this);
+	//contextMenu.addItem("Test", contextEditorCallback, this);
+	//contextMenu.addItem("Test2", contextEditorCallback, this);
+	//contextMenu.addItem("Test3", contextEditorCallback, this);
 
 
 	//trie testing
@@ -108,6 +108,10 @@ void TextEditor::load(string fileName) {
 	trie.addWord("Terse");
 
 	vector<string>contextWords = trie.getWords();
+
+	for (int i = 0; i < contextWords.size(); i++) {
+		contextMenu.addItem(contextWords[i], contextEditorCallback, this);
+	}
 
 	
 
