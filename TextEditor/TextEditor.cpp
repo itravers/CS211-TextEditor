@@ -105,6 +105,7 @@ void TextEditor::load(string fileName) {
 	Trie trie = Trie();
 	trie.addWord("Test");
 	trie.addWord("Tesla");
+	trie.addWord("Terse");
 
 	
 

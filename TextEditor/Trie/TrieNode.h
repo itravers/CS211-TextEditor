@@ -74,13 +74,19 @@ public:
     }
 
 	void addWord(const string& word) {
+
 		if (word.size() > 0) {
 
 			//if our word is our sentinal, we only add value, no children - base case
-			if (word[0] == '$') {
+			/*if (word[0] == '$') {
 				setValue('$');
 				return;
-			}
+			}*/
+
+			/*if (word.size() <= 0) {
+				setValue('$');
+				return;
+			}*/
 
 			//two cases 1- a prefix to our word already exists
 			//so we strip the first character of our word, and pass
@@ -110,6 +116,10 @@ public:
 				child->addWord(restOfWord);
 
 			}
+		}else {
+			//we are at the end of the word, we are not adding any more children.
+			int i = 0;
+			return;
 		}
 
 
