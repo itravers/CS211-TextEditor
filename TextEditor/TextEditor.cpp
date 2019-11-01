@@ -107,6 +107,8 @@ void TextEditor::load(string fileName) {
 	trie.addWord("Tesla");
 	trie.addWord("Terse");
 
+	vector<string>contextWords = trie.getWords();
+
 	
 
 	//components.push_back(

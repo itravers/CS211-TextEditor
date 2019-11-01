@@ -38,6 +38,11 @@ public:
 		
     }
 
+	vector<string> getWords() {
+		vector <string> words =_root->getWords();
+		return words;
+	}
+
 	//TODO: implement
     vector<string> search(const string &word)
     {
