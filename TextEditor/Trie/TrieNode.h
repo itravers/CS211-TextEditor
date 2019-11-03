@@ -101,26 +101,47 @@ public:
 			myWords.push_back(val);
 		}
 
-
 		return myWords;
+	}
 
+	vector<string>search(const string& word) {
+
+		vector<string> matches;
+		
+		//check for base case
+		if (word.size() > 0) { //base case not reached
+			char firstChar = word[0];
+			string restOfWord = word.substr(1);
+
+			
+
+			//search for this word
+			if (hasChild(firstChar)) {
+				TrieNode* child = getChild(firstChar);
+				matches = child->search(restOfWord);
+
+				//add the value in this node to the start of each word in matches
+				char currentValue = getValue();
+
+				//don't prepend the current value if we are in the root node. current value will be empty.
+				if (currentValue != '\0') {
+					for (int i = 0; i < matches.size(); i++) {
+						matches[i] = currentValue + matches[i];
+					}
+				}
+			}
+		}else {
+			//base case has been reached, get all words from all children.
+			matches = getWords();
+		}
+		
+
+		return matches;
 	}
 
 	void addWord(const string& word) {
 
 		if (word.size() > 0) {
-
-			//if our word is our sentinal, we only add value, no children - base case
-			/*if (word[0] == '$') {
-				setValue('$');
-				return;
-			}*/
-
-			/*if (word.size() <= 0) {
-				setValue('$');
-				return;
-			}*/
-
 			//two cases 1- a prefix to our word already exists
 			//so we strip the first character of our word, and pass
 			//in the rest to the appropriate child

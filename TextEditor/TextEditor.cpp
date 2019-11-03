@@ -106,8 +106,11 @@ void TextEditor::load(string fileName) {
 	trie.addWord("Test");
 	trie.addWord("Tesla");
 	trie.addWord("Terse");
+	trie.addWord("Jesus");
+	trie.addWord("Jimmy");
 
-	vector<string>contextWords = trie.getWords();
+
+	vector<string>contextWords = trie.search("J");
 
 	for (int i = 0; i < contextWords.size(); i++) {
 		contextMenu.addItem(contextWords[i], contextEditorCallback, this);

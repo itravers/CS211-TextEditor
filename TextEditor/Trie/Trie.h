@@ -53,9 +53,21 @@ public:
 	}
 
 	//TODO: implement
-    vector<string> search(const string &word)
-    {
-        vector<string> matches;
+    vector<string> search(const string &word){
+
+		//we wills store words here
+		vector<string> matches;
+
+		//search for this word
+		if (_root != nullptr) {
+			matches = _root->search(word);
+		}
+
+		//strip the $ off of every word
+		for (int i = 0; i < matches.size(); i++) {
+			string newString = matches[i].substr(0, matches[i].length() - 1);
+			matches[i] = newString;
+		}
         return matches;
     }
 };
