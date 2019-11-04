@@ -24,6 +24,7 @@
 #include "Components/EditorMenuPanel.hpp"					/* An Menu Window */
 #include "Components/MenuBar.hpp"						/* A Menu system, embedded in a bar*/
 #include "Components/ContextMenu.hpp"
+#include "Trie/Trie.h"
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -100,6 +101,7 @@ private:
 	static WINDOW* titleWindow;	
 	MenuBar menuBar;
 	ContextMenu contextMenu;
+	Trie contextMenuTrie;
 
 	/* Field Variables */
 	string currentStatus = "Starting Program...";

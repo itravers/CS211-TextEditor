@@ -170,6 +170,7 @@
     <ClCompile Include="TextEditor\TextEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="keywords.txt" />
     <Text Include="motd.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

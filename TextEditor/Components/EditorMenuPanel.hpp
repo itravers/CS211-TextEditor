@@ -78,6 +78,24 @@ namespace TextEditorNamespace {
 			return menuBehaviour->getLocationOfItem(itemNum, totalItems, hasBorder(), getLocation());
 		}
 
+		/*******************************************************************************
+		* Function Name:   clearMenu()
+		* Purpose:         clears all items from the menu
+		*******************************************************************************/
+		void clearMenu() {
+			menuItems.clear();
+			_buffer.clear();
+
+			//set up the buffer, starting with a blank line, and then repeat that blank line for every line of buffer
+			Size size = getSize();
+			string blankLine(size.width, ' ');
+
+			//create a new blank line for every height of size
+			for (int i = 0; i < size.height; i++) {
+				_buffer.push_back(blankLine);
+			}
+		}
+
 
 		/*******************************************************************************
 		* Function Name:   contains()

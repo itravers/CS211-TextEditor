@@ -53,6 +53,10 @@ namespace TextEditorNamespace {
 			menu->addItem(item, callBackFunction, ptr_to_caller);
 		}
 
+		void clearMenu() {
+			menu->clearMenu();
+		}
+
 		/*******************************************************************************
 		* Function Name:   processMouseEvent(MEVENT* mEvent)
 		* Purpose:         Returns vector of all items in the menu.

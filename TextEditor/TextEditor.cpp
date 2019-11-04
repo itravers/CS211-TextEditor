@@ -5,7 +5,7 @@
  *******************************************************************************/
 
 #include "TextEditor.h"
-#include "Trie/Trie.h"
+
 
 
 void TextEditor::testCallback2(string menuData) {
@@ -74,16 +74,11 @@ void TextEditor::load(string fileName) {
 	curs_set(0);
 
 
-	
-	
-
 	///////////////////TESTING
 	bool keep_going = true;
 	
-
 	components.push_back(
 		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
-		//new TextEditorNamespace::EditorWindowInteractive{ mainWindow, Location{1, 1}, Size{(numRows - 2)/2, (numCols - 2)/4}, true, true }
 
 	);
 
@@ -94,71 +89,36 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
 
-
 	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
-	//contextMenu.addItem("Test", contextEditorCallback, this);
-	//contextMenu.addItem("Test2", contextEditorCallback, this);
-	//contextMenu.addItem("Test3", contextEditorCallback, this);
 
 
-	//trie testing
-	Trie trie = Trie();
-	trie.addWord("Test");
-	trie.addWord("Tesla");
-	trie.addWord("Terse");
-	trie.addWord("Jesus");
-	trie.addWord("Jimmy");
 
-
-	vector<string>contextWords = trie.search("J");
-
-	for (int i = 0; i < contextWords.size(); i++) {
-		contextMenu.addItem(contextWords[i], contextEditorCallback, this);
-	}
 
 	
 
-	//components.push_back(
-	//	new TextEditorNamespace::EditorMenuPanel{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
-			//	new TextEditorNamespace::MenuBar{ mainWindow, Location{0, 0}, Size{3, numCols - 4}, true, true, true}
-
-	//);
-	//((EditorMenuPanel*)components[1])->addItem("File", menuCallback, this); //name of menu, callback function, and pointer to this
-	//((EditorMenuPanel*)components[1])->addItem("Edit", menuCallback, this); //name of menu, callback function, and pointer to this
-	//((EditorMenuPanel*)components[1])->addItem("View", menuCallback, this); //name of menu, callback function, and pointer to this
-	//((EditorMenuPanel*)components[1])->addItem("Tool", menuCallback, this); //name of menu, callback function, and pointer to this
-	//((EditorMenuPanel*)components[1])->addItem("Help", menuCallback, this); //name of menu, callback function, and pointer to this
-
-
-
-
-	//((EditorMenu*)components[1])->addItem("Edit");
-	//((EditorMenu*)components[1])->addItem("View");
-	//((EditorMenu*)components[1])->addItem("Tool");
-	//((EditorMenu*)components[1])->addItem("Help");
-
-		//((EditorMenu*)components[1])->setCallBack(menuCallback, this);
-		//((EditorMenu*)components[1])->setoff();
-
-	//((EditorMenu*)components[1])->setCallBack(testCallback, this);
-
-
-	//components.push_back(
-	//	new TextEditorNamespace::EditorWindowResizable{ mainWindow, Location{0, 0}, Size{1, 20}, true, true }
-	//);
-
 	//Initialize File Controller
 	FileController fileController = FileController();
+
+	//Read display File
 	vector<string>lines;
 	fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
-	//fileController.closeFile();
-
-	//((EditorWindowScrollable*)components[0])->setBuffer(lines);  // instead of setBuffer(), lets experiement with imprint()
-	//((EditorWindow*)components[0])->imprintOnBuffer(lines);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
+	
+	//read keywords.txt and add to a trie
+	vector<string>keywords;
+	fileController.readFile("keywords.txt", keywords, READ);
+	contextMenuTrie = Trie();
+	for (int i = 0; i < keywords.size(); i++) {
+		contextMenuTrie.addWord(keywords[i]);
+	}
 
-	//((EditorWindow*)components[1])->imprintOnBuffer(lines, 10, 0);
+	//contextMenuTrie.addWord("Test");
+
+
+	
+
+
 
 	//setup mouse
 	mousemask(ALL_MOUSE_EVENTS, NULL);
@@ -184,6 +144,9 @@ void TextEditor::load(string fileName) {
 		}
 
 		char mychar;
+		vector<string>contextWords;
+		string currentword;
+
 		switch (input){
 			case KEY_MOUSE:
 				//changeStatus("key mouse");
@@ -218,6 +181,18 @@ void TextEditor::load(string fileName) {
 				}
 				break;
 			case ctrl('f'):
+				//get word from current cursor position
+				currentword = "th";
+
+				//search for this word in the trie
+				contextWords = contextMenuTrie.search(currentword);
+
+				//delete all current word in our contextMenu
+				contextMenu.clearMenu();
+
+				for (int i = 0; i < contextWords.size(); i++) {
+					contextMenu.addItem(contextWords[i], contextEditorCallback, this);
+				}
 				contextMenu.toggleVisibility();
 				
 					for (auto& component : components) {
