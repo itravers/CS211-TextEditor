@@ -3,7 +3,7 @@ Currently, you can't edit any text, sorry. However, you can manipulate the menus
 
 
 Menu Commands
-	CTRL-f - Popup File Menu
+	CTRL-f - Open Context Menu <----- MILESTONE 5
 	CTRL-e - Popup Edit Menu
 	CTRL-v - Popup View Menu
 	CTRL-t - Popup Tool Menu

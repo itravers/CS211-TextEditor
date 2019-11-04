@@ -102,7 +102,7 @@ void TextEditor::load(string fileName) {
 	//Read display File
 	vector<string>lines;
 	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
-	fileController.readFile("keywords.txt", lines, READ);
+	fileController.readFile("motd.txt", lines, READ);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 	

@@ -76,9 +76,10 @@ I decided to partition this milestone into several sub-sections as follows:
    
    We then delete all the items in the context menu, and then readd new ones based on the content
    of the returned vector. Then the context menu is set to visible and the user is allowed to
-   click on an item, which gets inserted into the buffer.
+   click on an item, which gets inserted into the buffer.a
    
-  
+In the course of this milestone I worked on the following issues:
+#15 #17 #18 #19 #20 #21 #22 #23 #24 #25 #26 #27
    
    
   
