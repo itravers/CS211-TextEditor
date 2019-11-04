@@ -26,8 +26,8 @@
 
 #include <string>
 #include <vector>
-#include "curses.h"
-#include "panel.h"
+#include "../curses.h"
+#include "../panel.h"
 //#include "TextEditor.h" //we don't ever need to include this it's
 #include "customcolors.h"
 

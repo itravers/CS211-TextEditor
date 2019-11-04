@@ -1,4 +1,4 @@
-#include "TextEditor.h"
+#include "TextEditor/TextEditor.h"
 
 /* Start of the Program. */
 int main(int argc, char* argv[]) {

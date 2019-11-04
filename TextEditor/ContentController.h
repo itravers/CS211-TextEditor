@@ -8,7 +8,7 @@
 
 #define SCROLL_BAR_SIZE 2
 
-#include "curses.h"
+#include "../curses.h"
 #include "customcolors.h"
 #include "structs.h"
 #include <string>

@@ -60,8 +60,6 @@ MenuController::MenuController(WINDOW* mainWindow, int numRows, int numCols) {
 		//start the menus in hidden configuration
 		hide_panel(menuPanels[i]);
 	}
-
-	
 }
 
 /*

@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\TextEditor">
+      <UniqueIdentifier>{edf16516-90de-4787-8131-aa353823c278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TextEditor">
+      <UniqueIdentifier>{27189219-c435-4abf-b26a-c5d9b935869e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TextEditor\Components">
+      <UniqueIdentifier>{b37950f8-e2fc-44aa-b045-eb05909f7258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Trie">
+      <UniqueIdentifier>{b1ed312c-b42a-447f-9fb2-3c36ae52c0d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h">
@@ -24,26 +36,86 @@
     <ClInclude Include="panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ContentController.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\MenuController.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="customcolors.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\ContentController.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="DialogBox.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\customcolors.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="FileController.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\DialogBox.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="MenuController.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\FileController.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="structs.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\structs.h">
+      <Filter>Header Files\TextEditor</Filter>
     </ClInclude>
-    <ClInclude Include="TextEditor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextEditor\TextEditor.h">
+      <Filter>Header Files\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorComponent.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindow.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\Resizable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowResizable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\Moveable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowMoveable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowScrollable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\Scrollable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\Editable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowEditable.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\KeyboardHandler.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorWindowInteractive.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\MenuBehaviour.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\MenuBehaviourHorizontal.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\EditorMenuPanel.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\MenuBehaviourVertical.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\MenuBar.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Components\ContextMenu.hpp">
+      <Filter>Header Files\TextEditor\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Trie\Trie.h">
+      <Filter>Header Files\Trie</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Trie\TrieNode.h">
+      <Filter>Header Files\Trie</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,20 +135,28 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContentController.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TextEditor\MenuController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
-    <ClCompile Include="DialogBox.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TextEditor\ContentController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
-    <ClCompile Include="FileController.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TextEditor\DialogBox.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
-    <ClCompile Include="MenuController.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TextEditor\FileController.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
-    <ClCompile Include="TextEditor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TextEditor\TextEditor.cpp">
+      <Filter>Source Files\TextEditor</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="motd.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="keywords.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

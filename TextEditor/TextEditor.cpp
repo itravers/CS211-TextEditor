@@ -6,6 +6,38 @@
 
 #include "TextEditor.h"
 
+
+
+void TextEditor::testCallback2(string menuData) {
+	int i = 0;
+	int j = 0;
+}
+
+/*static void  testCallback(int other_arg, void* this_pointer) {
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->testCallback2();
+}*/
+
+void TextEditor::menuCallback(string menuData, void* this_pointer)
+{
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->testCallback2(menuData);
+}
+
+void TextEditor::contextEditorHelper(string wordToInsert) {
+	//insert the word wordToInsert into our content window
+	((EditorWindowInteractive*)components[0])->insertString(wordToInsert);
+
+}
+
+void TextEditor::contextEditorCallback(string menuData, void* this_pointer) {
+	TextEditor* self = static_cast<TextEditor*>(this_pointer);
+	self->contextEditorHelper(menuData);
+}
+
+
+
+
 TextEditor::TextEditor() : fileController()/*, menuController(this), contentController(this)*/ {
 //TextEditor::TextEditor() {
 
@@ -28,6 +60,7 @@ void TextEditor::load(string fileName) {
 	initColor();
 
 	//go near-full screen
+	resize_term(1000, 1000);
 	getmaxyx(mainWindow, numRows, numCols);
 	resize_term(numRows - 1, numCols - 1);
 	getmaxyx(mainWindow, numRows, numCols);
@@ -40,6 +73,162 @@ void TextEditor::load(string fileName) {
 	//i cause everything
 	curs_set(0);
 
+
+	///////////////////TESTING
+	bool keep_going = true;
+	
+	components.push_back(
+		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
+
+	);
+
+	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
+	menuBar.addItem("File", "Open", menuCallback, this);
+	menuBar.addItem("File", "Save", menuCallback, this);
+	menuBar.addItem("File", "Exit", menuCallback, this);
+	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
+	menuBar.addItem("Help", "About", menuCallback, this);
+
+	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
+
+
+
+
+	
+
+	//Initialize File Controller
+	FileController fileController = FileController();
+
+	//Read display File
+	vector<string>lines;
+	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
+	fileController.readFile("motd.txt", lines, READ);
+	((EditorWindowScrollable*)components[0])->setData(lines);
+
+	
+	//read keywords.txt and add to a trie
+	vector<string>keywords;
+	fileController.readFile("keywords.txt", keywords, READ);
+	contextMenuTrie = Trie();
+	for (int i = 0; i < keywords.size(); i++) {
+		contextMenuTrie.addWord(keywords[i]);
+	}
+
+	//setup mouse
+	mousemask(ALL_MOUSE_EVENTS, NULL);
+	MEVENT event;
+	
+
+	while (keep_going == true)
+	{
+		int input = wgetch(mainWindow);
+
+		//Curses documentation says to use KEY_RESIZE, but you can also use
+		//is_termresized.  In real life, use either/or but not both.
+		if (is_termresized() == true)
+		{
+			//resize_term(0, 0);
+			//getmaxyx(mainWindow, numRows, numCols);/////this doesn't work yet
+		}
+
+		char mychar;
+		vector<string>contextWords;
+		string currentword;
+
+		switch (input){
+			case KEY_MOUSE:
+				//changeStatus("key mouse");
+				if (nc_getmouse(&event) == OK) {
+					//processMainMouseEvent(((EditorMenuPanel*)components[1]), &event);
+					int itemClicked = menuBar.processMouseEvent(&event);
+					if (itemClicked == -2) {
+						components[0]->setNeedsRefresh(true);
+						//menuBar.render();
+					}
+					else if (itemClicked >= 0) {
+						for (auto& component : components) {
+							component->setNeedsRefresh(true);
+							
+						}
+						//menuBar.render();
+					}
+
+
+					itemClicked = contextMenu.processMouseEvent(&event);
+					if (itemClicked == -2) {
+						components[0]->setNeedsRefresh(true);
+						//menuBar.render();
+					}
+					else if (itemClicked >= 0) {
+						for (auto& component : components) {
+							component->setNeedsRefresh(true);
+
+						}
+						//menuBar.render();
+					}
+				}
+				break;
+			case ctrl('f'):
+				//get word from current cursor position
+				currentword = ((EditorWindowInteractive*)components[0])->searchBufferForCurrentWord();
+
+				//search for this word in the trie
+				contextWords = contextMenuTrie.search(currentword);
+
+				//delete all current word in our contextMenu
+				contextMenu.clearMenu();
+
+				for (int i = 0; i < contextWords.size(); i++) {
+					contextMenu.addItem(contextWords[i], contextEditorCallback, this);
+				}
+				contextMenu.toggleVisibility();
+				
+					for (auto& component : components) {
+						component->setNeedsRefresh(true);
+
+					}
+				
+				break;
+			
+			default:
+				((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
+				break;
+		}
+
+		
+
+		//render components
+		for (auto& component : components)
+		{
+			//TODO: render
+			if (component->needsRefresh() == true)
+			{
+
+				component->render();
+				component->refresh();
+			}
+		}
+
+		
+
+		//render the menubar
+		menuBar.render();
+		//menuBar.refresh();
+
+		if (contextMenu.needRefresh()) {
+			contextMenu.render();
+			contextMenu.refresh();
+			//contextMenu.needRefresh();
+		}
+
+		wrefresh(mainWindow);//
+	}
+
+	///////////////////////////////END TESTING
+
+
+	//COMMENT OUT FOR TESTING COMPONENTS
+	/*
 	//Initialize File Controller
 	FileController fileController = FileController();
 
@@ -158,6 +347,8 @@ void TextEditor::load(string fileName) {
 
 	refresh(); //Tells Curses to Draw
 
+
+	*/
 	//revert back to normal console mode
 	nodelay(mainWindow, TRUE);
 	keypad(mainWindow, TRUE);
@@ -167,6 +358,27 @@ void TextEditor::load(string fileName) {
 	endwin();
 
 	//return 0;
+}
+
+
+
+void TextEditor::refreshComponents(vector<EditorComponent*> v) {
+	for (auto& component : v) {
+		component->setNeedsRefresh(true);
+	}
+}
+
+bool TextEditor::componentNeedsRefresh(vector<EditorComponent*>v) {
+	bool returnVal = false;
+
+	//loop through the vector, and see if any specific element needs refreshed, if ANY elemnt does, return true
+	for (int i = 0; i < v.size(); i++) {
+		if (v[i]->needsRefresh()) {
+			returnVal = true;
+			break;
+		}
+	}
+	return returnVal;
 }
 
 /*
@@ -225,6 +437,8 @@ void TextEditor::initColor(void) {
 	init_pair(COLOR_CURSOR_PAIR, COLOR_BLACK, COLOR_WHITE);
 	init_pair(COLOR_SCROLLBAR_PAIR, COLOR_BLACK, COLOR_GREEN);
 	init_pair(COLOR_WORDWRAP_PAIR, COLOR_GREEN, COLOR_BLACK);
+	init_pair(COLOR_GREEN_BLACK, COLOR_GREEN, COLOR_BLACK);
+	init_pair(COLOR_WHITE_BLACK, COLOR_WHITE, COLOR_BLACK);
 }
 
 /*
@@ -234,6 +448,8 @@ void TextEditor::initColor(void) {
 void TextEditor::changeStatus(string newStatus) {
 	currentStatus = newStatus + "                 ";
 }
+
+
 
 /*
 	Writes out the lines in vector to the screen, exactly
@@ -250,7 +466,15 @@ void TextEditor::writeLines(vector<string>lines) {
 /*
 	Processes a Mouse Event
 */
-void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
+void TextEditor::processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouseEvent) {
+	//changeStatus("processMouseEvent()");
+
+	//tell the menu to check if this mouse event is its?
+	//((EditorMenuPanel*)components[1])->processMouseEvent(mouseEvent);
+	//menuPanel->processMouseEvent(mouseEvent);
+
+}
+/*void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numCols) {
 	//changeStatus("processMouseEvent()");
 
 	if (menuController.isMenuMouseEvent(mouseEvent, numRows, numCols)) {
@@ -263,3 +487,4 @@ void TextEditor::processMainMouseEvent(MEVENT* mouseEvent, int numRows, int numC
 	}
 
 }
+*/
