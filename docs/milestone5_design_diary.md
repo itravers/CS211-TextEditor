@@ -80,6 +80,8 @@ I decided to partition this milestone into several sub-sections as follows:
    
 In the course of this milestone I worked on the following issues:
 #15 #17 #18 #19 #20 #21 #22 #23 #24 #25 #26 #27
+
+![Demo](textEditorDemo_MILESTONE5.gif)
    
    
   
