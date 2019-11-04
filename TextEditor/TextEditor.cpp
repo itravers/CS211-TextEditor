@@ -114,13 +114,6 @@ void TextEditor::load(string fileName) {
 		contextMenuTrie.addWord(keywords[i]);
 	}
 
-	//contextMenuTrie.addWord("Test");
-
-
-	
-
-
-
 	//setup mouse
 	mousemask(ALL_MOUSE_EVENTS, NULL);
 	MEVENT event;
@@ -128,12 +121,6 @@ void TextEditor::load(string fileName) {
 
 	while (keep_going == true)
 	{
-		//wrefresh(mainWindow);
-		//refresh();
-		//werase(mainWindow);
-
-		
-
 		int input = wgetch(mainWindow);
 
 		//Curses documentation says to use KEY_RESIZE, but you can also use
@@ -202,6 +189,7 @@ void TextEditor::load(string fileName) {
 					}
 				
 				break;
+			
 			default:
 				((EditorWindowInteractive*)components[0])->handleKeyboardInput(input);
 				break;

@@ -154,6 +154,11 @@ namespace TextEditorNamespace {
 			case KEY_ENTER:
 				
 				break;
+			case 8: //this is a backspace
+				moveCursorLeft();
+				putChar(' ');
+				moveCursorLeft();
+				break;
 			case 'a': case 'b': case 'c': case ' ': default:
 				putChar((char)input);
 				break;
@@ -169,12 +174,23 @@ namespace TextEditorNamespace {
 			Location translatedLocation = Location{ _cursorLocation.y + _scrolledLocation.y, _cursorLocation.x + _scrolledLocation.x };
 			char currentChar = EditorWindowEditable::getChar(translatedLocation);
 
+			if (currentChar == ' ' || currentChar == '\0') {
+
+				//test if the character right before this one exists
+				
+				//if our current char is a blank, see if there is a word right before this one, if there is, use that
+				translatedLocation.x--;
+				if (translatedLocation.x  >= 0) {
+					char prevChar = EditorWindowEditable::getChar(translatedLocation);
+					if (prevChar == ' ' || prevChar == '\0')return currentWord; //if we are on a space, we don't need to show anything
+				}else {
+					//translatedLocation.x++;
+					return currentWord; //if we are on a space, we don't need to show anything
+				}
+			}
 			
-			//if we are on a space, we don't need to show anything
-			if (currentChar == ' ') {
-				//return an empty string
-				return currentWord;
-			}else {
+			
+			
 				//we are on a character, we need to backtrack until we are either on a space, or at the first line
 				//then we need to return all the chars between are most backtracked position, and our first position.
 				int lastX = translatedLocation.x;
@@ -193,10 +209,6 @@ namespace TextEditorNamespace {
 					translatedLocation.x = i;
 					currentWord += EditorWindowEditable::getChar(translatedLocation);
 				}
-			}
-
-
-			
 			
 			return currentWord;
 		}
@@ -208,14 +220,11 @@ namespace TextEditorNamespace {
 			for (int i = 0; i < s.size(); i++) {
 				putChar(s[i]);
 			}
-
 		}
 
 
 		//These will not be available to extended classes, or anyone else.
 	private:
-
-		
 
 		void moveCursorUp() {
 			if (_scrolledLocation.y == 0) {
