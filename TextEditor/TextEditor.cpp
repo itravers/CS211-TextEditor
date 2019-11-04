@@ -101,7 +101,8 @@ void TextEditor::load(string fileName) {
 
 	//Read display File
 	vector<string>lines;
-	fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
+	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
+	fileController.readFile("keywords.txt", lines, READ);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 	
@@ -182,7 +183,7 @@ void TextEditor::load(string fileName) {
 				break;
 			case ctrl('f'):
 				//get word from current cursor position
-				currentword = "th";
+				currentword = ((EditorWindowInteractive*)components[0])->searchBufferForCurrentWord();
 
 				//search for this word in the trie
 				contextWords = contextMenuTrie.search(currentword);

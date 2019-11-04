@@ -164,6 +164,43 @@ namespace TextEditorNamespace {
 			}
 		}
 
+		string searchBufferForCurrentWord() {
+			string currentWord = "";
+			Location translatedLocation = Location{ _cursorLocation.y + _scrolledLocation.y, _cursorLocation.x + _scrolledLocation.x };
+			char currentChar = EditorWindowEditable::getChar(translatedLocation);
+
+			
+			//if we are on a space, we don't need to show anything
+			if (currentChar == ' ') {
+				//return an empty string
+				return currentWord;
+			}else {
+				//we are on a character, we need to backtrack until we are either on a space, or at the first line
+				//then we need to return all the chars between are most backtracked position, and our first position.
+				int lastX = translatedLocation.x;
+
+				while (translatedLocation.x != 0 && currentChar != ' ') {
+					translatedLocation.x--;
+					currentChar = EditorWindowEditable::getChar(translatedLocation);
+				}
+
+				//go forward one if our current char is ' '
+				if (currentChar == ' ')translatedLocation.x++;
+				int firstX = translatedLocation.x;
+
+				//build our word
+				for (int i = firstX; i <= lastX; i++) {
+					translatedLocation.x = i;
+					currentWord += EditorWindowEditable::getChar(translatedLocation);
+				}
+			}
+
+
+			
+			
+			return currentWord;
+		}
+
 		void insertString(string s) {
 			//Location cursorLoc = ;
 			
