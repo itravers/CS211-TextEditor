@@ -118,6 +118,7 @@ private:
 
 	//huffman tree functions
 	void openHuffman();
+	void saveHuffman();
 
 	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible

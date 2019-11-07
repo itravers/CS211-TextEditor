@@ -13,6 +13,8 @@ void TextEditor::testCallback2(string menuData) {
 	int j = 0;
 	if (menuData == "Open Huffman") {
 		openHuffman();
+	}else if (menuData == "Save Huffman") {
+		saveHuffman();
 	}
 }
 
@@ -92,6 +94,7 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("File", "Open", menuCallback, this);
 	menuBar.addItem("File", "Open Huffman", menuCallback, this);
 	menuBar.addItem("File", "Save", menuCallback, this);
+	menuBar.addItem("File", "Save Huffman", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
@@ -226,7 +229,6 @@ void TextEditor::load(string fileName) {
 		if (contextMenu.needRefresh()) {
 			contextMenu.render();
 			contextMenu.refresh();
-			//contextMenu.needRefresh();
 		}
 
 		
@@ -452,8 +454,21 @@ void TextEditor::openHuffman() {
 	string fileName = dialogBox.displayDialogBox("Name of File:");
 	dialogBox.hide();
 	wrefresh(mainWindow);//
+}
 
+/*******************************************************************************
+* Function Name:   saveHuffman()
+* Purpose:         Queries the user for which file we want to save
+*                  Encodes the huffman tree itself into: FILENAME-code.txt
+*                  Compresses our text into file: FILENAME-compressed.txt
+*                  saves both files.
+*******************************************************************************/
+void TextEditor::saveHuffman() {
 
+	//let us get the file name from the user, using a dialog box.
+	string fileName = dialogBox.displayDialogBox("Name of File:");
+	dialogBox.hide();
+	wrefresh(mainWindow);//
 }
 
 /*
