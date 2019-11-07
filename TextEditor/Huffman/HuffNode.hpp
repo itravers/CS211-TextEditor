@@ -10,6 +10,7 @@
 #define HUFF_NODE_HPP
 
 template <typename E> class HuffNode {
+public:
 	virtual ~HuffNode() {}		//Base destructor
 	virtual int weight() = 0;	//Return Frequency
 	virtual bool isLeaf() = 0;	//Determine type
