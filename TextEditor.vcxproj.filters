@@ -123,6 +123,15 @@
     <ClInclude Include="TextEditor\Huffman\HuffNode.hpp">
       <Filter>Header Files\TextEditor\Huffman</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Huffman\LeafNode.hpp">
+      <Filter>Header Files\TextEditor\Huffman</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Huffman\InternalNode.hpp">
+      <Filter>Header Files\TextEditor\Huffman</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Huffman\HuffTree.hpp">
+      <Filter>Header Files\TextEditor\Huffman</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
