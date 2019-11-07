@@ -11,7 +11,12 @@
 void TextEditor::testCallback2(string menuData) {
 	int i = 0;
 	int j = 0;
+	if (menuData == "Open Huffman") {
+		openHuffman();
+	}
 }
+
+
 
 /*static void  testCallback(int other_arg, void* this_pointer) {
 	TextEditor* self = static_cast<TextEditor*>(this_pointer);
@@ -51,7 +56,8 @@ void TextEditor::load(string fileName) {
 	int numCols = 0;
 
 	//Initialze Curses
-	WINDOW* mainWindow = nullptr;
+	//WINDOW* mainWindow = nullptr;
+	mainWindow = nullptr;
 
 	//initialize screen to begin curses mode
 	mainWindow = initscr();
@@ -84,6 +90,7 @@ void TextEditor::load(string fileName) {
 
 	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
 	menuBar.addItem("File", "Open", menuCallback, this);
+	menuBar.addItem("File", "Open Huffman", menuCallback, this);
 	menuBar.addItem("File", "Save", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
@@ -91,7 +98,8 @@ void TextEditor::load(string fileName) {
 
 	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
 
-
+	//CREATE a NEW Dialog Box, to be used later
+	dialogBox = DialogBox(mainWindow, "", DIALOG_Y, DIALOG_X, DIALOG_NUM_ROWS, DIALOG_NUM_COLUMNS);
 
 
 	
@@ -195,7 +203,7 @@ void TextEditor::load(string fileName) {
 				break;
 		}
 
-		
+		//dialogBox.draw();
 
 		//render components
 		for (auto& component : components)
@@ -220,6 +228,8 @@ void TextEditor::load(string fileName) {
 			contextMenu.refresh();
 			//contextMenu.needRefresh();
 		}
+
+		
 
 		wrefresh(mainWindow);//
 	}
@@ -423,6 +433,27 @@ void TextEditor::drawBorder(int numRows, int numCols) {
 		//right column border
 		mvaddch(i, numCols - 1, ACS_CKBOARD);
 	}
+}
+
+/*******************************************************************************
+* Function Name:   openHuffman()
+* Purpose:         Queries the user for which file we want to open
+*                  Checks to see if there is a huffmanTree type of this file
+*                  If there is, we read in the huffman tree structure,
+*                  then we read in the compressed data.
+*                  then we decode the compressed data using the tree
+*                  Once everything is completed, we replace what is
+*                  currently showing in the content area, with all
+*                  the data we just decompressed.
+*******************************************************************************/
+void TextEditor::openHuffman() {
+
+	//let us get the file name from the user, using a dialog box.
+	string fileName = dialogBox.displayDialogBox("Name of File:");
+	dialogBox.hide();
+	wrefresh(mainWindow);//
+
+
 }
 
 /*

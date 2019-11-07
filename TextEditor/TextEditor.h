@@ -99,6 +99,7 @@ private:
 	ContentController contentController;
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;	
+	WINDOW* mainWindow;
 	MenuBar menuBar;
 	ContextMenu contextMenu;
 	Trie contextMenuTrie;
@@ -114,6 +115,9 @@ private:
 	
 	void writeLines(vector<string>);				// Writes the lines from the file to the screen
 	void processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouseEvent);	// processes a mouse event
+
+	//huffman tree functions
+	void openHuffman();
 
 	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
