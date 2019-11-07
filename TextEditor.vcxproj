@@ -148,6 +148,7 @@
     <ClInclude Include="TextEditor\customcolors.h" />
     <ClInclude Include="TextEditor\DialogBox.h" />
     <ClInclude Include="TextEditor\FileController.h" />
+    <ClInclude Include="TextEditor\Huffman\HuffNode.hpp" />
     <ClInclude Include="TextEditor\MenuController.h" />
     <ClInclude Include="TextEditor\structs.h" />
     <ClInclude Include="TextEditor\TextEditor.h" />

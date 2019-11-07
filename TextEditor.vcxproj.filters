@@ -22,7 +22,10 @@
     <Filter Include="Header Files\TextEditor\Components">
       <UniqueIdentifier>{b37950f8-e2fc-44aa-b045-eb05909f7258}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Trie">
+    <Filter Include="Header Files\TextEditor\Huffman">
+      <UniqueIdentifier>{8b4cc553-65fe-4215-8ba5-b118b95f4435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TextEditor\Trie">
       <UniqueIdentifier>{b1ed312c-b42a-447f-9fb2-3c36ae52c0d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -112,10 +115,13 @@
       <Filter>Header Files\TextEditor\Components</Filter>
     </ClInclude>
     <ClInclude Include="TextEditor\Trie\Trie.h">
-      <Filter>Header Files\Trie</Filter>
+      <Filter>Header Files\TextEditor\Trie</Filter>
     </ClInclude>
     <ClInclude Include="TextEditor\Trie\TrieNode.h">
-      <Filter>Header Files\Trie</Filter>
+      <Filter>Header Files\TextEditor\Trie</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Huffman\HuffNode.hpp">
+      <Filter>Header Files\TextEditor\Huffman</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
