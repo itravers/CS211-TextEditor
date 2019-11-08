@@ -18,6 +18,8 @@ private:
 	int wgt;	//subtree weight
 
 public:
+
+	InternalNode() {}
 	InternalNode(HuffNode<E>* l, HuffNode<E>* r) {
 		wgt = l->weight() + r->weight();
 		leftChild = l;

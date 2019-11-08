@@ -24,7 +24,7 @@ public:
 
 	//internal node constructor
 	HuffTree(HuffTree<E>* l, HuffTree<E>* r) {
-		root = new InternalNode<E>(l->root(), r->root());
+		root = new InternalNode<E>(l->getRoot(), r->getRoot());
 	}
 
 	//destructor
@@ -39,7 +39,7 @@ public:
 
 	//root weight
 	int weight() {
-		return root.weight();
+		return root->weight();
 	}
 };
 

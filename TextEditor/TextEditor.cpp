@@ -500,8 +500,37 @@ void TextEditor::saveHuffman() {
 	}
 
 	//we now have a frequency_distribution of characters in freq_dist
+	//we now loop through freq_dist creating huffman tree's and adding them to a priority queue
+	for (auto it : freq_dist) {
+		char c = it.first;
+		int freq = it.second;
+		HuffTree<char>* huffTree = new HuffTree<char>(c, freq);
+		huffmanQueue.push(huffTree);
+		int size = huffmanQueue.size();
+	}
 
+	//now we have a huffmanqueue with all individual chars in their own trees, we need to combine
+	while (huffmanQueue.size() > 1) {
+
+		//get our two lowest weight huffman trees from our priority queue
+		HuffTree<char>* t1 = huffmanQueue.top();
+		huffmanQueue.pop();
+
+		HuffTree<char>* t2 = huffmanQueue.top();
+		huffmanQueue.pop();
+
+		//create our merged
+		HuffTree<char>* mergedTree = new HuffTree<char>(t1, t2);
+
+		//put this merged tree back into the priority queue
+		huffmanQueue.push(mergedTree);
+	}
+		
 	int pause = 0;
+
+
+
+	
 }
 
 /*

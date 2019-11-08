@@ -124,16 +124,17 @@ private:
 	}*/
 
 	//C++ is DUMB
-	/*struct compareHuffmanTree{
-		bool operator()(HuffTree<int>& a, HuffTree<int>& b) const{
-			
-			return a.weight() >= b.weight();
+	struct compareHuffmanTree{
+		bool operator()(HuffTree<char>* a, HuffTree<char>* b) const{
+			int aw = a->weight();
+			int bw = b->weight();
+			return aw > bw;
 		}
-	};*/
+	};
 
 	//priority_queue<int, vector<int>, greater<int>>freq_dist = {};
 	unordered_map<char, int> freq_dist = {};
-	//priority_queue<HuffTree<char>*, vector<HuffTree<char>*>, compareHuffmanTree> huffmanQueue = {};
+	priority_queue<HuffTree<char>*, vector<HuffTree<char>*>, compareHuffmanTree> huffmanQueue = {};
 	void openHuffman();
 	void saveHuffman();
 
