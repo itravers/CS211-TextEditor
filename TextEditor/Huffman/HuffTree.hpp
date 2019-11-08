@@ -33,7 +33,7 @@ public:
 	}
 
 	//getroot
-	HuffNode<E>* root() {
+	HuffNode<E>* getRoot() {
 		return root;
 	}
 

@@ -45,7 +45,7 @@ public:
 	}
 
 	void setRight(HuffNode<E>* r) {
-		rightCHild = (HuffNode<E>*)r;
+		rightChild = (HuffNode<E>*)r;
 	}
 };
 

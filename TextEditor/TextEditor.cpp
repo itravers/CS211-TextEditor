@@ -468,7 +468,40 @@ void TextEditor::saveHuffman() {
 	//let us get the file name from the user, using a dialog box.
 	string fileName = dialogBox.displayDialogBox("Name of File:");
 	dialogBox.hide();
+	// do we set needs refresh here for all other components?, that may take care of dialog box bug?
 	wrefresh(mainWindow);//
+
+	////make a frequency distribution of letters in the buffer.
+	vector<string> buf = ((EditorWindowInteractive*)components[0])->getBuffer();
+
+	//loop through buffer line by line
+	for (int i = 0; i < buf.size(); i++) {
+
+		string line = buf[i];
+
+		//loop through line char by char
+		for (int j = 0; j < line.size(); j++) {
+
+			char c = line[j];	//this is a character.
+
+			//std::unordered_map<std::string, double>::const_iterator got = mymap.find(input);
+			auto it = freq_dist.find(c);
+
+			if (it == freq_dist.end()) {
+				
+				//we have not found this character in our freq_dist add it
+				freq_dist[c] = 1;
+			}else {
+				
+				//we have found this character before, increment it
+				freq_dist[c]++;
+			}
+		}
+	}
+
+	//we now have a frequency_distribution of characters in freq_dist
+
+	int pause = 0;
 }
 
 /*
