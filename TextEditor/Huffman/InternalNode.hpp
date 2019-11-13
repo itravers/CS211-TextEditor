@@ -49,6 +49,12 @@ public:
 	void setRight(HuffNode<E>* r) {
 		rightChild = (HuffNode<E>*)r;
 	}
+
+	void buildEncodingTable(unordered_map<char, string>& encodingTable, string currentPrefix = "") {
+		rightChild->buildEncodingTable(encodingTable, currentPrefix + "0");
+		leftChild->buildEncodingTable(encodingTable, currentPrefix + "1");
+		
+	}
 };
 
 

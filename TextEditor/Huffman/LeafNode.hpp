@@ -34,6 +34,13 @@ public:
 	bool isLeaf() {
 		return true;
 	}
+
+	void buildEncodingTable(unordered_map<char, string>& encodingTable, string currentPrefix = "") {
+
+		char value = val();
+		(encodingTable)[value] = currentPrefix;
+		//encodingTable.
+	}
 };
 
 

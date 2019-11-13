@@ -113,7 +113,7 @@ void TextEditor::load(string fileName) {
 	//Read display File
 	vector<string>lines;
 	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
-	fileController.readFile("motd.txt", lines, READ);
+	fileController.readFile("test.txt", lines, READ);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 	
@@ -456,6 +456,14 @@ void TextEditor::openHuffman() {
 	wrefresh(mainWindow);//
 }
 
+string TextEditor::encodeTextWithHuffman(vector<string> dataToEncode, HuffTree<char>* hT) {
+	unordered_map<char, string> encodingTable = {};
+	hT->getEncodingTable(encodingTable);
+
+
+	return "asdf";
+}
+
 /*******************************************************************************
 * Function Name:   saveHuffman()
 * Purpose:         Queries the user for which file we want to save
@@ -478,7 +486,7 @@ void TextEditor::saveHuffman() {
 	for (int i = 0; i < buf.size(); i++) {
 
 		string line = buf[i];
-
+		
 		//loop through line char by char
 		for (int j = 0; j < line.size(); j++) {
 
@@ -520,11 +528,24 @@ void TextEditor::saveHuffman() {
 		huffmanQueue.pop();
 
 		//create our merged
-		HuffTree<char>* mergedTree = new HuffTree<char>(t1, t2);
+		HuffTree<char>* mergedTree = new HuffTree<char>(t2, t1);
 
 		//put this merged tree back into the priority queue
 		huffmanQueue.push(mergedTree);
 	}
+
+	//Now we need to encode our text into binary using the huffman tree
+	HuffTree<char>* huffTree = huffmanQueue.top();
+	////string binaryTree = encodeHuffmanTreeIntoBinary(huffTree);
+	string binaryText = encodeTextWithHuffman(buf, huffTree);
+
+	////string headerFlag = "DEADBEEF";
+
+	//build entire binary file, with tree, then headerflag, then text
+	////string binaryFile = binaryTree + headerFlag + binaryText;
+
+	////fileController.writeFile(fileName, binaryFile);
+
 		
 	int pause = 0;
 

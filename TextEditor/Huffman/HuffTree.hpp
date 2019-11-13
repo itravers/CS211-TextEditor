@@ -41,6 +41,13 @@ public:
 	int weight() {
 		return root->weight();
 	}
+	//unordered_map<char, int> freq_dist
+	void getEncodingTable(unordered_map<char, string>& encodingTable) {
+		//unordered_map<char, string>* encodingTable = {};
+
+		//traverse the tree building the encodingTAble
+		root->buildEncodingTable(encodingTable);
+	}
 };
 
 

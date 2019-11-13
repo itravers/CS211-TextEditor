@@ -14,6 +14,8 @@ public:
 	virtual ~HuffNode() {}		//Base destructor
 	virtual int weight() = 0;	//Return Frequency
 	virtual bool isLeaf() = 0;	//Determine type
+	//virtual void buildEncodingTable(unordered_map<char, string> encodingTable) = 0;
+	virtual void buildEncodingTable(unordered_map<char, string>& encodingTable, string currentPrefix = "") = 0;
 };
 
 
