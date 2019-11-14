@@ -140,6 +140,7 @@ private:
 	void openHuffman();
 	void saveHuffman();
 	string encodeTextWithHuffman(vector<string>, HuffTree<char>*);
+	string encodeFreqDistIntoBinary(unordered_map<char, int> freqDist);
 	string s_binaryToHex(string);
 	string s_hexToBinary(string);
 
