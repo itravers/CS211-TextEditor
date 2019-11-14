@@ -37,6 +37,8 @@
 #include <stdio.h>
 #include <queue> 
 #include <map>
+#include <bitset>
+#include <sstream>
 
 /* Namespaces */
 using std::string;
@@ -139,7 +141,7 @@ private:
 	void saveHuffman();
 	string encodeTextWithHuffman(vector<string>, HuffTree<char>*);
 	string s_binaryToHex(string);
-	char c_binaryToHex(string);
+	string s_hexToBinary(string);
 
 	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible
