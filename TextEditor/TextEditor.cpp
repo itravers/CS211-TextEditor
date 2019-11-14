@@ -460,8 +460,82 @@ string TextEditor::encodeTextWithHuffman(vector<string> dataToEncode, HuffTree<c
 	unordered_map<char, string> encodingTable = {};
 	hT->getEncodingTable(encodingTable);
 
+	//loop through string and encode
+	string encodedData = "";
 
-	return "asdf";
+	for (int i = 0; i < dataToEncode.size(); i++) {
+		string line = dataToEncode[i];
+		for (int j = 0; j < line.size(); j++) {
+			encodedData += encodingTable[line[j]];
+		}
+	}
+
+	encodedData = s_binaryToHex(encodedData);
+
+	return encodedData;
+}
+
+string TextEditor::s_binaryToHex(string binaryData) {
+	string hexData = "";
+
+	for (int i = 0; i < binaryData.size(); i += 4) {
+		string binaryChar = binaryData.substr(i, 4);
+		char hexChar = c_binaryToHex(binaryChar);
+		hexData += hexChar;
+	}
+	return hexData;
+}
+
+char TextEditor::c_binaryToHex(string binaryChar) {
+	char hexChar;
+	//binaryChar will be a 4 bit binary character, encoded in a string of 0 and 1
+	if (binaryChar == "0000") {
+		hexChar = '0';
+	}else if (binaryChar == "0001") {
+		hexChar = '1';
+	}else if (binaryChar == "0010") {
+		hexChar = '2';
+	}
+	else if (binaryChar == "0011") {
+		hexChar = '3';
+	}
+	else if (binaryChar == "0100") {
+		hexChar = '4';
+	}
+	else if (binaryChar == "0101") {
+		hexChar = '5';
+	}
+	else if (binaryChar == "0110") {
+		hexChar = '6';
+	}
+	else if (binaryChar == "0111") {
+		hexChar = '7';
+	}
+	else if (binaryChar == "1000") {
+		hexChar = '8';
+	}
+	else if (binaryChar == "1001") {
+		hexChar = '9';
+	}
+	else if (binaryChar == "1010") {
+		hexChar = 'A';
+	}
+	else if (binaryChar == "1011") {
+		hexChar = 'B';
+	}
+	else if (binaryChar == "1100") {
+		hexChar = 'C';
+	}
+	else if (binaryChar == "1101") {
+		hexChar = 'D';
+	}
+	else if (binaryChar == "1110") {
+		hexChar = 'E';
+	}
+	else {
+		hexChar = 'F';
+	}
+	return hexChar;
 }
 
 /*******************************************************************************
@@ -528,7 +602,14 @@ void TextEditor::saveHuffman() {
 		huffmanQueue.pop();
 
 		//create our merged
-		HuffTree<char>* mergedTree = new HuffTree<char>(t2, t1);
+		HuffTree<char>* mergedTree;// = new HuffTree<char>(t2, t1);
+
+		//put larger children as left child
+		if (t1->weight() >= t2->weight()) {
+			mergedTree = new HuffTree<char>(t1, t2);
+		}else {
+			mergedTree = new HuffTree<char>(t2, t1);
+		}
 
 		//put this merged tree back into the priority queue
 		huffmanQueue.push(mergedTree);

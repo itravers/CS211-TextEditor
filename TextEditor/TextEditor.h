@@ -138,6 +138,8 @@ private:
 	void openHuffman();
 	void saveHuffman();
 	string encodeTextWithHuffman(vector<string>, HuffTree<char>*);
+	string s_binaryToHex(string);
+	char c_binaryToHex(string);
 
 	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible

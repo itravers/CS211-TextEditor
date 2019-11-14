@@ -51,8 +51,8 @@ public:
 	}
 
 	void buildEncodingTable(unordered_map<char, string>& encodingTable, string currentPrefix = "") {
-		rightChild->buildEncodingTable(encodingTable, currentPrefix + "0");
-		leftChild->buildEncodingTable(encodingTable, currentPrefix + "1");
+		rightChild->buildEncodingTable(encodingTable, currentPrefix + "1");
+		leftChild->buildEncodingTable(encodingTable, currentPrefix + "0");
 		
 	}
 };
