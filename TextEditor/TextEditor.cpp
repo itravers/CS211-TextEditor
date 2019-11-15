@@ -503,6 +503,9 @@ string TextEditor::s_hexToBinary(string hexData) {
 *                  Encodes the huffman tree itself into: FILENAME-code.txt
 *                  Compresses our text into file: FILENAME-compressed.txt
 *                  saves both files.
+*				   I decided to write this function without breaking it
+*                  down via functional decomposition. To allow me
+*                  to read through easier.
 *******************************************************************************/
 void TextEditor::saveHuffman() {
 
@@ -579,19 +582,17 @@ void TextEditor::saveHuffman() {
 	string binaryTree = encodeFreqDist(freq_dist);
 	string binaryText = encodeTextWithHuffman(buf, huffTree);
 
-	////string headerFlag = "DEADBEEF";
+	string headerFlag = "-";
 
-	//build entire binary file, with tree, then headerflag, then text
-	////string binaryFile = binaryTree + headerFlag + binaryText;
+	//put the frequency distribution on the first line of our file
+	//and put the 
+	vector<string>binaryFile;
+	binaryFile.push_back(binaryTree);
+	binaryFile.push_back(binaryText);
 
-	////fileController.writeFile(fileName, binaryFile);
-
+	fileController.writeFile(fileName, binaryFile);
 		
 	int pause = 0;
-
-
-
-	
 }
 
 string TextEditor::encodeFreqDist(unordered_map<char, int> freqDist) {

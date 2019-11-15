@@ -45,6 +45,7 @@ public:
 	 *******************************************************************************/
 	bool readFile(string fileName, vector<string>& lines, READ_WRITE readOrWrite);		/* Open A File & read into vector*/
 	bool writeFile(string fileName, vector<string>& lines);
+	bool writeFile(string filename, string file);
 	bool closeFile(ifstream);					/* Closes an Input File. */
 	bool closeFile(ofstream);					/* Closes an output file. */
 

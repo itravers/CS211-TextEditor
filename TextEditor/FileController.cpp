@@ -16,6 +16,13 @@ FileController::FileController() {
 	
 }
 
+bool FileController::writeFile(string filename, string file) {
+	//create a new vector and put the string file on the first line
+	vector<string> toWrite;
+	toWrite.push_back(file);
+	return writeFile(filename, toWrite);
+}
+
 bool FileController::writeFile(string filename, vector<string>& lines) {
 	if (outFile) outFile.close();
 
