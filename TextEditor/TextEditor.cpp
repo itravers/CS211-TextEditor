@@ -576,7 +576,7 @@ void TextEditor::saveHuffman() {
 
 	//Now we need to encode our text into binary using the huffman tree
 	HuffTree<char>* huffTree = huffmanQueue.top();
-	string binaryTree = encodeFreqDistIntoBinary(freq_dist);
+	string binaryTree = encodeFreqDist(freq_dist);
 	string binaryText = encodeTextWithHuffman(buf, huffTree);
 
 	////string headerFlag = "DEADBEEF";
@@ -594,13 +594,15 @@ void TextEditor::saveHuffman() {
 	
 }
 
-string TextEditor::encodeFreqDistIntoBinary(unordered_map<char, int> freqDist) {
+string TextEditor::encodeFreqDist(unordered_map<char, int> freqDist) {
 	string freqDistString = "";
 	for (auto it : freqDist) {
 		char c = it.first;
 		int i = it.second;
 		freqDistString += c;
-		freqDistString += i;
+		freqDistString += ':';
+		freqDistString += to_string(i);
+		freqDistString += ':';
 	}
 
 	return freqDistString;
