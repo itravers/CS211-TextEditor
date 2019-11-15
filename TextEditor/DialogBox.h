@@ -8,8 +8,8 @@
 
 #define DIALOG_NUM_COLUMNS 45
 #define DIALOG_NUM_ROWS 3
-#define DIALOG_X 1
-#define DIALOG_Y 2
+#define DIALOG_X 2
+#define DIALOG_Y 3
 
 #define A_ATTR (A_ATTRIBUTES)
 

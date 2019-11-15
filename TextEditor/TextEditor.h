@@ -25,6 +25,7 @@
 #include "Components/MenuBar.hpp"						/* A Menu system, embedded in a bar*/
 #include "Components/ContextMenu.hpp"
 #include "Trie/Trie.h"
+#include "Huffman/HuffTree.hpp"
 #include "customcolors.h"								/* Reference to console colors */
 #include "../TextEditor/MenuController.h"				/* Everything to do with Menu's */
 #include "FileController.h"								/* Manipulating Files */
@@ -34,6 +35,10 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
+#include <queue> 
+#include <map>
+#include <bitset>
+#include <sstream>
 
 /* Namespaces */
 using std::string;
@@ -92,13 +97,13 @@ public:
 	void contextEditorHelper(string menuData);
 	//void testCallback();
 private:
-
 	/* Objects */
 	FileController fileController;
 	MenuController menuController;
 	ContentController contentController;
 	DialogBox dialogBox;
 	static WINDOW* titleWindow;	
+	WINDOW* mainWindow;
 	MenuBar menuBar;
 	ContextMenu contextMenu;
 	Trie contextMenuTrie;
@@ -114,6 +119,30 @@ private:
 	
 	void writeLines(vector<string>);				// Writes the lines from the file to the screen
 	void processMainMouseEvent(EditorMenuPanel* menuPanel, MEVENT* mouseEvent);	// processes a mouse event
+
+	//huffman tree functions & objects
+	/*bool compareHuffmanTree(HuffTree<int>& a, HuffTree<int>& b){
+		return a.weight() >= b.weight();
+	}*/
+
+	//C++ is DUMB
+	struct compareHuffmanTree{
+		bool operator()(HuffTree<char>* a, HuffTree<char>* b) const{
+			int aw = a->weight();
+			int bw = b->weight();
+			return aw > bw;
+		}
+	};
+
+	//priority_queue<int, vector<int>, greater<int>>freq_dist = {};
+	unordered_map<char, int> freq_dist = {};
+	priority_queue<HuffTree<char>*, vector<HuffTree<char>*>, compareHuffmanTree> huffmanQueue = {};
+	void openHuffman();
+	void saveHuffman();
+	string encodeTextWithHuffman(vector<string>, HuffTree<char>*);
+	string encodeFreqDist(unordered_map<char, int> freqDist);
+	string s_binaryToHex(string);
+	string s_hexToBinary(string);
 
 	//void processMainMouseEvent(MEVENT*, int, int);	// processes a mouse event
 	static void colorbox(WINDOW*, chtype, int);		// Creates a color box around given window, 1 for visible

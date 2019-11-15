@@ -17,7 +17,7 @@ DialogBox::DialogBox(WINDOW* parentWindow, string message, int yPos, int xPos, i
 	is_showing = false;
 
 	//create a new window with those values
-	window = subwin(parentWindow, numRows, numCols, yPos, xPos);
+	this->window = subwin(parentWindow, numRows, numCols, yPos, xPos);
 	panel = new_panel(window);
 	hide_panel(panel);
 }
@@ -34,6 +34,7 @@ string DialogBox::displayDialogBox(string message) {
 	cursorLocation.x = message.size() + 1;
 	cursorLocation.y = 1;
 	displayCursor();
+	//show();
 	
 	wrefresh(window);
 
@@ -41,6 +42,7 @@ string DialogBox::displayDialogBox(string message) {
 	int c;
 	string inputValue = "";
 	while ((c = wgetch(window)) != 10/*KEY_ENTER*/) {
+		
 		if (c == -1) continue;
 		//check if this is an alpha numeric value
 		if ((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a') || (c >= '0' && c <= '9') || c == '.' || c == '-' || c == '_') {

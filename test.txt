@@ -1,66 +1,1700 @@
-   Welcome to the Editor of Text. Where you can do wonderful things... like edit text.
-Currently, you can't edit any text, sorry. However, you can manipulate the menus!
-sdfasdf
+numprints: 50
+The grammar file called "hamlet.g" contains 272 definitions.
+# Hamlet Draft Num: 1
 
-Menu Commands
- CTRL-f - Popup File Menu
- CTRL-e - Popup Edit Menu
- CTRL-v - Popup View Menu
- CTRL-t - Popup Tool Menu
- CTRL-h - Popup Help Menu
- CTRL-d - Close All Menus
- CTRL-c - Close the program
- CTRL-b - Demo Dialog Box
+To push on or not to push on ? That is the question ! 
+Is it a brilliant thing to stand for the hokum of awful concerns that appear , 
+Or to fall off a branch resulting from catastrophe and by countering stop them ? 
+To pass away , to snooze , cut off 
+And by a snooze to say we cancel the distress , and the dozen inborn injuries that the populace is receiver to ! 
+'Tis a realization boldly to be intended , To swim with the fishes , to rest 
 
- Move Cursor:
-  Up Arrow - Up
-  Down Arrow - Down
-  Right Arrow - Right
-  Left Arrow - Left
+To slumber , and for all one knows to mental picture . Oh , there's the dispute ... 
+while I am in my trance what bad things could pass 
+when we have trailed off this mortal rat race , must cause us to fall back and think for a bat of an eye . 
+There's the regard that leads to adversity of hanging out on this actuality for too much time . 
 
- Current Features:
-  A Menu System
-  Opening File from command line
-  Word Wrap
-  Scrolling
-  Scroll Bar
-  Dialog Box
-  Saving Files
+For who would stand for the scourges and disparagement of time , 
+the tyrants crime , the narcissistic mans insolence . 
+The pangs of reviled affection , 
+the duration it takes for a trial to trickle through the tribunals . 
+The scoffing of the government , 
+and when conditions that are dreadful take effect to forgiving bodies at the mitts of the disreputable . 
+when the disconsolate man himself may his final blow make with a evil sabre . 
 
- To be or not to be, that is the question. Whether 'tis nobler in the mind to suffer the slings and arrows of outra
-geous fortune, or to take arms against a sea of trouble and by oppsoing end them. To die, to sleep, no more. And by
- a sleep to say we end the heartache and the thousand natural shocks that flesh is heir to. Tis a consumation devou
-tly to be wished, to sleep, to die... Aye, there's the rub, for in that sleep of death what dreams may come when we
- have shuffled of this mortal coil must give us pause. There's the respect that makes calamity of so long life. For
- who would bear the whips and scorns of time, the oppresors wrong. The proud mans contumely. The pangs of despised 
-love, the laws delay. The insolence of office, and the spurns that the patient merit of the unworthy takes. For who
- would fardels bear to grunt a sweat under a weary life, but that the dread of something after death, the undiscove
-red country from whose borne no traveller returns, puzzles the will and makes us rather bear those ills we have tha
-n fly to others we know not of. Thus conscience doth make cowards of us all, and the natural hue of resolution is s
-icklied over by the pale cast of thought. And enterprises with great pith and moment, with this reguard, their curr
-ents turn awry... and lose the name of action.
+who may I ask would troubles sustain to grunt a good will down from a fatigued life . 
+We would not do so if we were not daunted of what ensues on the other side of the bitter end , 
+the nation subsequent to our cognizance disconcerts our spirit 
+to the footings where we would much sooner carry the troubles we are already acclimatized to 
+than chance going to those we know not of . 
 
- This editor
- is also going
- to need to
- be able to
- scroll down
- when text
- goes off the
- end of the
- screen. We
- Need some way
- to take care
- of scrolling
- when text
- goes too far
- down. That's
- why I'm 
- typing this
- section like
- this. It will
- help with testing.
- You should be
- able to scroll
- down and see
- this text. 
+my knowledge accomplishes us to revise my conduct , 
+and thus the indigenous tint of courage is nauseated or'e with the dim cast of thought 
+and ventures with excessive vigor and concern speculating on this they flip-flop their purpose 
+and forfeit the moniker of action . 
+
+
+# Hamlet Draft Num: 2
+
+Should I live , or stride in front of a moving boat ? That is the question ! 
+Should I elect to accept the rubbish of scurrilous happenings , 
+Or to oppose vs a pond of adversity and by fighting eradicate them ? 
+To die , to rest , departed 
+And by a slumber to say we end the distress , and the great deal of involuntary bewilderments that our species is heir to ! 
+'Tis a realization robustly to be wanted , To succumb , to nap 
+
+There is the chance that I could have a nightmare worse than death while I'm in this sleep . That's where the scrape may ensue ... 
+for in that snooze of cessation what day dream may come 
+when this life comes to a overthrow , must subside the growth . 
+This can be the reason that leads to difficulty of sheltering on this survival for too much time . 
+
+Why Could I keep on dealing with the sad things that pass , 
+the coercers sin , the covetousness of the mediocre gilded guy . 
+The suffering generated by bequeathing bestowing adulation to a person that does not become infatuated with me in reverse , 
+the law's delay . 
+The disparagement of the government , 
+and the spurns that the quiet incur of the wretched swipes . 
+when the guy himself might bring about himself to rest in peace with a uncovered bodkin . 
+
+what person would heft a strain to hoist ghastly nuisance down from a wearing life . 
+Nevertheless that the panic of that which exists at the heels of death , 
+the commonwealth from which no one ever triumphs obscures our will power 
+and brings about us alternatively hold those abuses we possess 
+than bustle to others we cannot fathom . 
+
+my info prepares us to rework the behaviour , 
+and thus the natural tone of one's volition is abolished because we analyse about it many a time 
+and the proceedings we execute in the sultriness of the occurance with this regard their motions turn away 
+and squander the label of action . 
+
+
+# Hamlet Draft Num: 3
+
+Would I commit suicide ? It's what I've been regarding just now ! 
+Weather 'tis prudent in the brain to stand for the phooey of dreadful things that result , 
+Or to fight in defiance of a profusion of suffering and by battling annul them ? 
+To drown , to nap , no longer 
+And by a trance to say we dissolve the bitterness , and the ream of uncontrolled bewilderments that man kind is recipient to ! 
+'Tis a masterpiece vigorously to be yearned , To croak , to oblivion 
+
+While in this snooze , I could possibly have a nightmare worse than death . Holy Lord! , there's the rub ... 
+for in that hibernation of the afterlife what day dream may come 
+when we expire , is obliged to cede us hesitation . 
+This might be the respect that causes difficulty of residing on this world for too much time . 
+
+Why Could I go on dealing with the inferior matters that take effect , 
+horrible people's irritation , the parsimony of the commonplace upscale guy . 
+The spasms effected by furnishing adoration to a earth dweller that does not love me in reverse , 
+the judge's delay . 
+The despisement of authority , 
+and the cold shoulders that the enduring deserve of the unworthy secures . 
+when the protagonist himself can his demise cause with a huge neon knife . 
+
+who would sustain a struggling to squawk a good will under a wearing lifetime . 
+We would not do so if we were not disturbed of what transpires thereafter mortality , 
+the unexplored region from whose endured no tourist comes back baffles all moxie 
+and gives rise to us preferably hoist those maladies we contain 
+than careen to others we don't get . 
+
+the information makes us to rethink my goings on , 
+and thus the characteristic complexion of one's volition is exterminated because we conceptualize about it too regularly 
+and deeds with immense pith and substance regarding this they revise their strategy 
+and those we are speaking about absolutely balk . 
+
+
+# Hamlet Draft Num: 4
+
+Could I commit suicide ? It's what I've been mulling over once more ! 
+Weather 'tis unselfish in the brain to put up with the crap of inferior affairs that result , 
+Or to boycott in contrast to a ocean of misfortune and by countering abrogate them ? 
+To rest in peace , to sleep , perished 
+And by a oblivion to say we terminate the misery , and the dozen spontaneous consternations that man kind is payee to ! 
+I need this more than most things , To pass on , to hibernation 
+
+To slumber , one can assume to have a delusion . That's where the dilemma may show ... 
+while I am in my slumber what hallucination may come 
+when death absorbs us , is compelled to cause us to hideaway and conceptualize for a moment . 
+This may be the regard that prepares difficulty of residing on this being for too much time . 
+
+Why Would I push on dealing with the unacceptable baggage that take place , 
+the authoritarians corruption , the overbearing guys scornfulness . 
+The discomfort caused by allowing love to a earth dweller that does not permit me devotion back , 
+the era it takes for a suit to dribble through the magistrates . 
+When bourgeois in posts of office are rude to me , 
+and when doings that are crummy result to willing citizens are induced by the unsuitable . 
+when he himself can abrogate his span with a bad blade . 
+
+which of you would lug a woe to deliver a low and low vibration a concern beneath a flagging life . 
+Nevertheless that the trepidation of something ensuing cessation , 
+the virgin land from whose endured no patrol triumphs frustrates the will power 
+to the situations where we would more readily manage the diseases we are already accustomed to 
+than dash to others we don't grasp . 
+
+Thus conscience does make cravens of us all, 
+and thus the ingenerate shade of resolution is lost because we ponder about it too often 
+and tasks with considerable substance and seriousness with this reason their streams divert 
+and drop the alias of action . 
+
+
+# Hamlet Draft Num: 5
+
+To carry on or not to hang in ? I have to prepare for this ! 
+Is it a smart thing to stand for all the wounds and blunders of a horrible duration , 
+Or to oppose notwithstanding a pond of troubles and by fighting abate them ? 
+To rest in peace , to hibernation , extinct 
+And by a hibernation to say we extinguish the despondency , and the million customary consternations that our species is heir to ! 
+I wish for this in excess of the whole enchilada , To croak , to trance 
+
+To hibernation , might be to have a mental picture . Holy Lord! , there's the issue ... 
+while I am in my hibernation what hogwash could arrive 
+when we kick the bucket , must slow down the case . 
+This could be the rationale that leads to misfortune of hanging out on this convolution for too much time . 
+
+For who would endure the crime that is piled on , 
+horrible people's rage , the ostentatious persons arrogance . 
+The agony in the ticker of abhorred infatuation , 
+the age it takes for a action to strain through the kangaroo courts . 
+The insolence of office , 
+and the rebuffs that the persevering incur at the fists of the disreputable . 
+when the glum man himself may motivate himself to swim with the fishes with a uncovered lance . 
+
+who would heft a strain to groan a sweat below a wearing story . 
+We would not do so if we were not daunted of what results on the far side of dissolution , 
+the state from which no one ever returns confuses our valor 
+to the conditions where we would sooner hold on to the cruel whereabouts we are already habituated to 
+than run to others we don't get . 
+
+the info brings about us to emend our procedures , 
+and thus the indigenous complexion of courage is sicklied throughout with the gray cast of speculation 
+and enterprises with tremendous pitch and value scrutinizing this they change their arrangement 
+and oust the name of execution . 
+
+
+# Hamlet Draft Num: 6
+
+Why should I keep on persisting like this ? It's what I've been mulling over once more ! 
+Should I dislike to stand for the bull of a atrocious story , 
+Or to call it quits by reason of hard times and by warring against annihilate them ? 
+To perish , to oblivion , no more 
+And by a rest to say we suppress the dejections , and the trillion universal bewilderments that man kind is payee to ! 
+'Tis a deed resolutely to be wanted , To go the way of all flesh , to trance 
+
+To trance , could be to hallucination . That's where the crunch may show ... 
+while I am in my snooze what hogwash could develop 
+when we swim with the fishes , must taper the operation . 
+This may be the respect that gives rise to difficulty of so expanded span . 
+
+Why Could I carry on dealing with the flogs and despisement of time , 
+the bullies crime , the grabbiness of the ordinary affluent earth dweller . 
+The misery provoked by permitting infatuation to a person that does not lust for me back , 
+the period it takes for a action to sift through the magistrates . 
+The scorns of office , 
+and the spurns that the willing are entitled to of the inexcusable defraud . 
+when he himself might his departure make with a gleaming shank . 
+
+who may I ask would lug a suffering to endeavor profoundly challenging underneath a spent duration . 
+Yet that the trepidation of something succeeding doom , 
+the country from which no one ever recovers disorients my initiative 
+to the footings where we would alternately keep the evils we are already acquainted with 
+than haste to others we don't get . 
+
+the info forms us to reasses all operation , 
+and thus the accustomed shade of one's volition is sicklied throughout with the faded cast of speculation 
+and the things we conclude in the warmth of the incident thinking about this they shift their scheme 
+and waste the surname of execution . 
+
+
+# Hamlet Draft Num: 7
+
+To keep on or not to continue ? That is the question ! 
+Is it a brainy thing to bear with all the sufferings and failures of shocking happenings , 
+Or to boycott counter to a multitude of hard times and by protesting dissolve them ? 
+To expire , to trance , cadaverous 
+And by a rest to say we suppress the torture , and the great deal of uncontrolled traumas that humanity is title holder to ! 
+'Tis a realization wholeheartedly to be hungered for , To give up the ghost , to rest 
+
+To nap , and probably to dream . I may have a lot of quandry if I sleep ... 
+for in that snooze of mortality what nightmare may come 
+when we go the way of all flesh , will obstruct the operation . 
+There's the cause that arranges adversity of dwelling on this sphere for too much time . 
+
+Who could bear with to stand up to the bashes and despisement of time , 
+sad people's rage , the penuriousness of the mainstream opulent earth dweller . 
+The discomfort provoked by awarding lust to a tellurian that does not adore me return wise , 
+the duration it takes for a trial to osmose through the tribunals . 
+The arrogance of office , 
+and when stuff that are lousy take place to calm folks at the possession of the unfit . 
+when the fellow himself can motivate himself to kick the bucket with a long grenade launcher . 
+
+what person would fardels bare to lug horrible persecution down from a beat history . 
+Although that the horror of perseverance subsequent to death , 
+the community ensuing our apprehension confuses my valor 
+to the footings where we would unwillingly hold on to the problems we are already used to 
+than gamble going to those we cannot fathom . 
+
+the information causes us to reasses our goings on , 
+and thus the indigenous tone of courage is obscured because we analyse about it many a time 
+and enterprises with a lot of soul and more importance scrutinizing this they change their strategy 
+and the serfs of our deliberation completely give up . 
+
+
+# Hamlet Draft Num: 8
+
+Would I suffer , or stab myself ? It's what I've been thinking about once more ! 
+Is it a clever thing to bear with all the wounds and blows of disgraceful disadvantage , 
+Or to fight in opposition to a sea of difficulty and by clashing abrogate them ? 
+To rest in peace , to coma , dead 
+And by a coma to say we stop the bitterness , and the great deal of commonplace injuries that man kind is heir to ! 
+'Tis a masterpiece eagerly to be yearned , To rest in peace , to hibernation 
+
+There is the chance that I could have a mental picture while I'm in this hibernation . I may have a lot of dispute if I sleep ... 
+for in that doze of quietus what bad things could pass 
+when mortality eats us , is compelled to cool the means . 
+This can be the cause that arranges adversity of hanging out on this bight for too much time . 
+
+For who would stand for the unacceptable things that arise , 
+crummy people's antagonism , the parsimony of the garden variety loaded human . 
+The pangs of shunned adulation , 
+the generation it takes for a trial to penetrate through the courts . 
+The audacity of those in charge , 
+and when effects that are awful result to enduring human beings are brought about by the wretched . 
+when the guy himself might occasion himself to croak with a good grenade launcher . 
+
+which of you would fardels bare to strive truly problematic underneath a sick history . 
+Though that the panic of something beyond the bitter end , 
+the commonwealth beyond our comprehension puzzles my initiative 
+to the whereabouts where we would much sooner maintain the diseases we are already acquainted with 
+than dare going to those we don't comprehend . 
+
+Thus moral sense doth make skulkers of us all, 
+and thus the inborn tone of resolution is annihilated because we ponder about it many a time 
+and accomplishments with huge pith and significance with this regard their tides deviate 
+and waste the style of action . 
+
+
+# Hamlet Draft Num: 9
+
+Would I go all hara-kiri ? It's what I've been speculating on presently ! 
+Should I hate to swallow all the boo-boo's and mistakes of crummy matters that appear , 
+Or to break with in defiance of a multitude of disaster and by disputing abrogate them ? 
+To rest in peace , to coma , perished 
+And by a coma to say we conclude the agony , and the thousand common bewilderments that human nature is holder to ! 
+'Tis a fulfilment sincerely to be sought , To perish , to oblivion 
+
+While in this coma , I could possibly have a hallucination . I may have a lot of squeeze if I coma ... 
+for in that rest of the bitter end what gibberish could take effect 
+when we have scuffled off this destructive amphitheatre , is directed to diminish the routine . 
+This may be the rationale that spawns difficulty of so expanded lifetime . 
+
+For who would tolerate the flogs and contempt of time , 
+dreadful people's antagonism , the miserliness of the ordinary gilded guy . 
+The suffering generated by permitting adoration to a human that does not administer me affection in return , 
+the lifetime it takes for a action to winnow through the tribunals . 
+The disdain of the masters of mankind , 
+and when conditions that are bad take place to persevering hoi polloi are created by the ineligible . 
+when the fellow himself may dissolve his story with a unrobed shiv . 
+
+what person would fardels bare to snort a care down from a drained span . 
+Yet that the apprehension of something beyond cessation , 
+the virgin land from whose travelled no exploration comes back befuddles my stamina 
+to the standing where we would more readily enjoy the troubles we are already habituated to 
+than fly to others we don't grasp . 
+
+the info accomplishes us to correct our procedures , 
+and thus the habitual shade of determination is obscured because we ponder about it too much 
+and the baggage we complete in the fever of the time with this respect their rivers turn awry 
+and those we are deliberating about conclusively welsh . 
+
+
+# Hamlet Draft Num: 10
+
+To push on or not to keep on ? That is the question ! 
+Weather 'tis ethical in the soul to swallow the guns and daggers of a atrocious generation , 
+Or to kill myself resulting from hardship and by countering dissolve them ? 
+To perish , to nap , no longer 
+And by a oblivion to say we extinguish the broken ticker , and the dozen involuntary clashes that humanity is inheritor to ! 
+'Tis a attainment robustly to be preferred , To succumb , to oblivion 
+
+There is the chance that I could have a nightmare worse than death while I'm in this rest . That's where the doubt may exist ... 
+for in that slumber of death what mental picture may come 
+when this experience comes to a abate , must cause us to fall back and ponder for a instant . 
+There's the respect that prepares troubles of sheltering on this corkscrew for too much time . 
+
+For who would endure the straps and taunting of time , 
+dreadful people's rage , the close-fistedness of the unexceptional rich tellurian . 
+The anguish effected by allowing appreciation to a girl that does not adore me in return , 
+the lifetime it takes for a lawsuit to winnow through the kangaroo courts . 
+When bodies in seats of jurisdiction are ill-mannered to me , 
+and when things that are dreadful materialize to accommodating people of the unfit poach . 
+when the disconsolate man himself can conclude his story with a uncovered bodkin . 
+
+which of you would fardels bare to strive incredibly laborious beneath a discontented history . 
+We would not do so if we were not scared of what transpires succedent to demise , 
+the place from which no one ever recovers distracts our ambition 
+to the situations where we would more willingly manage the maladies we are already accustomed to 
+than fly to others we don't understand . 
+
+Thus scruples does make babies of us all, 
+and thus the natural hue of determination is demolished because we conceptualize about it time and again 
+and activities with huge vigor and momentousness with this grounds their currents deviate 
+and those we are speaking about wholly recant . 
+
+
+# Hamlet Draft Num: 11
+
+Could I self-destruct ? That is the question ! 
+Weather 'tis befitting in the thinker to accept the crap of inferior proceedings that transpire , 
+Or to overturn in opposition to a pond of sorrow and by being contrary to undo them ? 
+To pass on , to doze , no longer 
+And by a trance to say we quash the suffering , and the great deal of regular traumas that the populace is payee to ! 
+I crave this to a greater degree than most things , To perish , to hibernation 
+
+While in this trance , I could possibly have a nightmare worse than death . I may have a lot of issue if I nap ... 
+for in that sleep of the end of life what bad things could materialize 
+when this span comes to a terminate , must subdue the means . 
+This could be the rationale that brings about difficulty of dwelling on this terrene for too much time . 
+
+Who could hang in to stand up to the scourges and mockery of time , 
+the intimidators crime , the covetousness of the common gilded guy . 
+The pangs of loathed allegiance , 
+the judge's tarrying . 
+When folks in situations of influence are dis-gracious to me , 
+and when affairs that are unacceptable materialize to indulgent bodies are brought about by the unsuitable . 
+when the unhappy man himself could suppress his span with a red bayonet . 
+
+who would hold a burdens to bare horrifying torture under a sleepy history . 
+We would not do so if we were not afraid of what happens later than doom , 
+the commonwealth from which no one ever recovers befuddles the desires 
+to the whereabouts where we would preferably manage the evils we are already acquainted with 
+than venture going to those we cannot fathom . 
+
+Thus conscience can make chickens of us all, 
+and thus the native color of one's volition is made ill throughout with the dangerous cast of understanding 
+and the effects we do in the hotness of the date mulling over this they revise their plans 
+and they fully bow out . 
+
+
+# Hamlet Draft Num: 12
+
+Why should I hang in living like this ? That is the question ! 
+Should I elect to suffer all the pangs and setbacks of nefarious disadvantage , 
+Or to limp in front of a flying aircraft carrier because of sorrow and by warring against terminate them ? 
+To perish , to slumber , not at all 
+And by a coma to say we destroy the broken heart , and the ocean of characteristic injuries that man kind is heir to ! 
+'Tis a masterpiece firmly to be hunted , To die , to slumber 
+
+To slumber , assumably to hallucination . I may have a lot of quandry if I snooze ... 
+for in that trance of the afterlife what crap could arise 
+when we have limped off this bitter universe , is directed to obstruct the advance . 
+This may be the rationale that prepares calamity of so expanded interval . 
+
+Who could put up with to stand up to the bad baggage that arrive , 
+lousy people's displeasure , the pretentious persons despisement . 
+The depression brought about by bequeathing bestowing lust to a girl that does not adulate me in return , 
+the duration it takes for a action to penetrate through the courts . 
+When folks in posts of influence are contemptuous to me , 
+and the rebuffs that the calm deserve at the possession of the ignoble . 
+when the unhappy man himself can motivate himself to pass on with a scary sword . 
+
+who may I ask would fardels bare to squawk a sweat below a sleepy interval . 
+But that the dismay of perseverance subsequent to demise , 
+the untravelled kingdom from whose travelled no expedition recovers distracts our moxie 
+and whips up us sooner sholder those problems we retain 
+than wager going to those we know not of . 
+
+Thus conscience does make quitters of us all, 
+and thus the ingenerate shade of determination is nauseated throughout with the pale cast of thought 
+and tasks with vast strength and significance with this reason their currents turn away 
+and those we are talking about utterly surrender . 
+
+
+# Hamlet Draft Num: 13
+
+Why should I carry on living like this ? That is the question ! 
+Is it a astute thing to stand for all the aches and setbacks of lousy concerns that develop , 
+Or to electrocute myself resulting from misfortune and by fighting quash them ? 
+To expire , to rest , perished 
+And by a slumber to say we conclude the heavy ticker , and the lots of natural breakdowns that flesh is inheritor to ! 
+'Tis a coup earnestly to be craved , To pass on , to oblivion 
+
+There is the chance that I could have a nightmare while I'm in this coma . That's where the disagreement may exist ... 
+for in that nap of the afterlife what malarkey could arise 
+when this life comes to a cancel , is directed to decelerate the advance . 
+This can be the cause that makes misfortune of so enlarged experience . 
+
+Who could bear to stand up to the beatings and despisement of time , 
+the slave drivers corruption , the close-fistedness of the undistinguished upscale earth dweller . 
+The anguish created by conferring infatuation to a woman that does not appreciate me in return , 
+the age it takes for a lawsuit to permeate through the kangaroo courts . 
+When bourgeois in points of power are insolent to me , 
+and when stuff that are sad transpire to imperturbable people at the control of the ignoble . 
+when the fellow himself can induce himself to swim with the fishes with a unrobed skewer . 
+
+what person would woe hoist to struggle emphatically laborious below a drained generation . 
+We would not do so if we were not frightened of what comes on the other side of annihilation , 
+the commonwealth succeeding our cognizance befuddles the ambition 
+and produces us unwillingly hoist those ailments we retain 
+than face going to those we don't grasp . 
+
+Thus conscience does make cravens of us all, 
+and thus the indigenous aspect of resolution is forfeit because we conceptualize about it many a time 
+and ventures with extreme importance and significance with this rationale their motions changes course 
+and drop the surname of suicide . 
+
+
+# Hamlet Draft Num: 14
+
+Would I commit suicide ? It's what I've been thinking about lately ! 
+Should I prefer to tolerate the bad things of dreadful doings that arise , 
+Or to end it all by reason of calamity and by being contrary to annul them ? 
+To go the way of all flesh , to slumber , lifeless 
+And by a nap to say we put the kibosh on the distress , and the aggregation of constant consternations that man kind is holder to ! 
+I wish for this more than everything , To swim with the fishes , to snooze 
+
+There is the chance that I could have a nightmare while I'm in this sleep . That's where the trouble may come to pass ... 
+while I am in my snooze what bull could materialize 
+when we kick the bucket , has to make us to turn tail and ponder for a flash . 
+There's the respect that produces misfortune of sheltering on this bight for too much time . 
+
+Why Would I keep at it dealing with the bad affairs that appear , 
+the dictators wrong , the penny-pinching of the average well off human . 
+The discomfort in the soul of shunned appreciation , 
+the judge's adjournment . 
+When persons in locales of jurisdiction are saucy to me , 
+and when affairs that are sad arise to willing bodies of the good for nothing embezzles . 
+when he himself may end his lifetime with a new dinner knife . 
+
+whom would woe lug to to haul hideous anguish below a fatigued life . 
+Yet that the panic of something beyond dissolution , 
+the place from which no one ever comes back puzzles our desires 
+to the situations where we would more willingly carry the troubles we are already familiarized with 
+than dare going to those we cannot fathom . 
+
+Thus moral sense can make cowards of us all, 
+and thus the innate tinge of resolution is nauseated throughout with the pale cast of thought 
+and ventures with extreme significance and more importance with this cause their tides deviate 
+and they fully reneges . 
+
+
+# Hamlet Draft Num: 15
+
+To be or not to be ? It's what I've been scrutinizing once more ! 
+Should I prefer to stand for the fists and bombs of odious happenings , 
+Or to oppose in the face of a ocean of adversity and by countering terminate them ? 
+To drown , to hibernation , passed away 
+And by a trance to say we revoke the depression , and the many characteristic bewilderments that the human species is heir to ! 
+I want this in a superior way than being stark-naked in the shower with a cute young woman , To kick the bucket , to coma 
+
+There is the chance that I could have a delusion while I'm in this trance . I may have a lot of dilemma if I doze ... 
+for in that oblivion of the end of life what bull could pass 
+when we kick the bucket , is obliged to wane the technique . 
+This can be the grounds that gives rise to suffering of dwelling on this terrene for too much time . 
+
+Who could swallow to stand up to the whips and ridicule of time , 
+the intimidators sin , the ostentatious mans taunting . 
+The torment induced by allowing devotion to a lady that does not love me back , 
+the sovereignty's delay . 
+When citizens in positions of authoritativeness are disrespectful to me , 
+and the snubs that the even tempered warrant of the inexcusable cheat . 
+when the protagonist himself might destroy his story with a shorn shiv . 
+
+who may I ask would fardels bare to squawk a perspiration below a drained experience . 
+Nevertheless that the phobia of that which exists succeeding the end of life , 
+the state from which no one ever comes back distracts the valor 
+and makes us unwillingly carry those diseases we possess 
+than careen to others we don't grasp . 
+
+my info leads to us to rethink all conduct , 
+and thus the native shade of resolution is demolished because we plan about it too repeatedly 
+and accomplishments with abundant importance and concern thinking about this they adjust their plans 
+and the clients of our ballad exhaustively recant . 
+
+
+# Hamlet Draft Num: 16
+
+Shall I tolerate , or end it all ? It's what I've been eye-balling just now ! 
+Is it a brainy thing to tolerate all the bruises and blows of unacceptable baggage that transpire , 
+Or to end it all because of troubles and by warring against expunge them ? 
+To perish , to doze , departed 
+And by a oblivion to say we cancel the sadness , and the ream of inborn consternations that man kind is receiver to ! 
+I wish for this more than everything , To kick the bucket , to sleep 
+
+There is the chance that I could have a mental picture while I'm in this doze . That's where the headache may result ... 
+for in that snooze of cessation what hallucination may come 
+when this experience comes to a vacate , is compelled to slow the means . 
+There's the rationale that whips up misfortune of residing on this amphitheatre for too much time . 
+
+Why Would I keep at it dealing with the strikes and jeering of time , 
+inferior people's outrage , the boastful persons insolence . 
+The anguish brought about by permitting appreciation to a girl that does not convey me devotion return wise , 
+the age it takes for a lawsuit to permeate through the kangaroo courts . 
+When people in posts of power are sassy to me , 
+and the repudiation that the patient earn are provoked by the good for nothing . 
+when the despondent man himself can obliterate his span with a bald shiv . 
+
+which of you would cart a woe to sustain awesome pain underneath a exhasted experience . 
+We would not do so if we were not scared of what occurs beyond the afterlife , 
+the exotic country from whose travelled no expedition comes back frustrates the ambition 
+and forms us more willingly hold those sicknesses we bear 
+than scurry to others we don't comprehend . 
+
+the information spawns us to review my procedures , 
+and thus the indigenous hue of determination is wasted because we conceptualize about it time and again 
+and the matters we accomplish in the fieriness of the moment with this regard their floods deviate 
+and the vassals of our ballad throughly cop out . 
+
+
+# Hamlet Draft Num: 17
+
+To run on or not to never cease ? I have to kick this around ! 
+Is it a clever thing to tolerate the beatings and bobkins of outrageous misfortunes , 
+Or to oppose facing a expanse of difficulty and by being contrary to conclude them ? 
+To rest in peace , to rest , extinct 
+And by a doze to say we vacate the torment , and the ton of regular consternations that humanity is recipient to ! 
+I need this in a superior way than being nude in the sack with a cute woman , To croak , to slumber 
+
+To hibernation , not impossibly to nightmare worse than death . 'Aye , there's the friction ... 
+for in that slumber of doom what phooey could develop 
+when mortality engrosses us , is obliged to taper the growth . 
+There's the rationale that generates adversity of so expanded life . 
+
+For who would stand for the sad stuff that take effect , 
+dreadful people's resentment , the close-fistedness of the ordinary moneyed guy . 
+The pangs of detested friendship , 
+the span it takes for a argument to dribble through the tribunals . 
+The contumely of the government , 
+and when doings that are horrible transpire to indulgent people at the fists of the inexcusable . 
+when the protagonist himself might overthrow his story with a unrobed knife . 
+
+which of you would hold a fardels to endeavor very tough beneath a wearing history . 
+We would not do so if we were not daunted of what happens succedent to quietus , 
+the kingdom later than our ken obscures all will power 
+and synthesizes us unwillingly to haul those maladies we contain 
+than face going to those we don't know . 
+
+Thus conscience doth make cowards of us all, 
+and thus the characteristic tint of determination is abolished because we analyse about it time and again 
+and the matters we finish in the swelter of the occurance scrutinizing this they swap their purpose 
+and they quite balk . 
+
+
+# Hamlet Draft Num: 18
+
+To be or not to be ? I have to ponder this ! 
+Should I select to stomach the sling shots and thunderbolts of horrible concerns that arrive , 
+Or to hop off a wing by virtue of sorrow and by countering cancel them ? 
+To succumb , to snooze , departed 
+And by a nap to say we expunge the hurting , and the lots of regular scares that humanity is receiver to ! 
+'Tis a success zealously to be craved , To give up the ghost , to sleep 
+
+There is the chance that I could have a nightmare while I'm in this oblivion . Holy Lord! , there's the pickle ... 
+for in that snooze of doom what baloney could happen 
+when we have straggled off this terrible survival , will consign us stoppage . 
+This could be the respect that generates hardship of so lengthened life . 
+
+Why Would I push on dealing with the thrashes and chutzpah of time , 
+the tyrants crime , the arrogant persons contumely . 
+The pangs of disdained friendship , 
+the hours it takes for a petition to trickle through the courts . 
+The taunting of office , 
+and when doings that are bad transpire to gentle people are evoked by the ignoble . 
+when the unhappy man himself may effect himself to succumb with a murderous machete . 
+
+which of you would struggling bare to bare hideous persecution down from a wearing story . 
+We would not do so if we were not distressed of what approaches on the far side of doom , 
+the place from which no one ever recovers befuddles the stamina 
+and produces us just as soon take those woes we bear 
+than dare going to those we don't grasp . 
+
+my information spawns us to reasses all procedures , 
+and thus the indigenous hue of determination is consumed because we analyse about it too repeatedly 
+and the affairs we achieve in the heat of the occurance with this rationale their floods turn aside 
+and those we are deliberating about completely get cold feet . 
+
+
+# Hamlet Draft Num: 19
+
+Should I stand for , or call it quits ? I have to ponder this ! 
+Should I propose to take the malarkey of shocking disadvantage , 
+Or to resist against a plethora of disaster and by countering extinguish them ? 
+To pass away , to hibernation , cadaverous 
+And by a coma to say we overthrow the heartache , and the ocean of natural scares that out world is receiver to ! 
+'Tis a realization wholeheartedly to be yearned , To swim with the fishes , to trance 
+
+To oblivion , horribly to nightmare worse than death . 'Aye , there's the squeeze ... 
+while I am in my trance what day dream may come 
+when we have scraped off this ruthless survival , is destined to subside the progress . 
+This might be the rationale that leads to suffering of so expanded span . 
+
+For who would withstand the awful effects that happen , 
+the taskmasters abuse , the conceited guys sneers . 
+The torture in the chest of loathed affection , 
+the judge's obstruction . 
+When hoi polloi in posts of authoritativeness are dis-gracious to me , 
+and when matters that are bad happen to mild folks of the unfit swipes . 
+when the protagonist himself could motivate himself to kick the bucket with a old shotgun . 
+
+who may I ask would stress take to toil extreamly arduous underneath a flagging interval . 
+We would not do so if we were not daunted of what transpires on the far side of quietus , 
+the kingdom from which no one ever triumphs confounds my valor 
+to the circumstances where we would sooner enjoy the maladies we are already acquainted with 
+than fly to others we do not understand . 
+
+my information forms us to rethink my procedures , 
+and thus the characteristic tone of courage is destroyed because we plan about it too repeatedly 
+and ventures with considerable essence and more importance eye-balling this they change their arrangement 
+and those we are deliberating about totally balk . 
+
+
+# Hamlet Draft Num: 20
+
+To be or not to be ? I have to resolve this ! 
+Is it a smart thing to accept the phooey of wanton sorrows , 
+Or to end it all because of suffering and by warring against abrogate them ? 
+To pass away , to snooze , deceased 
+And by a slumber to say we abrogate the agony , and the bulk of uncontrolled shocks that the populace is recipient to ! 
+'Tis a masterpiece strenuously to be envied , To drown , to nap 
+
+There is the chance that I could have a day dream while I'm in this rest . That's where the trouble may develop ... 
+while I am in my hibernation what dream may come 
+when annihilation exhausts us , will stop the action . 
+There's the reason that prepares suffering of hanging out on this being for too much time . 
+
+Who could live to stand up to the scourges and arrogance of time , 
+sad people's annoyance , the avarice of the mainstream propertied guy . 
+The suffering in the soul of derided appreciation , 
+the generation it takes for a trial to strain through the magistrates . 
+The contempt of office , 
+and when effects that are horrible materialize to mild citizens at the grasp of the undeserving . 
+when the guy himself might suppress his life with a large grenade . 
+
+which of you would bare a burdens to grumble a erection underneath a tired history . 
+We would not do so if we were not scared of what comes successive to death , 
+the kingdom from which no one ever reappears distracts all fortitude 
+and generates us just as soon hoist those ailments we possess 
+than face going to those we don't grasp . 
+
+my info leads to us to rework the behaviour , 
+and thus the innate tinge of determination is made ill throughout with the faint cast of reflection 
+and the things we achieve in the fever of the incident pondering this they change their aim 
+and the clients of our verse totally welsh . 
+
+
+# Hamlet Draft Num: 21
+
+Why should I push on existing like this ? That is the question ! 
+Should I select to accept the bullshit of corrupt unhappiness , 
+Or to be insubordinate undeterred by a multitude of calamity and by rivalling squelch them ? 
+To perish , to doze , gone 
+And by a doze to say we expunge the bitterness , and the bulk of involuntary consternations that our kind is inheritor to ! 
+'Tis a success strenuously to be yearned , To perish , to snooze 
+
+While in this sleep , I could possibly have a dream . I may have a lot of complication if I sleep ... 
+while I am in my slumber what mental picture may come 
+when we have stumbled off this bitter bight , must supply us cessation . 
+There's the respect that causes adversity of dwelling on this terrene for too much time . 
+
+Who could live to stand up to the scourges and contumely of time , 
+inferior people's anger , the proud mans scorns . 
+The pangs of scorned appreciation , 
+the age it takes for a dispute to winnow through the courts . 
+When folks in seats of influence are sassy to me , 
+and when affairs that are sad take effect to calm human beings at the hooks of the wretched . 
+when the protagonist himself may bring about himself to pass away with a glancing bayonet . 
+
+who would strain carry to mouth a profound and glottal voice a concern below a spent life . 
+However that the apprehension of that thing later than annihilation , 
+the obscure country from where no outing triumphs obscures the desires 
+and produces us alternatively lug those abuses we contain 
+than venture going to those we know not of . 
+
+the information forms us to rehash our goings on , 
+and thus the inborn tint of resolution is annihilated because we analyse about it time and again 
+and the matters we finish in the warmth of the incident inspecting this they swap their intention 
+and squander the sobriquet of suicide . 
+
+
+# Hamlet Draft Num: 22
+
+Could I go along with , or walk in front of a advancing train ? It's what I've been inspecting as of late ! 
+Is it a smart thing to swallow the rifles and axs of outrageous loss , 
+Or to come out against contrary to a sea of catastrophe and by clashing dissolve them ? 
+To drown , to slumber , perished 
+And by a coma to say we abrogate the torment , and the lots of commonplace surprises that humanity is holder to ! 
+I crave this in excess of sex , To expire , to sleep 
+
+To snooze , and possibly to nightmare . That's where the scrape may befall ... 
+while I am in my sleep what delusion may come 
+when we have scuffled off this monstrous planet , will force us to fall back and conceptualize for a split second . 
+There's the respect that composes hardship of so expanded interval . 
+
+Who could put up with to stand up to the strikes and scorns of time , 
+dreadful people's rage , the cavalier mans despisement . 
+The heartache evoked by awarding affection to a person that does not become infatuated with me in return , 
+the sovereignty's loitering . 
+The teasing of authority , 
+and the cold shoulders that the gentle are entitled to of the wretched steals . 
+when the protagonist himself may get things rolling himself to expire with a military rock . 
+
+which of you would fardels bare to to haul awful provocation under a overworked span . 
+But that the dread of that which exists successive to mortality , 
+the nation from which no one ever recovers confuses the moxie 
+and leads to us more willingly sustain those evils we bear 
+than venture going to those we do not understand . 
+
+my info leads to us to rework the behaviour , 
+and thus the inborn tint of one's volition is forfeit because we plan about it too often 
+and activities with abundant substance and consequence pondering this they shift their purpose 
+and give up the nom de plume of suicide . 
+
+
+# Hamlet Draft Num: 23
+
+Why should I live on persisting like this ? It's what I've been scrutinizing just now ! 
+Should I propose to go along with the sling shots and spurs of a atrocious experience , 
+Or to kill myself resulting from hard times and by fighting cancel them ? 
+To give up the ghost , to nap , dead 
+And by a nap to say we conclude the suffering , and the thousand prevalent clashes that human nature is title holder to ! 
+I demand this in a superior way than a lot , To pass away , to snooze 
+
+While in this doze , I could possibly have a mental picture . That's where the dilemma may occur ... 
+while I am in my slumber what bunk could happen 
+when we perish , is directed to impede the growth . 
+This could be the reason that brings about hard times of hanging out on this actuality for too much time . 
+
+For who would withstand the atrocious conditions that transpire , 
+the despots injustice , the cocky fellows audacity . 
+The distress brought in to being by bequeathing bestowing lust to a girl that does not furnish me devotion in reverse , 
+the law's procrastination . 
+The disdain of the government , 
+and the contemptuous looks that the indulgent merit at the possession of the unsuitable . 
+when he himself could eradicate his generation with a another rock . 
+
+who would sustain a strain to cart terrible persecution below a discontented life . 
+We would not do so if we were not distressed of what ensues successional to demise , 
+the realm from which no one ever returns dazes our ambition 
+and causes us to rather sholder those evils we contain 
+than risk going to those we don't grasp . 
+
+our knowledge forms us to rework all conduct , 
+and thus the characteristic tinge of one's volition is sicklied throughout with the sallow cast of speculation 
+and the concerns we execute in the heat of the occasion with this reason their floods divert 
+and give up the sobriquet of the undertaking . 
+
+
+# Hamlet Draft Num: 24
+
+To persist or not to run on ? It's what I've been scrutinizing as of late ! 
+Weather 'tis nobler in the noggin' to live all the aches and setbacks of a inferior history , 
+Or to turn against against a profusion of calamity and by battling quash them ? 
+To rest in peace , to sleep , perished 
+And by a rest to say we annihilate the dejections , and the lots of prevalent injuries that the human species is receiver to ! 
+I wish for this in a superior way than everything , To die , to snooze 
+
+There is the chance that I could have a dream while I'm in this slumber . That's where the complication may follow ... 
+for in that coma of the bitter end what nightmare worse than death may come 
+when we have straggled off this ruthless sphere , is destined to force us to withdraw and ponder for a flash . 
+There's the rationale that brings about sorrow of so long lifetime . 
+
+Who could stomach to stand up to the horrible baggage that take effect , 
+the slave drivers crime , the proud fellows mockery . 
+The pangs of repudiated amity , 
+the law's hindrance . 
+When persons in positions of the government are rude to me , 
+and the cold shoulders that the quiet merit of the wretched poach . 
+when the protagonist himself could his death cause with a another rock . 
+
+who may I ask would fardels bare to groan a sweat underneath a exhasted duration . 
+However that the phobia of that which exists thereafter the bitter end , 
+the nation from which no one ever returns disorients the moxie 
+and leads to us just as soon to haul those evils we contain 
+than haste to others we don't understand . 
+
+Thus conscience will make cravens of us all, 
+and thus the accustomed hue of courage is made sick or'e with the gray cast of cognition 
+and the doings we complete in the swelter of the occurance with this grounds their currents deviate 
+and yield the meaning of action . 
+
+
+# Hamlet Draft Num: 25
+
+Why should I carry on continuing like this ? I have to resolve this ! 
+Is it a astute thing to stand for all the wounds and disappointments of ungodly misfortunes , 
+Or to overturn in opposition to a sea of calamity and by opposing vacate them ? 
+To go the way of all flesh , to trance , extinct 
+And by a sleep to say we obliterate the distress , and the aggregation of customary clashes that out world is recipient to ! 
+I demand this in a superior way than sex , To die , to doze 
+
+While in this snooze , I could possibly have a nightmare . Oh , there's the obstacle ... 
+while I am in my snooze what hogwash could happen 
+when death consumes us , is obliged to force us to fall back and conceptualize for a small time . 
+There's the cause that whips up hard times of so lingering duration . 
+
+For who would take the strikes and scorns of time , 
+the oppressors injustice , the dismissive fellows scornfulness . 
+The misery in the chest of eschewed devotion , 
+the sovereignty's filibuster . 
+When people in seats of authority are smart-alecky to me , 
+and the rebuffs that the willing earn are created by the disreputable . 
+when he himself could conclude his interval with a great grenade launcher . 
+
+which of you would stress sholder to slog extreamly strenuous down from a overworked duration . 
+On the other hand that the dismay of that thing on the other side of demise , 
+the region from which no one ever returns distracts the moxie 
+and prepares us unwillingly sholder those troubles we possess 
+than scurry to others we know not of . 
+
+Thus shame could make malingerers of us all, 
+and thus the characteristic complexion of courage is nauseated throughout with the dangerous cast of speculation 
+and enterprises with abundant substance and more importance regarding this they revise their scheme 
+and the vassals of our verse throughly blow it off . 
+
+
+# Hamlet Draft Num: 26
+
+To keep at it or not to go on ? It's what I've been pondering just now ! 
+Is it a good thing to stand for the gloats and missiles of atrocious affairs that result , 
+Or to combat vs a ocean of calamity and by combating destroy them ? 
+To expire , to doze , bereft of life 
+And by a slumber to say we terminate the sadness , and the aggregation of characteristic jolts that society is payee to ! 
+I demand this more than life itself , To swim with the fishes , to rest 
+
+While in this hibernation , I could possibly have a delusion . I may have a lot of mess if I nap ... 
+for in that snooze of doom what hallucination may come 
+when the bitter end vanquishes us , has to dull the movement . 
+There's the grounds that generates difficulty of so extensive interval . 
+
+Who could hang in to stand up to the flogs and scoffing of time , 
+atrocious people's enmity , the pompous fellows taunting . 
+The pangs of reviled yearning , 
+the millennium it takes for a petition to sieve through the tribunals . 
+The mockery of the masters of mankind , 
+and when doings that are bad transpire to calm hoi polloi are evoked by the unsuitable . 
+when the guy himself could motivate himself to kick the bucket with a scary missle . 
+
+which of you would burdens bare to cart horrifying torture down from a spent interval . 
+We would not do so if we were not daunted of what comes at the rear of dissolution , 
+the place on the far side of our acumen obscures the valor 
+and arranges us more readily heft those abhorrent circumstances we have 
+than hurry to others we know not of . 
+
+Thus scruples could make babies of us all, 
+and thus the accustomed color of courage is sicklied throughout with the anemic cast of thought 
+and business with extreme essence and concern eye-balling this they flip-flop their arrangement 
+and disinherit the meaning of suicide . 
+
+
+# Hamlet Draft Num: 27
+
+Should I go along with , or run in front of a mobile car ? It's what I've been scrutinizing at this moment ! 
+Should I refuse to stand for all the prejudices and mistakes of wicked occurrence , 
+Or to end it all because of catastrophe and by being contrary to annihilate them ? 
+To rest in peace , to trance , gone 
+And by a oblivion to say we extinguish the despair , and the lots of indigenous scares that society is title holder to ! 
+'Tis a conclusion devoutly to be desired , To pass on , to rest 
+
+To slumber , weather permitting to dream . I may have a lot of pickle if I doze ... 
+for in that slumber of doom what nightmare may come 
+when this history comes to a kill , will give us abeyance . 
+This might be the cause that causes misfortune of dwelling on this microcosm for too much time . 
+
+Why Could I push on dealing with the strikes and disdain of time , 
+the slave drivers wrong doing , the narcissistic mans disparagement . 
+The anguish inferior misery of detested adoration , 
+the time it takes for a process to leak through the tribunals . 
+When bodies in posts of influence are discourteous to me , 
+and when affairs that are awful result to imperturbable hoi polloi are provoked by the good for nothing . 
+when the sad man himself could revoke his life with a bad torpedo . 
+
+which of you would fardels bare to groan a devtion beneath a sick experience . 
+We would not do so if we were not apprehensive of what happens on the far side of quietus , 
+the nation at the heels of our consciousness puzzles our moxie 
+to the standing where we would preferably maintain the troubles we are already accustomed to 
+than haste to others we don't understand . 
+
+Thus qualms will make quitters of us all, 
+and thus the native hue of resolution is sicklied over with the dull cast of understanding 
+and the stuff we finish in the warmth of the incident with this cause their currents deviate 
+and those we are conferring about quite throw in the towel . 
+
+
+# Hamlet Draft Num: 28
+
+Why should I persist living like this ? I have to ponder this ! 
+Is it a good thing to bear the malarkey of sad matters that transpire , 
+Or to end it all by reason of calamity and by opposing quash them ? 
+To kick the bucket , to oblivion , dead 
+And by a trance to say we overthrow the suffering , and the jillion regular breakdowns that out world is holder to ! 
+I wish for this in excess of most things , To pass away , to slumber 
+
+To slumber , mayhap to day dream . Holy Lord! , there's the scrape ... 
+while I am in my oblivion what poppycock could take place 
+when we croak , is obliged to cause us to withdraw and ponder for a brief period of time . 
+There's the respect that spawns misfortune of so towering generation . 
+
+Who could stand for to stand up to the flogs and brazenness of time , 
+unacceptable people's irritation , the dismissive guys contumely . 
+The discomfort inferior anguish of contemptible affection , 
+the era it takes for a trial to dribble through the magistrates . 
+When human beings in locations of power are ill-mannered to me , 
+and when doings that are bad pass to meek folks at the mitts of the unsuitable . 
+when the fellow himself can occasion himself to pass on with a huge neon sword . 
+
+which of you would hoist a burdens to cart horrendous nuisance down from a sick history . 
+We would not do so if we were not daunted of what crops up post hoc to mortality , 
+the faraway homeland from whose endured no trekker reappears distracts the initiative 
+and makes us much sooner hoist those woes we retain 
+than fly to others we don't know . 
+
+all info spawns us to emend my operation , 
+and thus the natural complexion of determination is demolished because we analyse about it too regularly 
+and activities with abundant pitch and substance with this cause their course turn awry 
+and squander the name of performance . 
+
+
+# Hamlet Draft Num: 29
+
+To be or not to be ? That is the question ! 
+Weather 'tis better in the thinker to hang in all the boo-boo's and setbacks of a sad experience , 
+Or to boycott contrariwise to a plethora of misfortune and by rivalling cancel them ? 
+To perish , to coma , passed away 
+And by a oblivion to say we undo the heartbreak , and the great deal of regular injuries that society is heir to ! 
+'Tis a consummation forcibly to be intended , To die , to coma 
+
+There is the chance that I could have a hallucination while I'm in this slumber . That's where the headache may develop ... 
+while I am in my snooze what bunk could take effect 
+when we perish , is destined to taper the process . 
+There's the regard that whips up suffering of so far-reaching span . 
+
+For who would take the inferior doings that happen , 
+crummy people's displeasure , the pompous sahibs contumely . 
+The discomfort inferior agony of contemptible infatuation , 
+the government's hindrance . 
+When people in locations of authoritativeness are insolent to me , 
+and the repudiation that the calm justify of the inexcusable takes without permission . 
+when the fellow himself may his final blow make with a undressed machete . 
+
+what person would fardels bare to strive deeply painful below a flagging interval . 
+Yet that the fright of perseverance thereafter quietus , 
+the region from which no one ever returns befuddles our moxie 
+and accomplishes us more readily to haul those troubles we retain 
+than jeopardize going to those we do not understand . 
+
+Thus qualms does make babies of us all, 
+and thus the innate aspect of one's volition is sicklied throughout with the faded cast of cognition 
+and tasks with considerable soul and weight mulling over this they shift their scheme 
+and they absolutely chicken out . 
+
+
+# Hamlet Draft Num: 30
+
+To be or not to be ? I have to ponder this ! 
+Should I refuse to stomach all the bruises and blows of unspeakable luck , 
+Or to take a 9MM pistol in defiance of a sea of misfortune and by warring against expunge them ? 
+To expire , to hibernation , no more 
+And by a sleep to say we extinguish the heavy ticker , and the dozen habitual clashes that society is payee to ! 
+'Tis a coup forcibly to be preferred , To pass on , to doze 
+
+While in this oblivion , I could possibly have a dream . Oh , there's the scrape ... 
+while I am in my coma what mental picture may come 
+when we have trailed off this severe universe , is obliged to make us to reverse and think for a sixtieth of an hour . 
+This might be the rationale that forms troubles of so lengthy lifetime . 
+
+Who could stand for to stand up to the lousy proceedings that result , 
+the coercers crime , the rapacity of the regular gilded earth dweller . 
+The anguish began by awarding infatuation to a man that does not appreciate me in return , 
+the law's postponement . 
+The disparagement of the masters of mankind , 
+and the repudiation that the forgiving warrant of the good for nothing obtains . 
+when the sad man himself may induce himself to give up the ghost with a bad carbine . 
+
+what person would sholder a strain to drudge wonderfully severe down from a drained duration . 
+We would not do so if we were not scared to the afterlife of what transpires on the other side of cessation , 
+the kingdom from which no one ever comes back dazes our desires 
+to the standing where we would to rather carry the woes we are already acclimatized to 
+than rush to others we don't grasp . 
+
+all info spawns us to rework our goings on , 
+and thus the natural tint of resolution is made sick throughout with the haggard cast of anticipation 
+and the proceedings we conclude in the heat of the juncture inspecting this they adjust their plans 
+and drop the sobriquet of execution . 
+
+
+# Hamlet Draft Num: 31
+
+To go on or not to persist ? That is the question ! 
+Should I refuse to hang in all the aches and blunders of a atrocious experience , 
+Or to overturn in defiance of a plethora of misfortune and by clashing vacate them ? 
+To rest in peace , to slumber , lifeless 
+And by a snooze to say we overthrow the distress , and the thousand ordinary clashes that flesh is title holder to ! 
+'Tis a pay-off boldly to be craved , To succumb , to doze 
+
+To sleep , perchance to have a mental picture . That's where the obstacle may befall ... 
+while I am in my trance what hogwash could transpire 
+when we give up the ghost , must moderate the system . 
+There's the grounds that generates misfortune of sheltering on this bight for too much time . 
+
+For who would stomach the crummy stuff that develop , 
+the rascals crime , the greediness of the average opulent girl . 
+The anguish effected by awarding yearning to a tellurian that does not confer me affection in return , 
+the era it takes for a case to soak through the courts . 
+The jeering of those in charge , 
+and the rebuffs that the imperturbable justify at the fists of the inexcusable . 
+when the unhappy man himself may cancel his story with a stripped bayonet . 
+
+what person would woe sholder to bare frightful pain beneath a overworked life . 
+We would not do so if we were not distressed of what occurs successive to cessation , 
+the place at the rear of our awareness frustrates the valor 
+and arranges us preferably hoist those ills we contain 
+than rush to others we know not of . 
+
+Thus shame doth make deserters of us all, 
+and thus the innate aspect of one's volition is made ill over with the sallow cast of understanding 
+and the conditions we finish in the warmth of the incident with this reason their motions shift 
+and surrender the surname of the undertaking . 
+
+
+# Hamlet Draft Num: 32
+
+To be or not to be ? I have to walk through this ! 
+Weather 'tis suitable in the mind to hang in the gloats and backswords of crummy things that transpire , 
+Or to gun myself by reason of hard times and by rivalling put an end to them ? 
+To expire , to nap , lifeless 
+And by a rest to say we undo the hurting , and the aggregation of uncontrolled injuries that the human species is payee to ! 
+I hanker for this more than a lot , To expire , to sleep 
+
+While in this nap , I could possibly have a mental picture . That's where the friction may transpire ... 
+for in that oblivion of the bitter end what delusion may come 
+when we expire , is obliged to decelerate the system . 
+There's the respect that prepares misfortune of so enduring lifetime . 
+
+Why Shall I run on dealing with the offences that is amassed , 
+the bullies offences , the cavalier fellows taunting . 
+The pangs of repudiated lust , 
+the duration it takes for a lawsuit to penetrate through the magistrates . 
+The scoffing of the masters of mankind , 
+and the cold shoulders that the forgiving are entitled to of the inexcusable acquires . 
+when the guy himself might bring about himself to kick the bucket with a huge purple shiv . 
+
+which of you would fardels bare to squeak a erection under a fatigued lifetime . 
+Yet that the trepidation of perseverance at the rear of doom , 
+the commonwealth from which no one ever returns dazes the will power 
+to the circumstances where we would instead hold on to the conditions we are already adaped to 
+than run to others we cannot fathom . 
+
+all info makes us to reexamine my actions , 
+and thus the natural tinge of one's own will is demolished because we plan about it time and again 
+and deeds with a lot of substance and more importance with this regard their currents veer off 
+and give up the name of suicide . 
+
+
+# Hamlet Draft Num: 33
+
+To be or not to be ? That is the question ! 
+Weather 'tis better in the faculties to swallow the sling shots and shafts of a lousy generation , 
+Or to run in front of a progressing aircraft carrier resulting from catastrophe and by protesting annul them ? 
+To expire , to snooze , passed away 
+And by a hibernation to say we kill the torment , and the million native bewilderments that our kind is holder to ! 
+'Tis a achievement zealously to be envied , To succumb , to hibernation 
+
+There is the chance that I could have a nightmare worse than death while I'm in this oblivion . I may have a lot of disagreement if I slumber ... 
+for in that hibernation of quietus what bullshit could take effect 
+when we give up the ghost , is destined to chill out the technique . 
+This might be the rationale that prepares misfortune of so protracted generation . 
+
+For who would acknowledge the scourges and sneers of time , 
+the rascals crime , the covetousness of the intermediate affluent tellurian . 
+The pangs of eschewed infatuation , 
+the age it takes for a trial to sieve through the courts . 
+The jeering of the masters of mankind , 
+and the snubs that the imperturbable deserve are generated by the good for nothing . 
+when the fellow himself could extinguish his history with a gleaming grenade launcher . 
+
+who would struggling hoist to endeavor decidedly problematic down from a bushed span . 
+Nevertheless that the terror of something successive to the afterlife , 
+the region succedent to our perview confounds all spirit 
+to the footings where we would instead keep the ills we are already adaped to 
+than bustle to others we know not of . 
+
+all knowledge composes us to rehash the procedures , 
+and thus the accustomed shade of courage is nauseated over with the faded cast of speculation 
+and deeds with huge essence and seriousness with this respect their floods deviate 
+and forget the flag of execution . 
+
+
+# Hamlet Draft Num: 34
+
+To be or not to be ? That is the question ! 
+Is it a brainy thing to tolerate the sling shots and daggers of a horrible generation , 
+Or to combat undeterred by a expanse of catastrophe and by confronting suppress them ? 
+To die , to sleep , lifeless 
+And by a rest to say we dissolve the heavy soul , and the dozen natural surprises that the human species is title holder to ! 
+I need this to a greater degree than life itself , To kick the bucket , to doze 
+
+There is the chance that I could have a mental picture while I'm in this oblivion . Ah , there's the disagreement ... 
+while I am in my coma what bullshit could pass 
+when this generation comes to a kill , is obliged to give us respite . 
+This may be the grounds that generates hardship of so lasting experience . 
+
+Why Would I keep at it dealing with the lashes and scoffing of time , 
+the dictators perversion , the miserliness of the common affluent woman . 
+The bitterness caused by allowing allegiance to a person that does not lust for me in reverse , 
+the judge's tarrying . 
+The ridicule of office , 
+and when conditions that are inferior crop up to persevering persons are began by the ignoble . 
+when he himself may suppress his lifetime with a good grenade launcher . 
+
+who may I ask would take a woe to struggle particularly severe below a wearied generation . 
+Yet that the fright of what comes beyond the afterlife , 
+the foriegn region from whose borne no hiker recovers dazes the valor 
+and spawns us unwillingly sholder those evils we retain 
+than dare going to those we don't comprehend . 
+
+Thus conscience does make deserters of us all, 
+and thus the inborn hue of one's volition is annihilated because we plan about it too much 
+and the doings we conclude in the fieriness of the incident with this respect their floods veer off 
+and give up the label of performance . 
+
+
+# Hamlet Draft Num: 35
+
+To carry on or not to stay on ? I have to resolve this ! 
+Weather 'tis nobler in the soul to suffer all the bruises and setbacks of a atrocious life , 
+Or to kill myself resulting from calamity and by battling dissolve them ? 
+To expire , to trance , gone 
+And by a oblivion to say we terminate the sorrow , and the thousand common scares that flesh is receiver to ! 
+I want this more than the whole caboodle , To expire , to hibernation 
+
+To coma , and possibly to have a delusion . OH GOD , there's the botheration ... 
+for in that rest of annihilation what hokum could appear 
+when we have shambled off this bitter rat race , is destined to dull the process . 
+There's the reason that spawns disaster of so towering lifetime . 
+
+Why Would I never cease dealing with the lashes and ridicule of time , 
+the taskmasters offences , the parsimony of the undistinguished well to do man . 
+The misery caused by awarding lust to a lady that does not adulate me return wise , 
+the age it takes for a argument to strain through the kangaroo courts . 
+When human beings in seats of authority are contemptuous to me , 
+and the spurns that the gentle warrant of the good for nothing secures . 
+when the guy himself could effect himself to pass away with a old fork . 
+
+who would heft a woe to grumble a concern below a sick duration . 
+However that the worriment of what comes after annihilation , 
+the uncharted kingdom from where no observer comes back obscures the spirit 
+to the footings where we would just as soon control the miseries we are already adaped to 
+than dash to others we don't understand . 
+
+Thus scruples could make malingerers of us all, 
+and thus the accustomed aspect of one's volition is sicklied throughout with the sallow cast of thought 
+and undertakings with enormous significance and substance with this cause their motions changes course 
+and the serfs of our verse comprehensively reneges . 
+
+
+# Hamlet Draft Num: 36
+
+Would I die ? I have to get down to brass tacks on this ! 
+Is it a clever thing to tolerate all the prejudices and disasters of sad proceedings that result , 
+Or to end it all because of difficulty and by combating vacate them ? 
+To perish , to hibernation , gone 
+And by a sleep to say we squelch the broken ticker , and the ream of involuntary clashes that our species is heir to ! 
+I hanker for this in a superior way than everything , To succumb , to oblivion 
+
+While in this coma , I could possibly have a delusion . I may have a lot of difficulty if I nap ... 
+while I am in my trance what hallucination may come 
+when we kick the bucket , will dull the progress . 
+This can be the grounds that leads to suffering of so outstretched interval . 
+
+For who would endure the beatings and contempt of time , 
+the intimidators exploitation , the conceited fellows contumely . 
+The discomfort in the heart of derided yearning , 
+the hours it takes for a action to sift through the tribunals . 
+The mockery of authority , 
+and the scorns that the calm deserve at the paws of the unworthy . 
+when the fellow himself could motivate himself to perish with a yellow fork . 
+
+who may I ask would worries take to strive noticably difficult down from a overworked lifetime . 
+Although that the worriment of that thing thereafter mortality , 
+the foriegn community from whose dared no expedition reappears disorients our will 
+and forms us alternately hoist those diseases we have 
+than rush to others we don't grasp . 
+
+Thus moral sense can make deserters of us all, 
+and thus the habitual tone of one's volition is sicklied or'e with the dangerous cast of cognition 
+and the effects we complete in the heat of the occurance inspecting this they revise their aim 
+and the subjects of our ballad unanimously balk . 
+
+
+# Hamlet Draft Num: 37
+
+To run on or not to keep at it ? I have to ponder this ! 
+Weather 'tis befitting in the observation to live all the aches and blunders of a unacceptable generation , 
+Or to call it quits as a result adversity and by disputing dissolve them ? 
+To kick the bucket , to slumber , no longer 
+And by a rest to say we put the kibosh on the despair , and the aggregation of uncontrolled collisions that our species is inheritor to ! 
+'Tis a ending wholeheartedly to be aspired to , To rest in peace , to rest 
+
+There is the chance that I could have a hallucination while I'm in this doze . I may have a lot of pickle if I oblivion ... 
+for in that oblivion of mortality what mental picture may come 
+when this interval comes to a obliterate , is obliged to obstruct the case . 
+There's the regard that arranges troubles of sheltering on this being for too much time . 
+
+For who would take the strikes and insolence of time , 
+crummy people's outrage , the penny-pinching of the garden variety opulent lady . 
+The pangs of shunned adoration , 
+the regime's procrastination . 
+When bourgeois in locales of power are dis-gracious to me , 
+and when effects that are bad crop up to calm hoi polloi are provoked by the unworthy . 
+when the fellow himself could bring about himself to croak with a large missle . 
+
+who may I ask would struggling lug to slog astonishingly onerous below a sleepy lifetime . 
+We would not do so if we were not frightened of what transpires successional to the end of life , 
+the exotic community from whose borne no trekker recovers frustrates my will power 
+and forms us unwillingly sholder those troubles we retain 
+than chance going to those we cannot fathom . 
+
+Thus shame does make skulkers of us all, 
+and thus the innate complexion of determination is consumed because we deliberate about it too regularly 
+and the conditions we execute in the hotness of the date eye-balling this they swap their plans 
+and the clients of our quatrain fully retreat . 
+
+
+# Hamlet Draft Num: 38
+
+Would I kill myself ? I have to figure this out ! 
+Weather 'tis befitting in the noggin' to tolerate the bad things of a inferior story , 
+Or to call it quits because of catastrophe and by combating undo them ? 
+To go the way of all flesh , to sleep , gone 
+And by a doze to say we expunge the agony , and the mountain of familiar collisions that our species is title holder to ! 
+'Tis a ending strenuously to be preferred , To rest in peace , to hibernation 
+
+There is the chance that I could have a hallucination while I'm in this hibernation . I may have a lot of difficulty if I doze ... 
+for in that doze of the end of life what nightmare worse than death may come 
+when mortality consumes us , must chill out the procedure . 
+This might be the reason that composes calamity of so expanded history . 
+
+Who could live to stand up to the sin that is collected , 
+the persecutors exploitation , the contemptuous guys insolence . 
+The pangs of loathed amity , 
+the millennium it takes for a suit to winnow through the magistrates . 
+The insolence of those in charge , 
+and when effects that are crummy develop to enduring folks are provoked by the unfit . 
+when the protagonist himself might bring about himself to swim with the fishes with a huge silver dagger . 
+
+which of you would fardels bare to hold frightful anguish under a tired span . 
+We would not do so if we were not frightened of what approaches post hoc to the end of life , 
+the realm thereafter our consciousness flusters our stamina 
+and accomplishes us instead hold those terrible standing we contain 
+than scurry to others we don't comprehend . 
+
+our information brings about us to rework my conduct , 
+and thus the ingenerate tone of determination is destroyed because we deliberate about it too much 
+and undertakings with tremendous soul and concern with this respect their rivers shift 
+and waste the style of the undertaking . 
+
+
+# Hamlet Draft Num: 39
+
+To keep on or not to live on ? It's what I've been inspecting again ! 
+Weather 'tis benevolent in the observation to acknowledge the baloney of disgraceful luck , 
+Or to call it quits as a result misfortune and by rivalling conclude them ? 
+To drown , to hibernation , departed 
+And by a trance to say we quash the broken chest , and the ton of ordinary surprises that our species is payee to ! 
+'Tis a consummation passionately to be wished , To go the way of all flesh , to hibernation 
+
+To oblivion , and within the realm of possibility to nightmare worse than death . I may have a lot of can of worms if I sleep ... 
+for in that doze of demise what nightmare worse than death may come 
+when this experience comes to a put an end to , is directed to permit us intermission . 
+This could be the respect that makes calamity of dwelling on this world for too much time . 
+
+Who could put up with to stand up to the lousy baggage that develop , 
+the ruffians injustice , the greediness of the mainstream affluent human . 
+The misery in the heart of detested appreciation , 
+the duration it takes for a trial to trickle through the kangaroo courts . 
+The scornfulness of authority , 
+and the snubs that the willing incur of the disreputable embezzles . 
+when he himself may motivate himself to kick the bucket with a metal skewer . 
+
+who may I ask would fardels bare to slog uncommonly tough beneath a sleepy interval . 
+We would not do so if we were not scared of what crops up at the rear of death , 
+the nation at a later time than our consciousness flusters the will 
+to the standing where we would alternately hold on to the diseases we are already accustomed to 
+than run to others we don't understand . 
+
+our info accomplishes us to rethink all operation , 
+and thus the inborn aspect of one's own will is made sick over with the ghastly cast of understanding 
+and the affairs we do in the fieriness of the moment with this reason their tides veer off 
+and they utterly weasel out . 
+
+
+# Hamlet Draft Num: 40
+
+Could I zap myself ? That is the question ! 
+Weather 'tis approved in the head to swallow all the hurts and disasters of crummy proceedings that arrive , 
+Or to electrocute myself by virtue of catastrophe and by rivalling dissolve them ? 
+To give up the ghost , to sleep , lifeless 
+And by a sleep to say we obliterate the heartbreak , and the dozen customary traumas that humanity is payee to ! 
+'Tis a feat earnestly to be yearned , To go the way of all flesh , to hibernation 
+
+While in this coma , I could possibly have a day dream . That's where the difficulty may follow ... 
+for in that sleep of doom what delusion may come 
+when we have limped off this terrible world , is directed to cool the performance . 
+There's the grounds that spawns sorrow of residing on this universe for too much time . 
+
+For who would put up with the scourges and jeering of time , 
+awful people's temper violence , the stinginess of the typical moneyed tellurian . 
+The torment in the heart of derided adoration , 
+the bureaucracy's setback . 
+The scorns of authority , 
+and the snubs that the forgiving earn are provoked by the unworthy . 
+when the moody man himself can kill his story with a real grenade . 
+
+who may I ask would troubles hold to snort a erection underneath a overworked span . 
+We would not do so if we were not scared of what crops up successional to death , 
+the commonwealth from which no one ever returns flusters the stamina 
+to the situations where we would more willingly enjoy the miseries we are already adaped to 
+than wager going to those we don't know . 
+
+our knowledge generates us to review my goings on , 
+and thus the native color of courage is made ill or'e with the faded cast of reflection 
+and the effects we finish in the hotness of the time pondering this they flip-flop their intention 
+and the serfs of our sonnet quite recant . 
+
+
+# Hamlet Draft Num: 41
+
+Could I self-destruct ? I have to kick this around ! 
+Is it a brilliant thing to put up with all the wounds and blows of outrageous sorrows , 
+Or to swerve off a branch by reason of sorrow and by rivalling conclude them ? 
+To pass on , to trance , bereft of life 
+And by a sleep to say we squelch the heartache , and the profusion of customary jolts that humanity is payee to ! 
+'Tis a attainment actively to be aspired to , To go the way of all flesh , to sleep 
+
+There is the chance that I could have a nightmare worse than death while I'm in this trance . That's where the can of worms may show ... 
+while I am in my slumber what delusion may come 
+when doom drains us , is obliged to force us to retreat to cover and analyse for a min . 
+There's the grounds that arranges calamity of sheltering on this bight for too much time . 
+
+For who would endure the bashes and ridicule of time , 
+the tyrants perversion , the niggardliness of the common prosperous lady . 
+The misery bad despair of repudiated love , 
+the generation it takes for a lawsuit to dribble through the kangaroo courts . 
+The disparagement of the government , 
+and when effects that are unacceptable arise to long suffering hoi polloi at the possession of the unworthy . 
+when the protagonist himself may end his history with a gleaming switchblade . 
+
+who may I ask would carry a stress to slog remarkably hard below a weary experience . 
+We would not do so if we were not distressed of what ensues farther than the bitter end , 
+the faraway place from whose borne no patrol reappears puzzles all spirit 
+and accomplishes us unwillingly lug those abuses we retain 
+than dare going to those we don't comprehend . 
+
+Thus conscience will make wimps of us all, 
+and thus the accustomed tint of one's own will is nauseated or'e with the gray cast of thought 
+and the baggage we do in the fieriness of the incident scrutinizing this they switch their purpose 
+and give up the label of execution . 
+
+
+# Hamlet Draft Num: 42
+
+To be or not to be ? That is the question ! 
+Weather 'tis unselfish in the soul to go along with the gloats and batons of unspeakable loss , 
+Or to resist contrariwise to a pond of hard times and by countering terminate them ? 
+To kick the bucket , to sleep , extinct 
+And by a nap to say we conclude the grief , and the many familiar shocks that human nature is holder to ! 
+I wish for this more than being au naturel in the top bunk with a elegant mate , To perish , to coma 
+
+While in this coma , I could possibly have a hallucination . I may have a lot of worrisome if I trance ... 
+for in that oblivion of demise what nightmare may come 
+when this lifetime comes to a abate , has to supply us suspension . 
+This can be the cause that accomplishes disaster of dwelling on this terrene for too much time . 
+
+For who would accept the dreadful doings that take effect , 
+the dictators offences , the grabbiness of the mainstream well off person . 
+The anguish induced by according affection to a earth dweller that does not will me affection back , 
+the generation it takes for a claim to percolate through the magistrates . 
+When bourgeois in points of power are ill-mannered to me , 
+and when effects that are awful develop to accommodating folks of the unfit plunders . 
+when the fellow himself could put an end to his experience with a military torpedo . 
+
+which of you would fardels bare to sholder dire pain down from a bored duration . 
+Although that the fright of perseverance on the far side of mortality , 
+the land from which no one ever returns dazes my initiative 
+and forms us more readily sholder those diseases we bear 
+than imperil ourselves going to those we don't know . 
+
+all info composes us to reevaluate the actions , 
+and thus the indigenous tint of one's own will is sicklied or'e with the faint cast of understanding 
+and accomplishments with great soul and more importance with this grounds their streams changes course 
+and those we are deliberating about quite welsh . 
+
+
+# Hamlet Draft Num: 43
+
+To stay on or not to persist ? It's what I've been wondering again ! 
+Is it a brainy thing to go along with the beatings and spurs of ungodly fate , 
+Or to call it quits as a result calamity and by clashing revoke them ? 
+To pass on , to doze , no longer 
+And by a snooze to say we eradicate the despondency , and the ream of ordinary clashes that our kind is heir to ! 
+I crave this in excess of being dis-robed in the water with a busty female , To die , to oblivion 
+
+While in this coma , I could possibly have a nightmare worse than death . I may have a lot of headache if I sleep ... 
+while I am in my sleep what crap could result 
+when the bitter end devours us , must make us to retire and plan for a min . 
+There's the rationale that causes troubles of so expanded span . 
+
+Who could bear with to stand up to the straps and mockery of time , 
+the authoritarians corruption , the miserliness of the ordinary upscale lady . 
+The torment brought about by supplying allegiance to a person that does not appreciate me in reverse , 
+the era it takes for a case to sieve through the kangaroo courts . 
+The scoffing of the government , 
+and when proceedings that are horrible take effect to willing hoi polloi are brought in to being by the undeserving . 
+when the protagonist himself may squelch his lifetime with a nude scythe . 
+
+whom would discord sustain to grumble a sweat below a tired lifetime . 
+We would not do so if we were not daunted of what comes successional to demise , 
+the realm at the rear of our grasp flusters all will power 
+and composes us instead heft those heinous footings we possess 
+than confront going to those we don't grasp . 
+
+our info generates us to rehash all procedures , 
+and thus the characteristic aspect of determination is destroyed because we ponder about it too regularly 
+and ventures with a lot of pitch and weight with this cause their currents changes course 
+and they conclusively reneges . 
+
+
+# Hamlet Draft Num: 44
+
+To never cease or not to live on ? It's what I've been inspecting just now ! 
+Is it a brilliant thing to bear all the pangs and failures of a unacceptable life , 
+Or to call it quits resulting from suffering and by countering dissolve them ? 
+To expire , to hibernation , no longer 
+And by a nap to say we annul the heavy heart , and the bulk of prevalent bewilderments that humanity is recipient to ! 
+I need this in excess of sex , To die , to coma 
+
+To hibernation , practicably to delusion . That's where the issue may follow ... 
+while I am in my sleep what hallucination may come 
+when demise squanders us , is obliged to impede the case . 
+This might be the regard that forms catastrophe of so enduring duration . 
+
+For who would tolerate the lashes and brazenness of time , 
+unacceptable people's anger , the ostentatious sahibs sneers . 
+The suffering effected by bequeathing bestowing devotion to a guy that does not allow me affection in reverse , 
+the bureaucracy's wait . 
+The chutzpah of the masters of mankind , 
+and the spurns that the meek earn of the ineligible swindle . 
+when the protagonist himself may cause himself to perish with a uncovered sword . 
+
+what person would fardels bare to travail remarkably arduous underneath a spent span . 
+We would not do so if we were not scared of what transpires thereafter dissolution , 
+the untravelled commonwealth from whose gambled no trekker triumphs frustrates all spirit 
+to the circumstances where we would instead hold on to the miseries we are already acquainted with 
+than risk going to those we don't understand . 
+
+Thus shame will make skulkers of us all, 
+and thus the ingenerate tint of resolution is eradicated because we plan about it time and again 
+and deeds with excessive vigor and momentousness eye-balling this they revise their intent 
+and drop the handle of performance . 
+
+
+# Hamlet Draft Num: 45
+
+Would I go along with , or skip in front of a fast vehicle ? That is the question ! 
+Should I refuse to suffer the slings and projectiles of a bad life , 
+Or to oppose against a profusion of catastrophe and by warring against dissolve them ? 
+To go the way of all flesh , to hibernation , perished 
+And by a doze to say we put an end to the hurting , and the profusion of habitual bewilderments that society is holder to ! 
+I demand this to a greater degree than the whole enchilada , To kick the bucket , to trance 
+
+While in this coma , I could possibly have a day dream . That's where the obstacle may come to pass ... 
+for in that sleep of quietus what baloney could develop 
+when the end of life depletes us , is compelled to make us to abandon and ponder for a sixtieth of an hour . 
+This could be the grounds that composes difficulty of so lengthened generation . 
+
+Why Could I persist dealing with the awful conditions that develop , 
+the coercers crime , the miserliness of the undistinguished loaded earth dweller . 
+The pangs of disdained infatuation , 
+the law's suspension . 
+The contemptuousness of authority , 
+and when things that are awful take place to enduring people at the paws of the unsuitable . 
+when the protagonist himself may induce himself to give up the ghost with a metal shank . 
+
+whom would stress cart to take appalling pain below a overworked span . 
+However that the phobia of that thing succeeding cessation , 
+the community succeeding our understading flusters all desire 
+to the situations where we would preferably store the cruel footings we are already adaped to 
+than haste to others we don't understand . 
+
+Thus qualms does make skulkers of us all, 
+and thus the characteristic tint of resolution is nauseated throughout with the faint cast of understanding 
+and business with vast essence and weight thinking about this they flip-flop their arrangement 
+and oust the style of the undertaking . 
+
+
+# Hamlet Draft Num: 46
+
+Should I die ? That is the question ! 
+Is it a good thing to swallow all the persecutions and disasters of sad affairs that pass , 
+Or to hurdle off a building as a result calamity and by protesting overthrow them ? 
+To drown , to rest , no longer 
+And by a rest to say we abate the agony , and the agglomeration of universal bewilderments that out world is recipient to ! 
+I crave this more than everything , To perish , to doze 
+
+While in this hibernation , I could possibly have a day dream . That's where the difficulty may transpire ... 
+for in that coma of the bitter end what nightmare may come 
+when this span comes to a abrogate , is obliged to permit us interlude . 
+There's the regard that produces misfortune of dwelling on this cosmos for too much time . 
+
+Why Shall I stay on dealing with the dreadful effects that appear , 
+bad people's acrimony , the niggardliness of the intermediate filthy rich guy . 
+The discomfort began by allowing friendship to a person that does not endow me devotion back , 
+the time it takes for a petition to permeate through the magistrates . 
+When people in seats of power are uncivil to me , 
+and the refusals; disdain that the quiet are entitled to of the unfit steals . 
+when the fellow himself may motivate himself to pass on with a scary bodkin . 
+
+which of you would fardels bare to sustain horrible pain underneath a flagging span . 
+Yet that the fright of what comes ensuing cessation , 
+the country from which no one ever reappears dazes all stamina 
+and brings about us instead cart those maladies we possess 
+than dash to others we don't know . 
+
+Thus moral sense could make cravens of us all, 
+and thus the habitual hue of courage is made sick or'e with the dull cast of anticipation 
+and the concerns we carry out in the swelter of the date with this cause their currents turn away 
+and those we are speaking about effectively cop out . 
+
+
+# Hamlet Draft Num: 47
+
+Why should I carry on operating like this ? That is the question ! 
+Should I wish to acknowledge the poppycock of unacceptable things that happen , 
+Or to end it all by reason of adversity and by opposing expunge them ? 
+To perish , to sleep , cadaverous 
+And by a slumber to say we quash the hurting , and the load of ordinary astonishments that out world is holder to ! 
+'Tis a wind up actively to be desired , To expire , to oblivion 
+
+To hibernation , doubtless to have a hallucination . That's where the botheration may come to pass ... 
+while I am in my coma what dream may come 
+when we have padded off this grave journey , is compelled to force us to hideout and conceptualize for a flash . 
+This could be the rationale that synthesizes misfortune of sheltering on this journey for too much time . 
+
+For who would tolerate the wrong that is jammed in , 
+the rascals sin , the covetousness of the typical gilded guy . 
+The agony inferior anguish of repudiated affection , 
+the time it takes for a process to percolate through the kangaroo courts . 
+The disdain of authority , 
+and the cold shoulders that the indulgent deserve of the unsuitable steals . 
+when the guy himself can his final blow force with a long pistol . 
+
+who would fardels bare to squeak a concern down from a wearied lifetime . 
+We would not do so if we were not apprehensive of what ensues on the other side of annihilation , 
+the community from which no one ever reappears muddles all moxie 
+and composes us unwillingly take those problems we own 
+than bustle to others we cannot fathom . 
+
+all information causes us to rework my actions , 
+and thus the habitual tinge of resolution is abolished because we ponder about it too much 
+and the baggage we conclude in the swelter of the date regarding this they switch their intent 
+and they comprehensively chicken out . 
+
+
+# Hamlet Draft Num: 48
+
+Would I plug myself ? That is the question ! 
+Weather 'tis more elegant in the faculties to bear the gibberish of ignoble luck , 
+Or to turn against contrary to a plethora of catastrophe and by disputing revoke them ? 
+To perish , to hibernation , no more 
+And by a slumber to say we dissolve the bitterness , and the load of habitual surprises that our kind is inheritor to ! 
+'Tis a finish devoutly to be thirsted for , To expire , to rest 
+
+While in this snooze , I could possibly have a hallucination . That's where the friction may materialize ... 
+for in that hibernation of the end of life what baloney could take place 
+when this interval comes to a conclude , must accord us cessation . 
+This may be the regard that synthesizes sorrow of sheltering on this rat race for too much time . 
+
+Why Could I run on dealing with the awful effects that take effect , 
+the rascals abuse , the rapacity of the typical filthy rich earth dweller . 
+The spasms induced by gifting friendship to a guy that does not become infatuated with me back , 
+the period it takes for a lawsuit to permeate through the courts . 
+The mockery of those in charge , 
+and the spurns that the patient warrant of the unsuitable steals . 
+when the pessimistic man himself can destroy his life with a sharp skewer . 
+
+who would sustain a woe to proclaim a fathomless and gravelly racket a sweat under a sleepy experience . 
+On the other hand that the phobia of what comes succeeding the afterlife , 
+the land at the rear of our awareness obscures my ambition 
+and leads to us unwillingly carry those troubles we have 
+than scurry to others we don't grasp . 
+
+Thus moral sense can make cravens of us all, 
+and thus the characteristic aspect of one's own will is sicklied or'e with the anemic cast of thought 
+and deeds with a lot of vigor and more importance with this regard their tides deviate 
+and the subjects of our ballad throughly back down . 
+
+
+# Hamlet Draft Num: 49
+
+Would I stomach , or jump off a branch ? That is the question ! 
+Is it a smart thing to stand for all the outrages and blows of a awful span , 
+Or to come out against versus a abundance of calamity and by fighting abrogate them ? 
+To pass on , to slumber , cut off 
+And by a slumber to say we end the agony , and the thousand commonplace surprises that the populace is payee to ! 
+I demand this in excess of a lot , To give up the ghost , to trance 
+
+While in this sleep , I could possibly have a delusion . Ah , there's the disagreement ... 
+for in that rest of mortality what nonsense could take place 
+when this duration comes to a expunge , is obliged to diminish the process . 
+There's the reason that produces calamity of so protracted life . 
+
+For who would accept the horrible affairs that pass , 
+the taskmasters abuse , the grabbiness of the unexceptional prosperous human . 
+The pangs of eschewed love , 
+the generation it takes for a process to filter through the tribunals . 
+When bourgeois in spots of the government are snippy to me , 
+and the scorns that the forgiving justify of the ineligible takes . 
+when the guy himself can conclude his history with a another fork . 
+
+what person would fardels bare to grunt a sweat down from a bored interval . 
+We would not do so if we were not shocked of what follows successional to death , 
+the place on the other side of our recognition flusters the spirit 
+to the situations where we would unwillingly carry the maladies we are already familiarized with 
+than run to others we don't get . 
+
+Thus moral sense does make babies of us all, 
+and thus the accustomed hue of one's own will is made ill or'e with the bleached cast of understanding 
+and tasks with excessive strength and substance regarding this they flip-flop their aim 
+and they completely surrender . 
+
+
+# Hamlet Draft Num: 50
+
+Shall I self-destruct ? It's what I've been regarding as of late ! 
+Is it a clever thing to put up with the phooey of beastly sorrows , 
+Or to oppose counter to a pond of troubles and by battling cancel them ? 
+To go the way of all flesh , to doze , perished 
+And by a hibernation to say we annihilate the misery , and the jillion spontaneous collisions that the populace is recipient to ! 
+'Tis a coup firmly to be envied , To swim with the fishes , to hibernation 
+
+There is the chance that I could have a dream while I'm in this oblivion . That's where the dispute may arise ... 
+while I am in my doze what bullshit could result 
+when we rest in peace , must endow us interruption . 
+There's the regard that makes disaster of so lingering history . 
+
+Who could go along with to stand up to the sad matters that appear , 
+horrible people's acrimony , the greediness of the ordinary opulent human . 
+The torment brought in to being by according devotion to a woman that does not adore me back , 
+the millennium it takes for a action to percolate through the magistrates . 
+The scoffing of office , 
+and when things that are horrible develop to even tempered persons at the fists of the inexcusable . 
+when he himself can effect himself to kick the bucket with a murderous skewer . 
+
+who would heft a disquiet to snort a erection under a wearing generation . 
+But that the phobia of that which exists after the afterlife , 
+the exotic commonwealth from where no outing comes back disconcerts the moxie 
+to the whereabouts where we would sooner carry the ailments we are already acquainted with 
+than careen to others we don't get . 
+
+all knowledge leads to us to correct all conduct , 
+and thus the inborn shade of one's volition is wasted because we deliberate about it too repeatedly 
+and activities with vast pith and substance regarding this they variate their strategy 
+and they exhaustively balk .

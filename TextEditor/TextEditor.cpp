@@ -11,7 +11,14 @@
 void TextEditor::testCallback2(string menuData) {
 	int i = 0;
 	int j = 0;
+	if (menuData == "Open Huffman") {
+		openHuffman();
+	}else if (menuData == "Save Huffman") {
+		saveHuffman();
+	}
 }
+
+
 
 /*static void  testCallback(int other_arg, void* this_pointer) {
 	TextEditor* self = static_cast<TextEditor*>(this_pointer);
@@ -51,7 +58,8 @@ void TextEditor::load(string fileName) {
 	int numCols = 0;
 
 	//Initialze Curses
-	WINDOW* mainWindow = nullptr;
+	//WINDOW* mainWindow = nullptr;
+	mainWindow = nullptr;
 
 	//initialize screen to begin curses mode
 	mainWindow = initscr();
@@ -84,14 +92,17 @@ void TextEditor::load(string fileName) {
 
 	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
 	menuBar.addItem("File", "Open", menuCallback, this);
+	menuBar.addItem("File", "Open Huffman", menuCallback, this);
 	menuBar.addItem("File", "Save", menuCallback, this);
+	menuBar.addItem("File", "Save Huffman", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
 
 	contextMenu = ContextMenu(mainWindow, Location{ numRows-13, numCols-20 }, Size{ 10, 15 });
 
-
+	//CREATE a NEW Dialog Box, to be used later
+	dialogBox = DialogBox(mainWindow, "", DIALOG_Y, DIALOG_X, DIALOG_NUM_ROWS, DIALOG_NUM_COLUMNS);
 
 
 	
@@ -102,7 +113,7 @@ void TextEditor::load(string fileName) {
 	//Read display File
 	vector<string>lines;
 	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
-	fileController.readFile("motd.txt", lines, READ);
+	fileController.readFile("test.txt", lines, READ);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 	
@@ -195,7 +206,7 @@ void TextEditor::load(string fileName) {
 				break;
 		}
 
-		
+		//dialogBox.draw();
 
 		//render components
 		for (auto& component : components)
@@ -218,8 +229,9 @@ void TextEditor::load(string fileName) {
 		if (contextMenu.needRefresh()) {
 			contextMenu.render();
 			contextMenu.refresh();
-			//contextMenu.needRefresh();
 		}
+
+		
 
 		wrefresh(mainWindow);//
 	}
@@ -423,6 +435,178 @@ void TextEditor::drawBorder(int numRows, int numCols) {
 		//right column border
 		mvaddch(i, numCols - 1, ACS_CKBOARD);
 	}
+}
+
+/*******************************************************************************
+* Function Name:   openHuffman()
+* Purpose:         Queries the user for which file we want to open
+*                  Checks to see if there is a huffmanTree type of this file
+*                  If there is, we read in the huffman tree structure,
+*                  then we read in the compressed data.
+*                  then we decode the compressed data using the tree
+*                  Once everything is completed, we replace what is
+*                  currently showing in the content area, with all
+*                  the data we just decompressed.
+*******************************************************************************/
+void TextEditor::openHuffman() {
+
+	//let us get the file name from the user, using a dialog box.
+	string fileName = dialogBox.displayDialogBox("Name of File:");
+	dialogBox.hide();
+	wrefresh(mainWindow);//
+}
+
+string TextEditor::encodeTextWithHuffman(vector<string> dataToEncode, HuffTree<char>* hT) {
+	unordered_map<char, string> encodingTable = {};
+	hT->getEncodingTable(encodingTable);
+
+	//loop through string and encode
+	string encodedData = "";
+
+	for (int i = 0; i < dataToEncode.size(); i++) {
+		string line = dataToEncode[i];
+		for (int j = 0; j < line.size(); j++) {
+			encodedData += encodingTable[line[j]];
+		}
+	}
+
+	encodedData = s_binaryToHex(encodedData);
+
+	return encodedData;
+}
+
+string TextEditor::s_binaryToHex(string binaryData) {
+	string text = "";
+	for (int i = 0; i < binaryData.size(); i += 8) {
+		string group = binaryData.substr(i, 8);
+		bitset<8> temp(group);
+		unsigned long u_temp = temp.to_ulong();
+		text += u_temp;
+	}
+	return text;
+}
+
+string TextEditor::s_hexToBinary(string hexData) {
+	string newBinary = "";
+	for (int i = 0; i < hexData.size(); i++) {
+		bitset<8> temp(hexData[i]);
+		newBinary += temp.to_string();
+	}
+	return newBinary;
+}
+
+
+
+/*******************************************************************************
+* Function Name:   saveHuffman()
+* Purpose:         Queries the user for which file we want to save
+*                  Encodes the huffman tree itself into: FILENAME-code.txt
+*                  Compresses our text into file: FILENAME-compressed.txt
+*                  saves both files.
+*				   I decided to write this function without breaking it
+*                  down via functional decomposition. To allow me
+*                  to read through easier.
+*******************************************************************************/
+void TextEditor::saveHuffman() {
+
+	//let us get the file name from the user, using a dialog box.
+	string fileName = dialogBox.displayDialogBox("Name of File:");
+	dialogBox.hide();
+	// do we set needs refresh here for all other components?, that may take care of dialog box bug?
+	wrefresh(mainWindow);//
+
+	////make a frequency distribution of letters in the buffer.
+	vector<string> buf = ((EditorWindowInteractive*)components[0])->getBuffer();
+
+	//loop through buffer line by line
+	for (int i = 0; i < buf.size(); i++) {
+
+		string line = buf[i];
+		
+		//loop through line char by char
+		for (int j = 0; j < line.size(); j++) {
+
+			char c = line[j];	//this is a character.
+
+			//std::unordered_map<std::string, double>::const_iterator got = mymap.find(input);
+			auto it = freq_dist.find(c);
+
+			if (it == freq_dist.end()) {
+				
+				//we have not found this character in our freq_dist add it
+				freq_dist[c] = 1;
+			}else {
+				
+				//we have found this character before, increment it
+				freq_dist[c]++;
+			}
+		}
+	}
+
+	//we now have a frequency_distribution of characters in freq_dist
+	//we now loop through freq_dist creating huffman tree's and adding them to a priority queue
+	for (auto it : freq_dist) {
+		char c = it.first;
+		int freq = it.second;
+		HuffTree<char>* huffTree = new HuffTree<char>(c, freq);
+		huffmanQueue.push(huffTree);
+		int size = huffmanQueue.size();
+	}
+
+	//now we have a huffmanqueue with all individual chars in their own trees, we need to combine
+	while (huffmanQueue.size() > 1) {
+
+		//get our two lowest weight huffman trees from our priority queue
+		HuffTree<char>* t1 = huffmanQueue.top();
+		huffmanQueue.pop();
+
+		HuffTree<char>* t2 = huffmanQueue.top();
+		huffmanQueue.pop();
+
+		//create our merged
+		HuffTree<char>* mergedTree;// = new HuffTree<char>(t2, t1);
+
+		//put larger children as left child
+		if (t1->weight() >= t2->weight()) {
+			mergedTree = new HuffTree<char>(t1, t2);
+		}else {
+			mergedTree = new HuffTree<char>(t2, t1);
+		}
+
+		//put this merged tree back into the priority queue
+		huffmanQueue.push(mergedTree);
+	}
+
+	//Now we need to encode our text into binary using the huffman tree
+	HuffTree<char>* huffTree = huffmanQueue.top();
+	string binaryTree = encodeFreqDist(freq_dist);
+	string binaryText = encodeTextWithHuffman(buf, huffTree);
+
+	string headerFlag = "-";
+
+	//put the frequency distribution on the first line of our file
+	//and put the 
+	vector<string>binaryFile;
+	binaryFile.push_back(binaryTree);
+	binaryFile.push_back(binaryText);
+
+	fileController.writeFile(fileName, binaryFile);
+		
+	int pause = 0;
+}
+
+string TextEditor::encodeFreqDist(unordered_map<char, int> freqDist) {
+	string freqDistString = "";
+	for (auto it : freqDist) {
+		char c = it.first;
+		int i = it.second;
+		freqDistString += c;
+		freqDistString += ':';
+		freqDistString += to_string(i);
+		freqDistString += ':';
+	}
+
+	return freqDistString;
 }
 
 /*
