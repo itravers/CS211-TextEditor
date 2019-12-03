@@ -16,6 +16,13 @@ void TextEditor::testCallback2(string menuData) {
 	}else if (menuData == "Save Huffman") {
 		saveHuffman();
 	}
+	else if (menuData == "Set Srt Vis") {
+		components[1]->setIsVisible(true);
+	}
+	else if (menuData == "Set Srt Invis") {
+		components[1]->setIsVisible(false);
+		components[0]->setNeedsRefresh(true);
+	}
 }
 
 
@@ -87,8 +94,13 @@ void TextEditor::load(string fileName) {
 	
 	components.push_back(
 		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
-
 	);
+
+	components.push_back(
+		new TextEditorNamespace::SortingWindow{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, 5, false }
+	);
+    //components[1]->setIsVisible(true);
+
 
 	menuBar = MenuBar(mainWindow, Location{ 0, 0 }, Size{ 3, numCols - 4 });
 	menuBar.addItem("File", "Open", menuCallback, this);
@@ -96,6 +108,8 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("File", "Save", menuCallback, this);
 	menuBar.addItem("File", "Save Huffman", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
+	menuBar.addItem("View", "Set Srt Vis", menuCallback, this);
+	menuBar.addItem("View", "Set Srt Invis", menuCallback, this);
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
 
