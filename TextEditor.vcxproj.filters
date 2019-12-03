@@ -28,6 +28,9 @@
     <Filter Include="Header Files\TextEditor\Trie">
       <UniqueIdentifier>{b1ed312c-b42a-447f-9fb2-3c36ae52c0d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\TextEditor\Sorting">
+      <UniqueIdentifier>{31bf4e49-34f8-4746-b2e3-dad7d0cec54a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h">
@@ -131,6 +134,9 @@
     </ClInclude>
     <ClInclude Include="TextEditor\Huffman\HuffTree.hpp">
       <Filter>Header Files\TextEditor\Huffman</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\SortingWindow.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

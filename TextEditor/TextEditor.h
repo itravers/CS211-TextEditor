@@ -31,6 +31,7 @@
 #include "FileController.h"								/* Manipulating Files */
 #include "ContentController.h"							/* All Content Manipulation. */
 #include "DialogBox.h"									/* Everything to do with dialogs. */
+#include "Sorting/SortingWindow.hpp"
 
 #include <string>
 #include <iostream>
@@ -56,6 +57,7 @@ using TextEditorNamespace::EditorWindowInteractive;
 using TextEditorNamespace::EditorMenuPanel;
 using TextEditorNamespace::MenuBar;
 using TextEditorNamespace::ContextMenu;
+using TextEditorNamespace::SortingWindow;
 
 
 /*******************************************************************************
@@ -107,6 +109,8 @@ private:
 	MenuBar menuBar;
 	ContextMenu contextMenu;
 	Trie contextMenuTrie;
+
+	SortingWindow sortingWindow;
 
 	/* Field Variables */
 	string currentStatus = "Starting Program...";
