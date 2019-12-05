@@ -72,14 +72,15 @@ namespace TextEditorNamespace {
 			_words.push_back("test");
 
 
-
+			//how many spaces per column are we writing?
+			int numSpacesPerColumn = getSize().width / _numCols;
 			int col = 0;
 			int row = 0;
+
 			//put each word into a label, that will be displayed at a certain location
 			for (int i = 0; i < _words.size(); i++) {
 
 				int curCol = i % (_numCols);
-
 				if (i > 0 && curCol == 0) {
 
 					//we change our row
@@ -92,6 +93,7 @@ namespace TextEditorNamespace {
 					//int curCol = i % _numCols;
 					//curCol++;
 					col = curCol;
+					col *= numSpacesPerColumn;
 				}
 			
 				_labels.push_back(new MovingLabel(_words[i], Vector2<float>(col, row)));
@@ -123,7 +125,8 @@ namespace TextEditorNamespace {
 			int moveToCol = newlabelPosition.x;
 
 			//this is our main text animation loop
-			label->setVel(Vector2<float>(.5f, .0f));
+			label->setMovingTo(Vector2<float>(100, label->getLoc().y));
+			label->setVel(Vector2<float>(10.0f, .0f));
 
 			// we use a fixed timestep of 1 / (60 fps) = 16 milliseconds
 			constexpr std::chrono::nanoseconds timestep(16ms);
@@ -142,14 +145,19 @@ namespace TextEditorNamespace {
 				
 					//update all labels
 					for (int i = 0; i < _labels.size(); i++) {
+						//_labels[i]->update(elapsedTime.count());
 						_labels[i]->update(elapsedTime.count());
+
 					}
+
+					//wclear(_c_window);
 
 					//and render
 					render();
 				
 					//clear();
 
+					wrefresh(_c_window);
 					refresh();
 				
 
@@ -164,10 +172,12 @@ namespace TextEditorNamespace {
 			if (isVisible()) {
 
 				//how many spaces per column are we writing?
-				int numSpacesPerColumn = getSize().width / _numCols;
+				//int numSpacesPerColumn = getSize().width / _numCols;
 
 				//loop through _labels and print them out
 				for (int i = 0; i < _labels.size(); i++) {
+
+					//if (i == 0)cout << "render: " << _labels[i]->getLoc().x << endl;
 
 					//Get the label
 					MovingLabel* label = _labels[i];
@@ -176,8 +186,8 @@ namespace TextEditorNamespace {
 					int col = label->getLoc().x;
 					int row = label->getLoc().y;
 					string word = label->getText();
-					int x = col * numSpacesPerColumn;
-
+					//int x = col * numSpacesPerColumn;
+					int x = col;
 					//print out our label
 					for (int j = 0; j < word.size(); j++) { //letter by letter, j track letter in a word
 			
