@@ -138,6 +138,12 @@
     <ClInclude Include="TextEditor\Sorting\SortingWindow.hpp">
       <Filter>Header Files\TextEditor\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\Vector2.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\MovingLabel.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
@@ -170,6 +176,9 @@
     </ClCompile>
     <ClCompile Include="TextEditor\TextEditor.cpp">
       <Filter>Source Files\TextEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditor\Sorting\Vector2.cpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

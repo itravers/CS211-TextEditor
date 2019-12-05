@@ -5,6 +5,7 @@
  *******************************************************************************/
 
 #include "TextEditor.h"
+#include "Sorting/Vector2.hpp"
 
 
 
@@ -18,9 +19,12 @@ void TextEditor::testCallback2(string menuData) {
 	}
 	else if (menuData == "Set Srt Vis") {
 		components[1]->setIsVisible(true);
+		((SortingWindow*)components[1])->moveTo(0, Vector2<float>(10, 10));
 	}
 	else if (menuData == "Set Srt Invis") {
 		components[1]->setIsVisible(false);
+		
+
 		components[0]->setNeedsRefresh(true);
 	}
 }
@@ -97,7 +101,7 @@ void TextEditor::load(string fileName) {
 	);
 
 	components.push_back(
-		new TextEditorNamespace::SortingWindow{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, 5, false }
+		new TextEditorNamespace::SortingWindow{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, 11, false }
 	);
     //components[1]->setIsVisible(true);
 
