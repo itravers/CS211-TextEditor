@@ -153,6 +153,9 @@
     <ClInclude Include="TextEditor\Sorting\BubbleSort.hpp">
       <Filter>Header Files\TextEditor\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\SelectionSort.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">

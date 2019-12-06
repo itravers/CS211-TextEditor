@@ -156,6 +156,7 @@
     <ClInclude Include="TextEditor\Sorting\BubbleSort.hpp" />
     <ClInclude Include="TextEditor\Sorting\MovingLabel.hpp" />
     <ClInclude Include="TextEditor\Sorting\Quicksort.hpp" />
+    <ClInclude Include="TextEditor\Sorting\SelectionSort.hpp" />
     <ClInclude Include="TextEditor\Sorting\Sorter.hpp" />
     <ClInclude Include="TextEditor\Sorting\SortingWindow.hpp" />
     <ClInclude Include="TextEditor\Sorting\Vector2.hpp" />

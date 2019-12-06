@@ -34,6 +34,7 @@
 #include "Sorting/SortingWindow.hpp"
 #include "Sorting/Quicksort.hpp"
 #include "Sorting/BubbleSort.hpp"
+#include "Sorting/SelectionSort.hpp"
 
 #include <string>
 #include <iostream>
@@ -157,7 +158,7 @@ private:
 	vector<TextEditorNamespace::EditorComponent*> components{};
 	QuickSort<string>* quickSort;
 	BubbleSort<string>* bubbleSort;
-	
+	SelectionSort<string>* selectionSort;
 
 };
 #endif
