@@ -16,15 +16,19 @@ void TextEditor::testCallback2(string menuData) {
 		openHuffman();
 	}else if (menuData == "Save Huffman") {
 		saveHuffman();
-	}
-	else if (menuData == "Set Srt Vis") {
+	}else if (menuData == "Set Srt Vis") {
 		components[1]->setIsVisible(true);
 		((SortingWindow*)components[1])->moveTo(0, Vector2<float>(10, 10));
-	}
-	else if (menuData == "Set Srt Invis") {
+	}else if (menuData == "Set Srt Invis") {
 		components[1]->setIsVisible(false);
-		
-
+		components[0]->setNeedsRefresh(true);
+	}else if (menuData == "Bubble Sort") {
+		components[0]->setNeedsRefresh(true);
+	}else if (menuData == "Selection Sort") {
+		components[0]->setNeedsRefresh(true);
+	}else if (menuData == "Insertion Sort") {
+		components[0]->setNeedsRefresh(true);
+	}else if (menuData == "Quick Sort") {
 		components[0]->setNeedsRefresh(true);
 	}
 }
@@ -114,6 +118,13 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("File", "Exit", menuCallback, this);
 	menuBar.addItem("View", "Set Srt Vis", menuCallback, this);
 	menuBar.addItem("View", "Set Srt Invis", menuCallback, this);
+	menuBar.addItem("Sort", "Bubble Sort", menuCallback, this);
+	menuBar.addItem("Sort", "Selection Sort", menuCallback, this);
+	menuBar.addItem("Sort", "Insertion Sort", menuCallback, this);
+	menuBar.addItem("Sort", "Quick Sort", menuCallback, this);
+
+
+
 	menuBar.addItem("Edit", "ContextMenu", menuCallback, this);
 	menuBar.addItem("Help", "About", menuCallback, this);
 
@@ -214,9 +225,7 @@ void TextEditor::load(string fileName) {
 				
 					for (auto& component : components) {
 						component->setNeedsRefresh(true);
-
 					}
-				
 				break;
 			
 			default:
