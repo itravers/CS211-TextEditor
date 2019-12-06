@@ -32,6 +32,8 @@
 #include "ContentController.h"							/* All Content Manipulation. */
 #include "DialogBox.h"									/* Everything to do with dialogs. */
 #include "Sorting/SortingWindow.hpp"
+#include "Sorting/Quicksort.hpp"
+#include "Sorting/BubbleSort.hpp"
 
 #include <string>
 #include <iostream>
@@ -153,6 +155,8 @@ private:
 	bool componentNeedsRefresh(vector<EditorComponent*> v);
 	void refreshComponents(vector<EditorComponent*> v);
 	vector<TextEditorNamespace::EditorComponent*> components{};
+	QuickSort<string>* quickSort;
+	BubbleSort<string>* bubbleSort;
 	
 
 };

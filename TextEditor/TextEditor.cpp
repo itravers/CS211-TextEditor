@@ -17,19 +17,23 @@ void TextEditor::testCallback2(string menuData) {
 	}else if (menuData == "Save Huffman") {
 		saveHuffman();
 	}else if (menuData == "Set Srt Vis") {
-		components[1]->setIsVisible(true);
-		((SortingWindow*)components[1])->moveTo(0, Vector2<float>(10, 10));
+		//components[1]->setIsVisible(true);
+		//((SortingWindow*)components[1])->moveTo(0, Vector2<float>(10, 10));
 	}else if (menuData == "Set Srt Invis") {
 		components[1]->setIsVisible(false);
 		components[0]->setNeedsRefresh(true);
 	}else if (menuData == "Bubble Sort") {
-		components[0]->setNeedsRefresh(true);
+		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
+		bubbleSort->sort(data);
+		((EditorWindowInteractive*)components[0])->setData(data);
 	}else if (menuData == "Selection Sort") {
 		components[0]->setNeedsRefresh(true);
 	}else if (menuData == "Insertion Sort") {
 		components[0]->setNeedsRefresh(true);
 	}else if (menuData == "Quick Sort") {
-		components[0]->setNeedsRefresh(true);
+		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
+		quickSort->sort(data);
+		((EditorWindowInteractive*)components[0])->setData(data);
 	}
 }
 
@@ -66,6 +70,10 @@ TextEditor::TextEditor() : fileController()/*, menuController(this), contentCont
 }
 
 void TextEditor::load(string fileName) {
+	//load sorting objects
+	quickSort = new QuickSort<string>{};
+	bubbleSort = new BubbleSort<string>{};
+
 	string arg1;
 
 	//Setup Window
@@ -104,9 +112,9 @@ void TextEditor::load(string fileName) {
 		new TextEditorNamespace::EditorWindowInteractive{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, true, true }
 	);
 
-	components.push_back(
-		new TextEditorNamespace::SortingWindow{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, 11, false }
-	);
+	//components.push_back(
+	//	new TextEditorNamespace::SortingWindow{ mainWindow , Location{3, 0}, Size{(numRows - 5) / 1, (numCols - 4) / 1}, 11, false }
+	//);
     //components[1]->setIsVisible(true);
 
 
@@ -116,8 +124,8 @@ void TextEditor::load(string fileName) {
 	menuBar.addItem("File", "Save", menuCallback, this);
 	menuBar.addItem("File", "Save Huffman", menuCallback, this);
 	menuBar.addItem("File", "Exit", menuCallback, this);
-	menuBar.addItem("View", "Set Srt Vis", menuCallback, this);
-	menuBar.addItem("View", "Set Srt Invis", menuCallback, this);
+	//menuBar.addItem("View", "Set Srt Vis", menuCallback, this);
+	//menuBar.addItem("View", "Set Srt Invis", menuCallback, this);
 	menuBar.addItem("Sort", "Bubble Sort", menuCallback, this);
 	menuBar.addItem("Sort", "Selection Sort", menuCallback, this);
 	menuBar.addItem("Sort", "Insertion Sort", menuCallback, this);
@@ -142,7 +150,7 @@ void TextEditor::load(string fileName) {
 	//Read display File
 	vector<string>lines;
 	//fileController.readFile("TextEditor/ContentController.cpp", lines, READ);
-	fileController.readFile("test.txt", lines, READ);
+	fileController.readFile("motd.txt", lines, READ);
 	((EditorWindowScrollable*)components[0])->setData(lines);
 
 	

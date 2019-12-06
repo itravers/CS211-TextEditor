@@ -17,11 +17,14 @@
 
 #include "EditorComponent.hpp"
 #include "../customcolors.h"
+
 #include <vector>
 #include <string>
+#include <sstream>
 
 using std::vector;
 using std::string;
+using std::istringstream;
 
 //we are defining a class in the namespace TextEditorNamespace
 namespace TextEditorNamespace {
@@ -97,6 +100,38 @@ namespace TextEditorNamespace {
 			 *******************************************************************************/
 			vector<string> getBuffer() const {
 				return _buffer;
+			}
+
+			/*******************************************************************************
+			 * Function Name:   getwords()
+			 * Purpose:         Returns every word in the text buffer.
+			 *******************************************************************************/
+			vector<string> getWords() const {
+				vector<string>words;
+
+				for (int i = 0; i < _buffer.size(); i++) {
+					// Used to split string around spaces. 
+					istringstream ss(_buffer[i]);
+
+					// Traverse through all words 
+					do {
+						// Read a word 
+						string word;
+						ss >> word;
+
+						//we only want words and numbers here
+						if (word == "" || &word[0] == " ") {
+							//int i = 0;
+						}
+						else {
+							words.push_back(word);
+						}
+
+						// While there is more to read 
+					} while (ss);
+				}
+				
+				return words;
 			}
 
 			/*******************************************************************************

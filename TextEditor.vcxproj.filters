@@ -144,6 +144,15 @@
     <ClInclude Include="TextEditor\Sorting\MovingLabel.hpp">
       <Filter>Header Files\TextEditor\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\Quicksort.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\Sorter.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditor\Sorting\BubbleSort.hpp">
+      <Filter>Header Files\TextEditor\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pdcurses.dll">
