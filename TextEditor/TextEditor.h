@@ -35,6 +35,7 @@
 #include "Sorting/Quicksort.hpp"
 #include "Sorting/BubbleSort.hpp"
 #include "Sorting/SelectionSort.hpp"
+#include "Sorting/InsertionSort.hpp"
 
 #include <string>
 #include <iostream>
@@ -159,6 +160,7 @@ private:
 	QuickSort<string>* quickSort;
 	BubbleSort<string>* bubbleSort;
 	SelectionSort<string>* selectionSort;
+	InsertionSort<string>* insertionSort;
 
 };
 #endif

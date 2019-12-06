@@ -23,15 +23,17 @@ void TextEditor::testCallback2(string menuData) {
 		components[1]->setIsVisible(false);
 		components[0]->setNeedsRefresh(true);
 	}else if (menuData == "Bubble Sort") {
-		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
-		bubbleSort->sort(data);
-		((EditorWindowInteractive*)components[0])->setData(data);
+		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords(); //get words as data
+		bubbleSort->sort(data);														 //sort data
+		((EditorWindowInteractive*)components[0])->setData(data);					 //set buffer to data
 	}else if (menuData == "Selection Sort") {
 		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
-		bubbleSort->sort(data);
+		selectionSort->sort(data);
 		((EditorWindowInteractive*)components[0])->setData(data);
 	}else if (menuData == "Insertion Sort") {
-		components[0]->setNeedsRefresh(true);
+		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
+		insertionSort->sort(data);
+		((EditorWindowInteractive*)components[0])->setData(data);
 	}else if (menuData == "Quick Sort") {
 		vector<string> data = ((EditorWindowInteractive*)components[0])->getWords();
 		quickSort->sort(data);
@@ -76,6 +78,7 @@ void TextEditor::load(string fileName) {
 	quickSort = new QuickSort<string>{};
 	bubbleSort = new BubbleSort<string>{};
 	selectionSort = new SelectionSort<string>{};
+	insertionSort = new InsertionSort<string>{};
 
 	string arg1;
 

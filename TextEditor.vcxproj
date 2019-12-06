@@ -154,6 +154,7 @@
     <ClInclude Include="TextEditor\Huffman\LeafNode.hpp" />
     <ClInclude Include="TextEditor\MenuController.h" />
     <ClInclude Include="TextEditor\Sorting\BubbleSort.hpp" />
+    <ClInclude Include="TextEditor\Sorting\InsertionSort.hpp" />
     <ClInclude Include="TextEditor\Sorting\MovingLabel.hpp" />
     <ClInclude Include="TextEditor\Sorting\Quicksort.hpp" />
     <ClInclude Include="TextEditor\Sorting\SelectionSort.hpp" />
